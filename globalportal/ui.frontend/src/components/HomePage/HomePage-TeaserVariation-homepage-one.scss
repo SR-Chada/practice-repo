@@ -1,0 +1,69 @@
+@mixin TeaserVariationHomePage-one {
+    .cmp-global-teaser-variation-one {
+        .cq-dd-image {
+            max-width: 1200px;
+            margin: auto;
+            transition: none;
+
+            @media only screen and (max-width:1300px) {
+                max-width: 1050px;
+            }
+
+            .cmp-teaser__image {
+                opacity: 1;
+
+                .cmp-image {
+                    height: 495px;
+                    width: 1200px;
+                    margin: auto;
+
+                    @media only screen and (max-width:1300px) {
+                        width: 1050px;
+                    }
+
+                    img {
+                        height: inherit !important;
+                    }
+                }
+            }
+
+            .cmp-teaser__content {
+                max-width: 900px;
+                left: 0;
+                padding: 0 0px 0 0px;
+                margin-left: 70px;
+
+                @include mobile {
+                    margin-left: 40px;
+                }
+
+                .cmp-teaser__pretitle {
+                    color: $swipe-text-color;
+                }
+
+                .cmp-teaser__title {
+                    margin-top: 10px;
+                }
+
+                .cmp-teaser__description {
+                    color: $swipe-text-color;
+
+                    line-height: 1.7;
+                    font-weight: $font-weight-300;
+                }
+
+                .cmp-teaser__action-container {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+
+}
+.cmp-global-teaser-variation.cmp-global-teaser-variation-one{
+    .cmp-teaser__content{
+        @include mobile{
+            bottom: 45px;
+        }
+    }
+}

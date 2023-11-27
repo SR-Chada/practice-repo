@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Facetted Search Component"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[macnicagwi.components.facettedsearch.editor]">
+    <content
+        granite:class="cmp-facettedsearch__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <filters
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Filters"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <searchPageRootPath
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Assign page path under which all pages to be filtered are situated."
+                                                fieldLabel="Search Page Root Path"
+                                                name="./searchPageRootPath"
+                                                nodeTypes="cq:Page"
+                                                required="{Boolean}true"
+                                                rootPath="/content/macnicagwi"/>
+                                            <searchAssetRootPath
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Assign esset path under which all assets to be filtered are situated."
+                                                fieldLabel="Search Asset Root Path"
+                                                name="./searchAssetRootPath"
+                                                nodeTypes="dam:Asset"
+                                                required="{Boolean}true"
+                                                rootPath="/content/dam/macnicagwi"/>
+                                            <filterType
+                                                granite:class="cmp-facettedsearch-dialog-edit__filterType"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                fieldLabel="Filter Type"
+                                                name="./filterType"
+                                                vertical="{Boolean}false">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <singleLevelFilter
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Single Level Filter"
+                                                        value="singleLevelFilter"/>
+                                                    <multiLevelFilter
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Multi Level Filter"
+                                                        value="multiLevelFilter"/>
+                                                    <none
+                                                        jcr:primaryType="nt:unstructured"
+														checked="{Boolean}true"
+                                                        text="None"
+                                                        value="none"/>
+                                                </items>
+                                            </filterType>
+                                            <withFilterGroup
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <filterRootPaths
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        fieldLabel="Choose Filter(s)"
+                                                        multiple="{Boolean}true"
+                                                        name="./filterRootPaths"
+                                                        required="{Boolean}true">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <businessCategories
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Business Categories"
+                                                                value="macnicagwi:business-categories"/>
+                                                            <manufacturers
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Product Manufacturers"
+                                                                value="macnicagwi:manufacturers"/>
+                                                            <productLines
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Product Lines"
+                                                                value="macnicagwi:product-lines"/>
+                                                            <productFamilySeries
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Product Families"
+                                                                value="macnicagwi:product-families"/>
+                                                            <applicationCategories
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Application Categories"
+                                                                value="macnicagwi:application-categories"/>
+                                                            <features
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Features"
+                                                                value="macnicagwi:features"/>
+                                                            <locationType
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Location Type"
+                                                                value="macnicagwi:location-type"/>
+                                                            <newsType
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="News Type"
+                                                                value="macnicagwi:news-type"/>
+                                                            <status
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Event Status"
+                                                                value="macnicagwi:status"/>
+                                                            <articleSource
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Article Source"
+                                                                value="macnicagwi:article-source"/>
+                                                        </items>
+                                                    </filterRootPaths>
+                                                    <freeTextSearch
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                        checked="${not empty cqDesign.freeTextSearch ? cqDesign.freeTextSearch : false}"
+                                                        fieldDescription="If checked displays free text search box."
+                                                        name="./freeTextSearch"
+                                                        text="Free Text Search"
+                                                        uncheckedValue="false"
+                                                        value="true">
+                                                        <granite:data
+                                                            jcr:primaryType="nt:unstructured"
+                                                            cmp-facettedsearch-dialog-hook="freeTextSearch"/>
+                                                    </freeTextSearch>
+                                                    <freeTextSearchGroup
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <freeTextSearchPlaceholder
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldLabel="Free Text Search Placeholder"
+                                                                name="./freeTextSearchPlaceholder"/>
+                                                        </items>
+                                                        <granite:data
+                                                            jcr:primaryType="nt:unstructured"
+                                                            cmp-facettedsearch-dialog-hook="freeTextSearchGroup"/>
+                                                    </freeTextSearchGroup>
+                                                    <filterButtonText
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldDescription="The text to display on filter button in smaller screens"
+                                                        fieldLabel="Filter Button Text"
+                                                        name="./filterButtonText"/>
+                                                    <applyButtonText
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldDescription="The text to display on apply button"
+                                                        fieldLabel="Apply Button Text"
+                                                        name="./applyButtonText"/>
+                                                    <clearButtonText
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldDescription="The text to display on clear button"
+                                                        fieldLabel="Clear Button Text"
+                                                        name="./clearButtonText"/>
+                                                </items>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cmp-facettedsearch-dialog-hook="withFilterGroup"/>
+                                            </withFilterGroup>
+                                            <withoutFilterGroup
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <manufacturer
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                        fieldLabel="Manufacturer"
+                                                        name="./manufacturerFilter"
+                                                        rootPath="/content/cq:tags/macnicagwi/manufacturers"/>
+                                                    <productLine
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                        fieldLabel="Product Line"
+                                                        name="./productLineFilter"
+                                                        rootPath="/content/cq:tags/macnicagwi/product-lines"/>
+                                                </items>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cmp-facettedsearch-dialog-hook="withoutFilterGroup"/>
+                                            </withoutFilterGroup>
+                                            <id
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="HTML ID attribute to apply to the component."
+                                                fieldLabel="ID"
+                                                name="./id"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </filters>
+                    <results
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Results"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <searchResultsBlockSize
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                fieldDescription="Block Size to display particular number of search results"
+                                                fieldLabel="Search Results Block Size"
+                                                min="{Long}1"
+                                                value="3"
+                                                name="./searchResultsBlockSize"/>
+                                            <noResultsFoundText
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The text to display when there is no results found post search."
+                                                fieldLabel="No Results Found Text"
+                                                name="./noResultsFoundText"/>
+                                            <loadMoreButtonText
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The text to display on the load more button"
+                                                fieldLabel="Load More Button Text"
+                                                name="./loadMoreButtonText"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </results>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

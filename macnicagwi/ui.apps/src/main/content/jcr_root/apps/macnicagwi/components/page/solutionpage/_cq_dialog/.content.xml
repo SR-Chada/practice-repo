@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="MACNICA GWI Solution Page"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[cq.common.wcm,core.wcm.components.page.v2.editor,cq.wcm.msm.properties,granite.contexthub.configuration,cq.siteadmin.admin.properties]"
+    mode="edit">
+    <content
+        granite:class="cq-dialog-content-page"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                granite:class="cq-siteadmin-admin-properties-tabs"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                size="L">
+                <items jcr:primaryType="nt:unstructured">
+                    <solutionDetails
+                        cq:showOnCreate="{Boolean}false"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Solution Details"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <section
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                   
+                                            <businessCategories
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                fieldLabel="Business Categories"
+                                                multiple="{Boolean}true"
+                                                name="./businessCategories"
+                                                required="true"
+                                                rootPath="/content/cq:tags"/>
+                                            <manufacturer
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                fieldLabel="Manufacturer"
+                                                name="./manufacturer"
+                                                required="true"
+                                                rootPath="/content/cq:tags"/>
+                                                <manufacturerlogo
+                                                granite:class="cmp-image__editor"
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Manufacturer Logo"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <file
+                                                        granite:class="cmp-image__editor-file-upload"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                        allowDrop="{Boolean}false"
+                                                        allowUpload="{Boolean}false"
+                                                        class="cq-droptarget"
+                                                        fieldDescription="Used in components referencing the page (e.g. Manufacturer listing, Product Line Listing)"
+                                                        fieldLabel="Image"
+                                                        fileNameParameter="./manufacturerlogo/fileName"
+                                                        fileReferenceParameter="./manufacturerlogo/fileReference"
+                                                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                        name="./manufacturerlogo/file">
+                                                        <granite:data
+                                                            jcr:primaryType="nt:unstructured"
+                                                            cq-msm-lockable="/cq:featuredimage"/>
+                                                    </file>
+                                                    <type
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                        name="./manufacturerlogo/sling:resourceType"
+                                                        value="core/wcm/components/image/v3/image"/>
+                                                    <alternativeGroup
+                                                        granite:class="cmp-image__editor-alt"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <alt
+                                                                granite:class="cmp-image__editor-alt-text"
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldDescription="Alternative text for logo of the supplier / manufacturer corresponding to the page"
+                                                                fieldLabel="Manufacturer logo Alt text"
+                                                                name="./manufacturerlogo/alt">
+                                                                <granite:data
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    cq-msm-lockable="/cq:featuredimage"/>
+                                                            </alt>
+                                                            <altValueFromDAM
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                checked="true"
+                                                                fieldDescription="When checked, populate the image's alt attribute with the value of the dc:description metadata in DAM."
+                                                                name="./manufacturerlogo/altValueFromDAM"
+                                                                text="Inherit - Value taken from the DAM asset"
+                                                                uncheckedValue="false"
+                                                                value="{Boolean}true">
+                                                                <granite:data
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    cq-msm-lockable="/cq:featuredimage"/>
+                                                            </altValueFromDAM>
+                                                        </items>
+                                                    </alternativeGroup>
+                                                </items>
+                                            </manufacturerlogo>
+                                            <applicationCategories
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                fieldLabel="Application Categories"
+                                                multiple="{Boolean}true"
+                                                name="./applicationCategories"
+                                                rootPath="/content/cq:tags"/>
+                                            <features
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                fieldLabel="Key Features"
+                                                multiple="{Boolean}true"
+                                                name="./features"
+                                                rootPath="/content/cq:tags"/>
+                                        </items>
+                                    </section>
+                                </items>
+                            </column>
+                        </items>
+                    </solutionDetails>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

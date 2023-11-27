@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    granite:class="action-type-dialog"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Core Form Container"
+    sling:resourceType="granite/ui/components/coral/foundation/container">
+    <items jcr:primaryType="nt:unstructured">
+        <rpc_mail_formEndPointUrl
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldDescription="Endpoint URL of the RESTful service"
+            fieldLabel="Endpoint"
+            name="./rpc_mail_externalServiceEndPointUrl"
+            required="{Boolean}true"/>
+        <rpc_mail_subject
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldDescription="Subject line for the emails sent for each submitted form."
+            fieldLabel="Subject"
+            name="./rpc_mail_subject"
+            required="{Boolean}true"/>
+        <rpc_mail_from
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldDescription="Email address that the message is considered to be sent from."
+            fieldLabel="From"
+            fieldLabel_commentI18n="Context: Email From field"
+            name="./rpc_mail_from"
+            required="{Boolean}true"/>
+        <rpc_mail_mailToBusiness
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+            checked="${not empty cqDesign.mailToBusiness ? cqDesign.mailToBusiness : false}"
+            fieldDescription="If checked displays free text search box."
+            name="./rpc_mail_mailToBusiness"
+            text="Send Mail To Business"
+            uncheckedValue="false"
+            value="true">
+            <granite:data
+                jcr:primaryType="nt:unstructured"
+                cmp-formcontainer-dialog-hook="rpc_mail_mailToBusiness"/>
+        </rpc_mail_mailToBusiness>
+        <rpc_mail_businessEmailsGroup
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+                <rpc_mail_mailto
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                    fieldDescription="Email addresses where the messages will be sent."
+                    fieldLabel="To"
+                    fieldLabel_commentI18n="Context: Email To field"
+                    required="{Boolean}true">
+                    <field
+                        granite:class="mailto-Textfield"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        name="./rpc_mail_mailto"/>
+                </rpc_mail_mailto>
+                <rpc_mail_cc
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                    fieldDescription="Email addresses where the messages will be sent as a copy."
+                    fieldLabel="CC">
+                    <field
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        name="./rpc_mail_cc"/>
+                </rpc_mail_cc>
+            </items>
+            <granite:data
+                jcr:primaryType="nt:unstructured"
+                cmp-formcontainer-dialog-hook="rpc_mail_businessEmailsGroup"/>
+        </rpc_mail_businessEmailsGroup>
+        <rpc_mail_mailToCustomer
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+            checked="${not empty cqDesign.mailToCustomer ? cqDesign.mailToCustomer : false}"
+            fieldDescription="If checked displays free text search box."
+            name="./rpc_mail_mailToCustomer"
+            text="Send Mail To Customer"
+            uncheckedValue="false"
+            value="true">
+            <granite:data
+                jcr:primaryType="nt:unstructured"
+                cmp-formcontainer-dialog-hook="rpc_mail_mailToCustomer"/>
+        </rpc_mail_mailToCustomer>
+    </items>
+    <granite:data
+        jcr:primaryType="nt:unstructured"
+        showhidetargetvalue="macnicagwi/components/content/form/actions/rpc_mail"
+        usesRedirect="false"/>
+</jcr:root>

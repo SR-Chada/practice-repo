@@ -1,0 +1,11 @@
+.cmp-teaser__content{
+    padding: 16px 24px 24px 24px;
+    .cmp-teaser__title{
+      @include H4-text;
+      padding: 0;
+      margin: 0;
+      a{
+        color: $color-text-primary;
+      }
+    }
+  }

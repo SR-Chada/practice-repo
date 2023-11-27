@@ -1,0 +1,318 @@
+.cmp-contactcards {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 38px;
+    @include tab{
+        grid-gap: 18px;
+    }
+  .cmp-contactcard {
+    width: 30.482%;
+    background: $color-background-default;
+    border: 1px solid $border-color-default;
+    border-radius: 8px;
+    @include mobile {
+        width: 100%;
+    }
+    &__title {
+        background: $contact-cards-title-background-color;
+        padding: 16px 0 8px;
+        text-align: center;
+        border-radius: 8px 8px 0 0;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+
+        &--value{
+            @include H1-text;
+            color: $color-primary;
+            font-size: $font-size-20;
+            padding: 0 8px;
+           
+        }
+    }
+    &__content {
+        padding: 16px 24px 12px;
+        grid-gap: 16px;
+        display: grid;
+    }
+    &__google-maps{
+      border-bottom: 1px dashed $border-color-default;
+      padding-bottom: 16px;
+        &--link {
+          text-transform: uppercase;
+        }
+    }
+    &__address--value{
+        border-bottom: 1px dashed $border-color-default;
+        padding-bottom: 16px;
+        @include tab-and-mobile{
+            height: 100% !important;
+        }
+    }
+    &__route-instrcutions{
+     &-label {
+         @include normal-text-medium;
+        text-transform: uppercase;
+        color: $color-text-primary;
+     }
+    
+     &--icons {
+        cursor: pointer;
+    }
+     &-icons{
+        display: flex;
+        grid-gap: 28px;
+        margin-top: 16px;
+        border-bottom: 1px dashed $border-color-default;
+        padding-bottom: 16px;
+     }
+     &--public-transport-icon{
+        &::before{
+            display: block;
+            content: url("../resources/images/bus-icon.svg");
+         }
+     }
+     &--car-icon{
+        &::before{
+            display: block;
+            content: url("../resources/images/car-icon.svg");
+         }
+     }
+     &--motorcycle-icon{
+        &::before{
+            display: block;
+            content: url("../resources/images/bike-icon.svg");
+         }
+     }
+     &-popup--title {
+        @include H1-text;
+        color: $color-primary;
+        border-bottom: 1px solid $table-border-color;
+        padding-bottom: 9.5px;
+        margin-bottom: 34.5px;
+    }
+   }
+   
+   &__mobile-number{
+    display: flex;
+       &--icon{
+        margin-right: 8px;
+         &::before{
+            display: block;
+            content: url("../resources/images/contact-person-blue-icon.svg");
+         }
+      }
+   }
+   &__fax-number{
+    display: flex;
+    @include tab-and-mobile {
+        border-bottom: 1px dashed #c4c4c4;
+        padding-bottom: 1pc;
+    } 
+    &--icon{
+     margin-right: 8px;
+      &::before{
+         display: block;
+         content: url("../resources/images/contact-phone-blue-icon.svg");
+      }
+   }
+   }
+   &__emails{
+       display: block;
+    @include tab-and-mobile {
+        display: none;
+    } 
+   }
+   &__business-email{
+    display: flex;
+    &--label {
+        @include normal-text-medium;
+        color: $color-text-primary;
+    }
+     &--icon{
+        margin-right: 8px;
+        &::before{
+            display: block;
+            content: url("../resources/images/email-blue-icon.svg");
+         }
+      }
+      &--value{
+        color: $button-secondary-color;
+        @include normal-text;
+        word-break: break-word;
+    }
+   }
+   &__support-email{
+    margin-left: 32px;
+    margin-top: 16px;
+    &--label {
+        @include normal-text-medium;
+        color: $color-text-primary;
+    }
+    &--value{
+        color: $button-secondary-color;
+        @include normal-text;
+        word-break: break-word;
+   }
+}
+&__technical-email{
+    margin-left: 32px;
+    margin-top: 16px;
+    &--label {
+        @include normal-text-medium;
+        color: $color-text-primary;
+    }
+    &--value {
+        color: $button-secondary-color;
+        @include normal-text;
+        word-break: break-word;
+    }
+   }
+   &__popup-container{
+        display: none;
+        .cmp-popup{
+            .cmp-title__text{
+                border-bottom: 1px solid $table-border-color;
+                .cmp-title__link {
+                    color: $color-primary;
+                }
+            } 
+            .cmp-tabs__tablist {
+                margin-block-start: 0;
+                margin-top: 44px;
+                margin-bottom: 28px;
+                @include tab-and-mobile{
+                    margin-top: 16px;
+                }
+                li {
+                    margin-right: 28px;
+                    color: #6D50FF;
+                }
+                
+            }
+            .cmp-tabs__button{
+                display: none !important;
+            }
+            .cmp-tabs__tablist {
+                padding: 0;
+                background: none;
+                position: sticky;
+            }
+            .cmp-tabs__tab--active{
+                background-color: $color-background-default !important;
+            }
+        }
+      .cmp-contactcard__route-instrcutions-popup-tab{
+        display: flex;
+        grid-gap: 28px;
+        &-transport--label{
+            &-text{
+               @include tab-and-mobile{
+                 display: none;
+               }
+             }
+         }
+          &-public-transport{
+               &--label{
+                   display: flex;
+                &::before{
+                    display: block;
+                    content: url("../resources/images/bus-icon.svg");
+                    margin-right: 10px;
+                 }
+             }
+          }
+          &-car{
+            &--label{
+                display: flex;
+                &::before{
+                    display: block;
+                    content: url("../resources/images/car-icon-blue.svg");
+                    margin-right: 10px;
+                 }
+              }
+          }
+          &-motorcycle{
+            &--label{
+                display: flex;
+                &::before{
+                    display: block;
+                    content: url("../resources/images/bike-icon-blue.svg");
+                    margin-right: 10px;
+                 }
+              }
+          }
+          
+          .active{
+            display: block;
+        }
+        &-transport--value{
+            ul{
+                padding-inline-start: 24px;
+                li {
+                    border-bottom: 1px solid $table-border-color;
+                    padding-bottom: 8px;
+                    margin-bottom: 8px;
+                    &::marker {
+                        color: $color-primary;
+                    }
+                }
+            } 
+        }
+      }
+      .cmp-tabs__tab--active {
+        border-bottom: 3px solid $color-primary;
+        color: $color-primary !important;
+        .cmp-contactcard__route-instrcutions-popup-tab-motorcycle--label{
+            &::before{
+               content: url("../resources/images/bike-icon.svg") !important;
+             }
+        }
+        .cmp-contactcard__route-instrcutions-popup-tab-car--label{
+            &::before{
+               content: url("../resources/images/car-icon.svg") !important;
+            }
+        }
+        .cmp-contactcard__route-instrcutions-popup-tab-public-transport--label{
+            &::before{
+               content: url("../resources/images/bus-icon.svg") !important;
+            }
+        }
+      } 
+    }
+    &__read-more-button{
+     display: none;
+     @include tab-and-mobile {
+         display: block;
+     }  
+     button {
+        border: none;
+        background-color: $color-background-default;
+        color: $button-secondary-color;
+        @include H4-text-uppercase;
+        text-align: right;
+    }
+    }
+    
+  }
+  .cmp-contactcard--companyname{
+    font-size: $font-size-medium;
+}
+}
+.cmp-contactcard__button {
+    color: $subpageliststing-mobile-text-color;
+    width: 100%;
+    text-align: left;
+    background: $color-search-bar;
+    border-radius: 8px 0 0 8px;
+    padding: 8px 0 8px 8px;
+    border: none;
+    margin-bottom: 16px;
+    @include H4-text;
+         &::after {
+            content: url("../resources/images/vector-icon-blue.svg");
+            float: right;
+            margin: 0 7px;
+        }
+}
+

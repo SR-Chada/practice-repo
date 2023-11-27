@@ -1,0 +1,426 @@
+.cmp-manufacturerlisting {
+    .cmp-manufacturerlisting__entries {
+        padding: 0;
+
+        .cmp-manufacturerlisting__entry {
+            padding: 24px;
+            list-style: none;
+            margin: 0;
+            border: 1px solid $border-color-medium;
+            border-radius: 8px;
+            width: calc(100% - 48px);
+
+            .cmp-manufacturerlisting__entry-heading {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: $font-size-large;
+
+                @include mobile {
+                    flex-direction: column-reverse;
+                    align-items: flex-start;
+                    padding: 0 0 8px;
+                }
+
+                span {
+                    @include mobile {
+                        margin-top: 16px;
+                    }
+                }
+
+                img {
+                    height: 32px;
+                }
+            }
+
+            .cmp-productlinelisting {
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    border-bottom: 1px solid $border-color-medium;
+                }
+
+                .cmp-productlinelisting__product-line-cards {
+                    padding: 24px 0 16px 0;
+
+                    @include mobile {
+                        border: none;
+                        padding: 0;
+                    }
+
+                    .cmp-productlinelisting__product-line-card {
+                        padding: 0;
+                        
+                        a {
+                            margin: 16px 16px 0 0;
+                        }
+                    }
+                }
+            }
+
+            .cmp-productlinelisting--parent {
+                &::before {
+                    display: none;
+                }
+
+                .cmp-productlinelisting__product-line-cards {
+                    padding: 0;
+
+                    @include mobile {
+                        border: none;
+                        padding: 0;
+                    }
+
+                    .cmp-productlinelisting__product-line-card {
+                        padding: 0;
+
+                        a {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .cmp-manufacturerlisting__showmore {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .cmp-button {
+            background-color: $color-primary;
+            padding: 8px 24px;
+            color: $color-background-default;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+            @include normal-text;
+            cursor: pointer;
+
+            &[disabled] {
+                background-color: $button-primary-disable-background-color;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &__search-input-filter {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: stretch;
+        .cmp-manufacturerlisting__filter-button.cmp-button {
+            background: none;
+            color: $button-secondary-color;
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+
+            .cmp-button__text {
+                font-size: $font-size-small;
+            }
+
+            .cmp-button__icon--filter-icon {
+                content: url("../resources/images/filter-icon.svg");
+                height: 16px;
+                width: 16px;
+                margin: 0 0 0 10px;
+                display: block;
+            }
+        }
+    }
+
+    &__no-results {
+        margin: 30px 0;
+    }
+}
+
+.cmp-manufacturerlisting__search-input-filter {
+    padding: 0 0 8px;
+    border-bottom: 1px solid $table-border-color;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.cmp-manufacturerlisting__search-filters {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 10px;
+        width: 75%;
+    }
+    &-item {
+        color: $color-primary;
+        padding: 8px 16px;
+        border: 1px $border-color-default solid;
+        border-radius: 8px;
+        background: white;
+        margin: 0 10px 0 0;
+        cursor: pointer;
+        display: flex;
+        white-space: nowrap;
+        width: auto;
+
+        &:active {
+            color: white;
+            background-color: $color-primary;
+        }
+    }
+
+    &-item--active {
+        color: white;
+        background-color: $color-primary;
+
+        /* &::after {
+            content: url("../resources/images/dropdown-arrow.svg");
+            display: block;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 40px;
+            left: 50px;
+        } */
+
+        .cmp-manufacturerlisting__search-filters-children {
+            display: flex;
+        }
+    }
+
+    &-children {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: $color-background-primary;
+        width: 97%;
+        border: 1px solid $border-color-default;
+        border-radius: 24px;
+        padding: 16px;
+        margin: 0;
+        z-index: 1;
+        flex-direction: column;
+        align-items: flex-end;
+
+        &-close-icon {
+            background: url("../resources/images/close-icon-black.svg");
+            background-repeat: no-repeat;
+            height: 16px;
+            width: 16px;
+            margin: 4px 6px;
+            display: block;
+
+            @include tab-and-mobile {
+                position: fixed;
+                bottom: 386px;
+                right: 12px;
+            }
+           
+        }
+
+        &-buttons {
+            display: flex;
+            margin-top: 10px;
+        }
+    }
+
+    &-uncheck-all-button {
+        background: none;
+        color: $button-secondary-color;
+        border: none;
+        outline: none;
+        font-family: $font-family;
+        font-weight: $font-weight-normal;
+        margin-right: 26px;
+        cursor: pointer;
+    }
+
+    &-apply-button {
+        font-family: $font-family;
+        background-color: $color-primary;
+        padding: 8px 16px;
+        color: $color-background-default;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    &-apply-button--inactive {
+        opacity: 0.3;
+    }
+
+    &-children-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-start;
+    }
+    &-child {
+        margin: 10px;
+        color: $color-primary;
+        padding: 2px 12px;
+        border: 1px $border-color-default solid;
+        border-radius: 50px;
+        background: white;
+        white-space: nowrap;
+        
+        &:active {
+            color: white;
+            background-color: $color-primary;
+        }
+    }
+    &-child--active {
+        color: white;
+        background-color: $color-primary;
+        display: flex;
+
+        &::before {
+            content: url("../resources/images/tick-mark-icon.svg");
+            width: 12px;
+            height: 0;
+            display: block;
+            margin-right:4px;
+        }
+    }
+    &-text-search {
+        position: relative;
+        input {
+            padding: 8px 12px;
+            border: 1px $border-color-default solid;
+            border-radius: 8px;
+            background: $color-search-bar;
+            width: 180px;
+        }
+
+        &-icon {
+            background: url("../resources/images/subsidiary-search-icon-bw.svg");
+            height: 18px;
+            width: 18px;
+            display: block;
+            position: absolute;
+            top: 7px;
+            right: 4px;
+        }
+    }
+
+    &.overlay {
+        @include tab-and-mobile {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: block;
+            z-index: 999;
+            padding: 0;
+            display: flex;
+            align-items: flex-end;
+
+            .cmp-manufacturerlisting__search-filters {
+                &-list {
+                    border-radius: 5px;
+                    padding: 44px 24px 16px;
+                    border: solid 1px $border-color-default;
+                    background-color: $color-background-default;
+                    border-radius: 16px 16px 0px 0px;
+                    width: 100%;
+                    height: 362px;
+                    position: relative;
+                    flex-wrap: nowrap;
+                    overflow-x: scroll;
+                }
+
+
+                &-item {
+                    color: $color-text-primary;
+                    background-color: $color-background-default;
+                    flex-direction: column;
+                    border: none;
+                    padding: 0 12px 0 0;
+                }
+
+                &-children {
+                    margin-top: 24px;
+                    z-index: 1;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    background-color: $color-background-default;
+                    border: none;
+                    border-radius: 0;
+                    padding: 0;
+                    position: absolute;
+                    width: 92%;
+                    left: 24px;
+
+                    &-list {
+                        overflow-y: scroll;
+                        margin: 16px 0 24px;
+                        max-height: 192px;
+
+                        &::-webkit-scrollbar-track {
+                            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                            border-radius: 10px;
+                            background-color: #f5f5f5;
+                        }
+
+                        &::-webkit-scrollbar {
+                            width: 5px;
+                            background-color: #f5f5f5;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            border-radius: 35px;
+                            background-color: #9043a4;
+                        }
+                    }
+                }
+
+                &-item--active {
+
+                    & > span {
+                        border-bottom: 3px $color-text-primary solid;
+                    }
+
+                    .cmp-manufacturerlisting__search-filters-children {
+                        display: flex;
+                    }
+                }
+
+
+                &-children-buttons {
+                    background: $color-search-bar;
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    position: absolute;
+                    top: 262px;
+
+                }
+
+                &-uncheck-all-button {
+                    margin-right: 16px;
+                    font-size: $font-size-small;
+                    text-transform: uppercase;
+                    font-weight: $font-weight-normal;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,174 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.search-results {
+  .title {
+    color: $main-color;
+    position: relative;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $main-color;
+    margin-bottom: 53px;
+    @include mobile {
+      font-size: $font-size-24;
+      line-height: 28.8px;
+      letter-spacing: 0.96px;
+      margin-bottom: 32px;
+    }
+    h3 {
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $main-color;
+        position: absolute;
+        bottom: -3px;
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+  }
+  .filter {
+    font-size: $font-size-24;
+    font-family: $font-family-kanit;
+    line-height: 36px;
+    letter-spacing: 0.96px;
+    padding-top: 53px;
+    padding-bottom: 31px;
+    &::first-letter {
+      color: $point-color;
+    }
+    @include mobile {
+      font-size: $font-size-24;
+      line-height: 36px;
+      letter-spacing: 0.96px;
+    }
+  }
+  > .content-mapping {
+    a {
+      text-decoration: none;
+      > .search-container {
+        padding: 40px;
+        display: flex;
+        gap: 45px;
+        max-width: 1060px;
+        background-color: #faf7fa;
+        margin-bottom: 20px;
+        .under_line {
+          border-bottom: 1px solid $main-color;
+          padding-bottom: 15px;
+        }
+        & .image_container {
+          @include mobile {
+            width: 100%;
+          }
+        }
+        .placeholder-image {
+          height: 179px;
+          width: 179px;
+          background-color: $image-empty-color;
+          @include mobile {
+            width: 100%;
+          }
+        }
+        & .content_container {
+          flex: 3;
+
+          .heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            p {
+              line-height: 36px;
+              width: 100%;
+              letter-spacing: 0.8px;
+              font-size: $font-size-20;
+              font-family: $font-family-kanit !important;
+              @include mobile {
+                font-size: $font-size-regular;
+              }
+            }
+          }
+          .content {
+            p {
+              line-height: 28.8px;
+              letter-spacing: 1.12px;
+              padding-top: 15px;
+              @include mobile {
+                font-size: $font-size-small;
+              }
+            }
+          }
+        }
+        .cmp-image__image {
+          width: 179px;
+          height: 179px;
+          object-fit: cover;
+          @include mobile {
+            width: 100%;
+          }
+        }
+        @include mobile {
+          flex-direction: column;
+          padding: 25px 20px;
+          gap: 19px;
+        }
+      }
+    }
+    .show-more {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: -webkit-center;
+      position: relative;
+      p {
+        cursor: pointer;
+        &::after {
+          content: "";
+          width: 65px;
+          height: 65px;
+          border-radius: 50%;
+          display: block;
+          margin-top: 30px;
+          cursor: pointer;
+          background: transparent
+            linear-gradient(
+              270deg,
+              $sub-color-light 0%,
+              $button-circle-color 100%
+            )
+            0% 0% no-repeat padding-box;
+        }
+        &::before {
+          content: "";
+          background-image: url("../../assets/icon/right-arrow-lg-black.svg");
+          background-size: 50px 4px;
+          background-repeat: no-repeat;
+          width: 60px;
+          height: 4px;
+          position: absolute;
+          margin-left: 1rem;
+          top: 50%;
+          left: 50%;
+          transform: translate(-75%) rotate(90deg);
+          -webkit-transform: translate(-75%) rotate(90deg);
+          transition: background-size 0.3s ease-out;
+          @include mobile {
+            width: 45px;
+            background-size: 45px 4px;
+          }
+        }
+        &:hover::before {
+          width: 60px;
+          background-size: 60px 4px;
+          @include mobile {
+            width: 45px;
+            background-size: 45px 4px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "search": {
+    "searchPlaceholder": "Search",
+    "searchAssetRootPath": "/content/dam/macnicagwi/apac/galaxy/public/en",
+    "jcr:created": "Mon Feb 14 2022 17:48:28 GMT+0530",
+    "jcr:lastModifiedBy": "sumit.ka@1digitals.com",
+    "loadMoreButtonText": "Show More",
+    "jcr:createdBy": "admin",
+    "sling:resourceType": "macnicagwi/components/content/search",
+    "searchResultsPagePath": "/content/macnicagwi/apac/galaxy/en/test",
+    "jcr:lastModified": "Wed Sep 07 2022 09:59:29 GMT+0000",
+    "downloadFormFragmentPath": "/content/experience-fragments/macnicagwi/apac/galaxy/en/site/forms/watch-restricted-video-form",
+    "jcr:primaryType": "nt:unstructured",
+    "searchResultsBlockSize": "5",
+    "searchPageRootPath": "/content/macnicagwi/apac/galaxy/en",
+    "noResultsFoundText": "No Results Results"
+  }
+}

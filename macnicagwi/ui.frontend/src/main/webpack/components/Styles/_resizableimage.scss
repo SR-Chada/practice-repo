@@ -1,0 +1,52 @@
+.cmp-resizableimage__image{
+        max-width:100%;
+        width: auto;
+        height: auto;
+    
+    &--position{
+        &-left{
+            float: left;   
+        }
+        &-right{
+            float: right;
+        }
+        &-center{
+            float: none;
+        }
+    }
+
+    &--display{
+        &-cover{
+            object-fit: cover;
+        }
+        &-scale-down{
+            object-fit: scale-down;
+        }
+        &-fill{
+            object-fit: fill;
+        }
+    }
+    &--verticalalignment{
+        &-top{
+            vertical-align: top;
+        }
+        &-bottom{
+            vertical-align: bottom;
+        }
+        &-middle{
+            vertical-align: middle;
+        }
+    }
+}
+
+.cmp-resizableimage--width{
+    #macnica-subsidiary-logo, #macnica-footer-logo{
+        width: auto !important;
+    }
+}
+.cmp-resizableimage{
+    display: grid;
+}
+
+
+

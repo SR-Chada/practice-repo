@@ -1,0 +1,85 @@
+.cmp-newslisting{
+  &__list {
+    @include tab{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 24px;
+    }
+    &item{
+    border: 1px solid $border-color-medium;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    @include tab-and-mobile{
+      width: 100%;
+      margin-bottom: 0;
+      }
+      @include mobile{
+        margin-bottom: 24px;
+    }
+      &-content {
+       display: flex;
+       padding: 1pc;
+       
+       @include tab-and-mobile{
+        display: grid;
+        grid-gap: 1pc;
+       }
+       
+      }
+      &-date {
+        min-width: 129px;
+        margin-right: 1pc;
+        @include tab-and-mobile{
+          width: 100%;
+        }
+      }
+      @include mobile{
+        display: block;
+    }
+  
+       &-title {
+          @include H2-text;
+           padding-right: 1pc;
+        }
+        
+  
+    &-productlines {
+      display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      background: $color-background-primary;
+      padding: 1pc 0px 1pc 145px;
+    }
+    &-productline {
+      &-image{
+        img{
+          width: 80px;
+          height: 33px;
+        }
+      }
+      @include mobile{
+        padding-left: 1pc;
+      }
+    }
+    &-action {
+      @include H2-text;
+      font-family: $font-family;
+      &:visited{
+          color: $color-text-primary;
+        }
+    }
+    &-description {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include tab-and-mobile{
+        -webkit-line-clamp: 6;
+      }
+  }
+  }
+
+}
+
+}

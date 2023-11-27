@@ -1,0 +1,350 @@
+@mixin header {
+
+    .cmp-homepage__header {
+        position: absolute;
+        z-index: 6;
+
+        .container {
+            .cmp-navigation {
+                background: transparent !important;
+
+                .cmp-navigation__group {
+                    .cmp-navigation__item {
+                        @include desktop{
+                            border: none !important;
+                        }
+                       
+                    }
+
+                    max-width: unset;
+                    padding: 0 0px;
+
+                }
+                & >.cmp-navigation__group{
+                    margin: 0 70px;
+                }
+            }
+
+            .cmp-header--main {
+                background: transparent !important;
+
+                .container {
+                    .cmp-container {
+                        max-width: unset;
+                        margin: 0 70px;
+
+                        .aem-container {
+                            padding: 0 0px;
+
+                            .cmp-header__logo-container {
+                                    @include mobile{
+                                        padding: 0 20px;
+                                    }
+                                .container {
+                                    .cmp-container {
+                                        margin: 0;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .cmp-navigation__item {
+            &:hover {      
+                @include desktop {
+                    & > .cmp-navigation__dropdown {
+                        left: 0 !important;
+                    }
+                }
+            }
+        }
+        
+        .header-below-background-color{
+            @include tab-and-mobile {
+              &::after {
+                content: "";
+                display: none !important;
+              }
+            }
+        }
+    }
+
+    .background {
+        background: #0F0F0F !important;
+    }
+
+    .cmp-carousel {
+        
+        .cmp-carousel__content {
+
+            .cmp-carousel__item {
+                div {
+                    position: relative;
+
+                    .cmp-image {
+
+                        img {
+                            max-height: inherit !important;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .cmp-carousal-slide-heading {
+                        position: absolute;
+                        bottom: 122px;
+                        left: 120px;
+                        width: 85%;
+                        display: flex;
+                        flex-direction: column;
+                        grid-gap: 23px;
+
+                        .cmp-carousal-slide-heading-level-one {
+                            color: white;
+                            font-size: 55px;
+                        }
+
+                        .cmp-carousal-slide-heading-level-two {
+                            font-size: 55px;
+                            -webkit-text-stroke: 2px #efebeb;
+                            color: transparent;
+                        }
+
+                        P {
+                            line-height: 60.8px;
+                        }
+
+
+                        .cmp-carousal-slide-icon {
+                            z-index: 5;
+                            display: inline-flex;
+                            top: 100px;
+                            position: absolute;
+                            right: 0;
+
+                            div.cmp-carousal-icon {
+                                width: 1px;
+                                height: 120px;
+                                background: white;
+                                position: relative;
+                                animation: mymove 5s infinite;
+
+                                .circle {
+                                    position: absolute;
+                                    width: 10px;
+                                    height: 10px;
+                                    border-radius: 50%;
+                                    background: white;
+                                    inset: 0;
+                                    margin: auto;
+                                    left: -4px;
+                                    animation: circle 5s ease-in-out alternate;
+                                }
+
+                                @keyframes mymove {
+                                    0% {
+                                        transform-origin: top;
+                                        transform: scaleY(0);
+                                    }
+
+                                    45% {
+                                        transform-origin: top;
+                                        transform: scaleY(1);
+                                    }
+
+                                    55% {
+                                        transform-origin: bottom;
+                                        transform: scaleY(1);
+                                    }
+
+                                    100% {
+                                        transform-origin: bottom;
+                                        transform: scaleY(0);
+                                    }
+                                }
+
+                                @keyframes circle {
+                                    0% {
+                                        transform: translateY(-35px);
+                                    }
+
+                                    100% {
+                                        transform: translateY(35px);
+                                    }
+                                }
+                            }
+
+                            .cmp-heading-scroll-text {
+                                color: white !important;
+                                z-index: 5;
+                                transform-origin: 0 0;
+                                transform: rotate(90deg);
+                                font-size: 13px;
+                                position: relative;
+                                left: 53px;
+                            }
+                        }
+
+
+                    }
+                }
+            }
+
+            .cmp-carousel__actions {
+                display: none;
+            }
+
+            .cmp-carousel__indicators {
+                display: inline-flex;
+                justify-content: flex-start;
+                width: auto;
+                padding-left: 110px;
+                position: absolute;
+                bottom: 87px;
+                display: none;
+                .cmp-carousel__indicator {
+                    background-color: rgb(197 197 197 / 80%);
+                    width: 7px;
+                    height: 7px;
+                    
+                }
+
+                .cmp-carousel__indicator--active {
+                    background-color: rgb(255 255 255 / 80%);
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+    }
+
+
+    @media only screen and (max-width: $breakpoint-tab) and (min-width: ($breakpoint-mobile+1)) {
+        .cmp-header--container {
+            .cmp-header--main {
+                .container {
+
+                    .cmp-container {
+                        margin: 0 !important;
+                    }
+                }
+            }
+        }
+
+        .cmp-carousel {
+            height: 95vh;
+
+            .cmp-carousel__content {
+
+                .cmp-carousel__item {
+                    div {
+                        .cmp-image {
+                            height: 95vh;
+
+                            img {
+                                min-height: 667px;
+                                // height: inherit;
+                            }
+
+                        }
+
+                        .cmp-carousal-slide-heading {
+                            bottom: 128px;
+                            left: 50px;
+                            width: 85%;
+                            grid-gap: 0px;
+
+                            .cmp-carousal-slide-heading-level-one {
+                                line-height: 56px;
+                                font-size: 44px;
+                            }
+
+                            .cmp-carousal-slide-heading-level-two {
+                                margin-top: 1rem;
+                                font-size: 44px;
+                            }
+
+                            .cmp-carousal-slide-icon {
+                                bottom: -100px;
+                            }
+
+                            .cmp-heading-scroll-text {
+                                bottom: -51px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    @media only screen and (max-width: $breakpoint-mobile) {
+        .cmp-header--container {
+            .cmp-header--main {
+                .container {
+
+                    .cmp-container {
+                        margin: 0 0px !important;
+                    }
+                }
+            }
+        }
+
+        .cmp-carousel {
+            height: 95vh;
+
+            .cmp-carousel__content {
+
+                .cmp-carousel__item {
+                    div {
+                        .cmp-image {
+                            height: 95vh;
+
+                            img {
+                                height: inherit;
+                            }
+
+                        }
+
+                        .cmp-carousal-slide-heading {
+                            bottom: 128px;
+                            left: 20px;
+                            width: 85%;
+                            grid-gap: 0px;
+
+                            .cmp-carousal-slide-heading-level-one {
+                                line-height: 56px;
+                            }
+
+                            .cmp-carousal-slide-heading-level-two {
+                                margin-top: 1rem;
+                            }
+
+                            .cmp-carousal-slide-icon {
+                                top: 155px;
+                            }
+
+                            .cmp-heading-scroll-text {
+                                bottom: -51px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#is-publish{
+    .cmp-carousel {
+        max-height: 100vh;
+        .cmp-image {
+            max-height: 100vh;
+             img{
+                height: 100vh;
+             }
+           }
+    }
+}

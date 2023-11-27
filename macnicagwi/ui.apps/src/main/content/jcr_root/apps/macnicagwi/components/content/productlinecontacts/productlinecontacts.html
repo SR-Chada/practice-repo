@@ -1,0 +1,46 @@
+<sly data-sly-use.textModel="com.adobe.cq.wcm.core.components.models.Text"
+   data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<p data-sly-test.text="${textModel.text}"></p>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+<div data-sly-use.productlinecontacts="com.macnicagwi.core.components.models.ProductLineContacts"
+   class="cmp-productlinecontacts" id="${productlinecontacts.id}">
+   <div class="cmp-productlinecontact" data-sly-repeat.productLineContactCfmDto="${productlinecontacts.productLineContactCfmDtos}">
+      <div class="cmp-productlinecontact__elements">
+         <div class="cmp-productlinecontact__element cmp-productlinecontact__name">
+            <div class="cmp-productlinecontact__name--person-icon">
+            </div>
+            <div class="cmp-productlinecontact__name--contact-name">
+               ${productLineContactCfmDto.name}
+            </div>
+         </div>
+         <div class="cmp-productlinecontact__element cmp-productlinecontact__contact-numbers">
+            <div class="cmp-productlinecontact__contact-numbers-primary-contact">
+               <div class="cmp-productlinecontact__contact-numbers-phone-icon">
+               </div>
+               <div class="cmp-productlinecontact__contact-numbers-primary-contact-value">
+                  ${productLineContactCfmDto.primaryContactNumber}
+               </div>
+            </div>
+            <div class="cmp-productlinecontact__contact-numbers-secondary-contact" data-sly-test="${productLineContactCfmDto.secondaryContactNumber}">
+               <div class="cmp-productlinecontact__contact-numbers-phone-icon">
+               </div>
+               <div class="cmp-productlinecontact__contact-numbers-secondary-contact-value">
+                  ${productLineContactCfmDto.secondaryContactNumber}
+               </div>
+            </div>
+         </div>
+         <div class="cmp-productlinecontact__element cmp-productlinecontact__email-id">
+            <div class="cmp-productlinecontact__email-id-icon">
+            </div>
+            <a href="mailto:${productLineContactCfmDto.emailId}" class="cmp-productlinecontact__email-id-contact-email">
+               ${productLineContactCfmDto.emailId}
+            </a>
+         </div>
+         <div class="cmp-productlinecontact__element cmp-productlinecontact__product-line-logos">
+            <div class="cmp-productlinecontact__product-line-logos-item" data-sly-repeat.productLineLogo="${productLineContactCfmDto.productLineLogos}">
+               <img data-sly-test="${productLineLogo.getPath}" src="${productLineLogo.getPath}" alt="${productLineLogo.getName}"/>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,601 @@
+//== XF Header style, used on page template
+
+/* Global Header */
+header.experiencefragment {
+    border-bottom: 1px solid $color-background-default;
+    background: $color-common-gradient;
+    color: $color-background-default;
+
+    .cmp-experiencefragment {
+        height: fit-content;
+    }
+
+
+
+    #header-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin: 0 auto;
+        height: 50px;
+
+       .button{
+            display: flex;
+         }
+
+        .image:first-child {
+            flex-grow: 1;
+            margin: 16px 24px;
+        }
+
+        #for-investors {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            width: 160px;
+            height: 32px;
+
+            & .cmp-button__icon--dollar-icon {
+                &::before {
+                    content: url("../resources/images/dollar-icon-white.svg");
+                    height: 16px;
+                    width: 9px;
+                    margin: 0 8px 0 0;
+                    display: block;
+                }
+            }
+
+            &:hover {
+                & .cmp-button__icon--dollar-icon {
+                    &::before {
+                        content: url("../resources/images/dollar-icon-blue.svg");
+                        height: 16px;
+                        width: 9px;
+                        margin: 0 8px 0 0;
+                        display: block;
+                    }
+                }
+            }
+        }
+        a#for-investors {
+            & .cmp-button__icon--dollar-icon {
+                &::before {
+                    margin: 0 8px 8px 0;
+                }
+
+            }
+            &:hover {
+                & .cmp-button__icon--dollar-icon {
+                    &::before {
+                        margin: 0 8px 8px 0;
+                    }
+                }
+            }
+        }
+        #select-region {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-right: 24px;
+            width: 160px;
+            height: 32px;
+    
+            & .cmp-button__icon--globe-icon {
+                &::before {
+                    content: url("../resources/images/globe-icon-white.svg");
+                    height: 16px;
+                    width: 16px;
+                    margin: 0 8px 0 0;
+                    display: block;
+                }
+            }
+    
+            &:hover {
+                & .cmp-button__icon--globe-icon {
+                    &::before {
+                        content: url("../resources/images/globe-icon-blue.svg");
+                        height: 16px;
+                        width: 16px;
+                        margin: 0 8px 0 0;
+                        display: block;
+                    }
+                }
+            }
+        }
+        a#select-region {
+            & .cmp-button__icon--globe-icon {
+                &::before {
+                    margin: 0px 5px 10px 0px;
+                }
+            }
+            &:hover {
+                & .cmp-button__icon--globe-icon {
+                    &::before {
+                        margin: 0 8px 8px 0;
+                    }
+                }
+            } 
+        }
+       
+
+    }
+    #macnica-global-logo {
+        display: flex;
+        justify-content: right; 
+         text-align: center;
+
+
+                 .cmp-image__image {
+            width: 120px;
+            height: 32px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    .cmp-button {
+        background: none;
+        border: none;
+        padding: 0px;
+        font-size: $font-size-normal;
+        font-weight: $font-weight-normal;
+
+        &:hover {
+            background-color: $color-background-default;
+            border-radius: 30px;
+            text-decoration: none;
+            .cmp-button__text {
+                color: $button-primary-hover-background-color;
+            }
+        }
+    }
+
+    .cmp-button__text {
+        color: $color-background-default;
+        text-decoration: none;
+    }
+
+    //== Navigation
+
+    .navigation {
+        width: 100%;
+    }
+
+    .cmp-navigation {
+        padding: 8px 24px;
+        float: left;
+        width: 100%;
+        background-color: $color-accent;
+        box-sizing: border-box;
+
+        & > .cmp-navigation__group {
+            margin: 0 auto;
+            max-width: 1440px;
+        }
+    }
+
+    .cmp-navigation__group {
+        display: flex;
+        list-style: none;
+        padding-inline-start: 0;
+        position: relative;
+        margin: 0;
+    }
+
+    .cmp-navigation__item--level-0 {
+        position: relative;
+
+        & > .cmp-navigation__item-link {
+            color: $color-background-default;
+            font-size: $font-size-normal;
+            font-style: normal;
+            padding: 10px 16px;
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                background-color: $button-primary-hover-background-color;
+            }
+
+            // down arrow
+            &::after {
+                content: "";
+                border: solid $color-background-default;
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                visibility: hidden;
+                padding: 4px;
+                margin-bottom: 2px;
+                margin-left: 8px;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+            }
+
+            //down arrow visibility
+            &:hover::after {
+                visibility: visible;
+            }
+
+            &--active {
+                background-color: $button-primary-hover-background-color;
+
+                // down arrow
+                &::after {
+                    content: "";
+                    border: solid $color-background-default;
+                    border-width: 0 2px 2px 0;
+                    display: inline-block;
+                    visibility: visible;
+                    padding: 4px;
+                    margin-bottom: 2px;
+                    margin-left: 8px;
+                    transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                }
+            }
+        }
+
+        & > .cmp-navigation__group {
+            list-style: none;
+            display: none;
+            margin: 0;
+            padding-inline-start: 0px;
+            background: $color-background-default;
+            position: absolute;
+            margin-top: 8px;
+            width: max-content;
+            min-width: 167px;
+            box-shadow: 0px 24px 24px rgba(0, 0, 0, 0.25);
+            border-radius: 0px 0px 8px 8px;
+            border: 1px solid #cbcaca;
+            z-index: 1;
+        }
+
+        &:hover > .cmp-navigation__group {
+            display: block;
+        }
+    }
+
+    .cmp-navigation__item--level-1 {
+        padding: 12px 24px;
+
+        & > a.cmp-navigation__item-link {
+            color: #1d3070;
+            font-size: $font-size-normal;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $color-hover-dropdown;
+        }
+
+        &:first-child {
+            margin-top: 16px;
+        }
+
+        &:last-child {
+            margin-bottom: 16px;
+        }
+
+        & .cmp-navigation__group {
+            display: none;
+        }
+    }
+
+    //== Search
+
+    .cmp-search__field {
+        display: flex;
+        margin: -3px 0;
+    }
+    .cmp-search__input {
+        height: 26px;
+    }
+
+    .li.cmp-navigation__item.cmp-navigation__item--level-2 {
+        padding: 5px 0;
+    }
+
+    .cmp-navigation__item.cmp-navigation__item--level-1 {
+        ul {
+            padding-left: 14px;
+        }
+    } 
+}
+
+@include tab-and-mobile {
+    .side-header-nav_subsidiary .subsidiary-elements-container .navigation{
+        display: unset !important;
+    }
+    header.experiencefragment {
+        display: flex;
+        padding: 0;
+        border-bottom: 0;
+
+        .cmp-experiencefragment--header {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+                       
+        }
+
+        #header-container {
+            .button{
+                display: flex;
+
+                position: relative;
+
+            }
+            .cmp-button{
+                padding: 0;
+            }
+            .image:first-child {
+                margin: 8px 16px;
+            }
+
+            #for-investors, #select-region {
+                display:flex;
+                width: 5px;
+                background-color: transparent;
+            }
+            .cmp-button__text{
+                display: none;
+            }
+            .cmp-button__icon.cmp-button__icon--globe-icon{
+                margin-left: auto;
+            }
+        }
+
+        #macnica-global-logo {
+            margin-right: 0;
+            .cmp-image__image {
+                width: 119px;
+                height: 24px;
+            }
+        }
+
+       
+
+        .cmp-experiencefragment.cmp-experiencefragment--header .cmp-container {
+            :not(:first-child) {
+                display: block;
+            }
+        }
+    }
+
+    .side-header-nav-container {
+        display: block;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: $color-text-primary;
+        background-color: rgba($color-text-primary, 0.5);
+        animation-name: slideout;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+
+        .side-header-nav_global {
+            align-self: left;
+            width: 50%;
+            background: $color-common-gradient;
+            position: relative;
+            top: 0;
+            left: 0;
+
+            @include mobile {
+                width: 75%;
+            }
+
+            .down-arrow_global {
+                border: solid $color-background-default;
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                padding: 4px;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                position: absolute;
+                top: 22px;
+                right: 26px;
+                z-index: 1;
+                display: none !important;
+            }
+
+            #header-container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 20px 24px;
+                position: sticky;
+                top: 0;
+                background: $color-common-gradient;
+                
+                #for-investors {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 20px 0 0;
+
+                    & .cmp-button__icon--dollar-icon {
+                        &::before {
+                            content: url("../resources/images/dollar-icon-white.svg");
+                            height: 16px;
+                            width: 9px;
+                            margin: 0 14px 0 0;
+                            display: block;
+                        }
+                    }
+
+                    &:hover {
+                        & .cmp-button__icon--dollar-icon {
+                            &::before {
+                                content: url("../resources/images/dollar-icon-blue.svg");
+                                height: 16px;
+                                width: 9px;
+                                margin: 0 14px 0 0;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+                #select-region {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 16px 0 0;
+                    padding: 8px 4px;
+
+                    & .cmp-button__icon--globe-icon {
+                        &::before {
+                            content: url("../resources/images/globe-icon-white.svg");
+                            height: 16px;
+                            width: 16px;
+                            margin: 0 12px 0 0;
+                            display: block;
+                        }
+                    }
+
+                    &:hover {
+                        & .cmp-button__icon--globe-icon {
+                            &::before {
+                                content: url("../resources/images/globe-icon-blue.svg");
+                                height: 16px;
+                                width: 16px;
+                                margin: 0 8px 0 0;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+
+            
+            #macnica-global-logo {
+                .cmp-image__image {
+                    width: 119px;
+                    height: 24px;
+    
+                }
+            }
+
+            a {
+                text-decoration: none;
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                }
+            }
+
+            .cmp-button {
+                margin-right: 24px;
+                background: none;
+                border: none;
+                padding: 4px 6px;
+                font-size: $font-size-normal;
+                font-weight: $font-weight-normal;
+
+                &:hover {
+                    text-decoration: underline;
+
+                    .cmp-button__text {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .cmp-button__text {
+                color: $color-background-default;
+                text-decoration: none;
+            }
+
+            .navigation {
+                margin: 0 0 60px;
+                overflow-y: scroll;
+                height: calc(100vh - 220px);
+
+                &::-webkit-scrollbar-track {
+                    border-radius: 10px;
+                    background-color: $color-accent;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 5px;
+                    background-color: $color-accent;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    background-color: $color-background-default;
+                }
+
+                .cmp-navigation {
+                    background-color: $color-accent;
+                    padding: 10px 0 30px 32px;
+                    min-height: 100vh;
+
+                    .cmp-navigation__group {
+                        display: flex;
+                        flex-direction: column;
+                        list-style: none;
+                        padding-inline-start: 0;
+                        margin: 0;
+
+                        .cmp-navigation__item--level-0 {
+                            padding: 30px 0 0 0;
+                            .cmp-navigation__item-link {
+                                color: $color-background-default;
+                                font-size: $font-size-normal;
+                                font-weight: $font-weight-bold;
+                                text-decoration: none;
+                            }
+
+                            &:hover > .cmp-navigation__group {
+                                background: none;
+                            }
+                        }
+
+                        .cmp-navigation__item--level-1 {
+                            padding: 30px 24px 0 8px;
+
+                            .cmp-navigation__item-link {
+                                color: $color-background-default;
+                                font-size: $font-size-normal;
+                                font-weight: $font-weight-normal;
+                                text-decoration: none;
+                            }
+
+                            & .cmp-navigation__group {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes slideout {
+    from {
+        margin: 0 -100%;
+    }
+    to {
+        margin: 0 0%;
+    }
+}

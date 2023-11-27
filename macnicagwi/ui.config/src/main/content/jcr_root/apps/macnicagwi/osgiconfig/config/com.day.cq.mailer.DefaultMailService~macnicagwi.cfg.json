@@ -1,0 +1,12 @@
+{
+  "smtp.host": "$[env:AEM_PROXY_HOST;default=proxy.tunnel]",
+  "smtp.port": "30001",
+  "smtp.user": "$[env:EMAIL_USERNAME;default=myApiKey]",
+  "smtp.password": "$[secret:EMAIL_PASSWORD]",
+  "from.address": "cmsadmin@macnica.co.jp",
+  "smtp.ssl": false,
+  "smtp.starttls": true,
+  "smtp.requiretls": true,
+  "debug.email": false,
+  "oauth.flow": false
+}

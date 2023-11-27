@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/globalportal" mode="update"/>
+    <filter root="/content/macnicagwi/global" mode="merge"/>
+    <filter root="/content/dam/macnicagwi/globalportal/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/macnicagwi/globalportal" mode="merge"/>
+</workspaceFilter>

@@ -1,0 +1,78 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.milestones-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 53.5px;
+  width: 100vw;
+  position: relative;
+  left: calc(-50.55vw + 50%);
+  .with-bg {
+    background-color: $table-heading-bg;
+  }
+  .pt0{
+    padding-top: 0 !important;
+  }
+  .pb0{
+    padding-bottom: 0 !important;
+  }
+  .milestones-outer-container {
+    .max-width-inner-container {
+      @include max-cmp-width;
+      padding: 37px 0 50px 56px;
+      border-left: 1px solid $point-color;
+      position: relative;
+      transform: translate(-49.5%);
+      @include mobile {
+        padding-left: 23px;
+        padding-right: 8%;
+        transform: translate(-44.5%);
+      }
+      @include tab {
+        padding-right: 12%;
+        transform: translate(-43%);
+      }
+      h3 {
+        margin-bottom: 27px;
+        color: $point-color;
+        @include mobile {
+          margin-bottom: 18px;
+          font-size: $font-size-23;
+          letter-spacing: 0.96px;
+        }
+      }
+      .milestones-inner-container {
+        h4 {
+          margin-bottom: 14px;
+          color: $main-color;
+          @include mobile {
+            margin-bottom: 11px;
+            font-size: $font-size-17;
+            letter-spacing: 0.68px;
+          }
+        }
+
+        .desc {
+          padding-bottom: 33px;
+          color: $plane-color;
+          @include mobile {
+            padding-bottom: 22px;
+            font-size: $font-size-13;
+            letter-spacing: 0.91px;
+          }
+        }
+      }
+      & > div::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        background-color: $point-color;
+        position: absolute;
+        border-radius: 50%;
+        left: -4px;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

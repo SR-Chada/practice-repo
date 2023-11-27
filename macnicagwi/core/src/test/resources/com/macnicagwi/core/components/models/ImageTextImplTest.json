@@ -1,0 +1,17 @@
+{
+  "imagetext": {
+    "isHeading": "true",
+    "jcr:created": "Wed Sep 07 2022 11:43:01 GMT+0000",
+    "jcr:lastModifiedBy": "sumit.ka@1digitals.com",
+    "jcr:createdBy": "sumit.ka@1digitals.com",
+    "sling:resourceType": "macnicagwi/components/content/imagetext",
+    "assetPositionMediumScreen": "top",
+    "assetType": "Image",
+    "isButton": "true",
+    "assetPositionSmallScreen": "top",
+    "jcr:lastModified": "Wed Sep 07 2022 11:43:22 GMT+0000",
+    "assetPositionLargeScreen": "left",
+    "jcr:primaryType": "nt:unstructured",
+    "isText": "true"
+  }
+}

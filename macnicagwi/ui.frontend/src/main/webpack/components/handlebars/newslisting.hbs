@@ -1,0 +1,26 @@
+<div class="cmp-newslisting__list">
+{{#each searchResults}}
+       <div class="cmp-newslisting__listitem">
+            <a  class="cmp-newslisting__listitem-action" href={{this.path}}>
+                <div class="cmp-newslisting__listitem-content">
+                    <div class="cmp-newslisting__listitem-date">{{this.date}}</div>
+                    <div class="cmp-newslisting__listitem-data">
+                        <div class="cmp-newslisting__listitem-title">{{this.title}}</div>
+                        <div class="cmp-newslisting__listitem-description">{{this.description}}</div> 
+                   </div>
+                 </div>
+                </a>
+                <div class="cmp-newslisting__listitem-productlines">
+                {{#each productLineLogos}}
+                <div class="cmp-newslisting__listitem-productline">
+                    <a class="cmp-newslisting__listitem-productline-action" href={{redirectLink}} target="_blank">
+                         <div class="cmp-newslisting__listitem-productline-image"><img src={{path}} alt="{{altText}}"></div>
+                    </a>
+                </div>
+               {{/each}}
+               </div>
+            
+         </div>
+  
+{{/each}}
+</div>

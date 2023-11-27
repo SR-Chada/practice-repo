@@ -1,0 +1,73 @@
+<div 
+    data-sly-use.list="com.macnicagwi.core.components.models.ManufacturerList"
+    data-sly-use.filter="com.macnicagwi.core.components.models.MultiLevelFilter"
+    data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+    <div class="multilevelfilter" data-sly-resource="${'.' @ resourceType='macnicagwi/components/content/multilevelfilter'}"></div>
+    <div  
+        class="cmp-manufacturerlist"
+        data-cmp-resource="${list.resourcePath}"
+        data-cmp-listsize="${list.totalResultsSize}"
+        id="${list.id}">
+        
+		<ul class="cmp-manufacturerlist__entries"
+            data-sly-list.manufacturer="${list.listItems}">
+
+            <li class="cmp-manufacturerlist__entry"
+                data-sly-test="${list.listItems[manufacturer].size > 0}">
+                <a class="cmp-manufacturerlist__entry-heading" data-sly-attribute="${manufacturer.link.htmlAttributes}"
+                data-cmp-clickable="${manufacturer.data ? true : false}">
+                    <span class="cmp-manufacturerlist__item-title">${manufacturer.title}</span>
+                    <div class="cmp-manufacturerlist__item-image-link"
+                        data-sly-test="${manufacturer.manufacturerLogo}">
+                        <div class="cmp-manufacturerlist__item-image" data-attr-test="test" data-img-src="${manufacturer.manufacturerLogo}" data-sly-resource="${manufacturer.manufacturerLogo @ wcmmode='disabled'}">
+                        </div>
+                    </div>
+                </a>
+                <div class="cmp-productlinelisting">
+
+                    <ul class="cmp-productlinelisting__product-line-cards"
+                    data-sly-list.productline="${list.listItems[manufacturer]}">
+
+                        <li class="cmp-productlinelisting__product-line-card">
+                            <a data-sly-attribute="${productline.link.htmlAttributes}"
+                            data-cmp-clickable="${productline.data ? true : false}">
+                                <div class="cmp-productlinelisting__item-image-link"
+                                    data-sly-test="${productline.productLineLogo}">
+                                    <div class="cmp-productlinelisting__item-image" data-attr-test="test" data-img-src="${productline.productLineLogo}" data-sly-resource="${productline.productLineLogo @ wcmmode='disabled'}">
+                                    </div>
+                                </div>
+                                <span class="cmp-productlinelisting__item-title">${productline.title}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="cmp-manufacturerlist__entry"
+                data-sly-test="${list.listItems[manufacturer].size == 0}">
+           		<div class="cmp-productlinelisting cmp-productlinelisting--parent">
+                    <ul class="cmp-productlinelisting__product-line-cards">
+                        <li class="cmp-productlinelisting__product-line-card">
+                            <a data-sly-attribute="${manufacturer.link.htmlAttributes}"
+                            data-cmp-clickable="${manufacturer.data ? true : false}">
+                                <div class="cmp-productlinelisting__item-image-link"
+                                    data-sly-test="${manufacturer.manufacturerLogo}">
+                                    <div class="cmp-productlinelisting__item-image" data-attr-test="test" data-img-src="${manufacturer.manufacturerLogo}" data-sly-resource="${manufacturer.manufacturerLogo @ wcmmode='disabled'}">
+                                    </div>
+                                </div>
+                                <span class="cmp-productlinelisting__item-title">${manufacturer.title}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+			</li>
+        </ul>
+
+    </div>
+    <span class="cmp-manufacturerlist__no-results-found">${filter.getNoResultsFoundText}</span>
+    <div data-sly-test="${filter.getLoadMoreButtonText != null}"
+        class="cmp-manufacturerlist__loadmore-button">
+        <button class="cmp-button">${filter.getLoadMoreButtonText}</button>
+    </div>
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent, classAppend='cmp-manufacturerlist'}"></sly>

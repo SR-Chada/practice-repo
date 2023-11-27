@@ -1,0 +1,14 @@
+.cmp-listpack__list{
+   padding: 0;
+   margin: 0;
+    .cmp-listpack__listitem{
+        display: flex;
+        list-style: none;
+        @include mobile-normal-text;
+        &::before {
+           content: url("../resources/images/vertical-butllet-icon.svg");
+           display: block;
+           margin-right: 5px;
+        }
+     }
+}

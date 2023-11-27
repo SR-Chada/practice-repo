@@ -1,0 +1,22 @@
+{
+  "video": {
+    "youtubeLoop": "true",
+    "embeddableResourceType": "core/wcm/components/embed/v1/embed/embeddable/youtube",
+    "jcr:created": "Thu Sep 08 2022 07:35:35 GMT+0000",
+    "jcr:lastModifiedBy": "sumit.ka@1digitals.com",
+    "youtubeHeight": "250",
+    "isRestrictedVideo": "false",
+    "jcr:createdBy": "sumit.ka@1digitals.com",
+    "sling:resourceType": "macnicagwi/components/content/video",
+    "youtubePlaysInline": "true",
+    "type": "embeddable",
+    "youtubeRel": "true",
+    "layout": "fixed",
+    "youtubeVideoId": "39YGMM9DmyY",
+    "jcr:lastModified": "Thu Sep 08 2022 07:37:28 GMT+0000",
+    "youtubeWidth": "450",
+    "jcr:primaryType": "nt:unstructured",
+    "youtubeMute": "true",
+    "youtubeAutoPlay": "true"
+  }
+}

@@ -1,0 +1,49 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2021 Adobe
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+  <div data-sly-use.download="com.macnicagwi.core.components.models.Download"
+  data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+  data-sly-test.hasContent="${download.filename && download.url}"
+  data-resource-path="${download.getResourcePath}"
+  id="${download.id}"
+  class="cmp-download${!wcmmode.disabled ? ' cq-dd-file' : ''}">
+ <h3 class="cmp-download__title" data-sly-test.title="${download.title}" data-sly-element="${download.titleType}">
+     <a data-sly-unwrap="${!download.url}" class="cmp-download__title-link" href="${download.url}">${title}</a>
+ </h3>
+ <div class="cmp-download__description" data-sly-test.description="${download.description}">${description @ context="html"}</div>
+ <div data-sly-test="${(download.displayFilename && download.filename) || (download.displaySize && download.size) || (download.displayFormat && download.format)}" class="cmp-download__properties">
+    <a class="cmp-download__action" isRestrictedDownload="${download.isRestrictedDownload}" resource="${download.url}">
+        <span class="cmp-download__action-icon"></span>
+    </a>
+    <a data-sly-test="${download.displayFilename && download.filename}" class="cmp-download__action cmp-download__property cmp-download__property--filename" isRestrictedDownload="${download.isRestrictedDownload}" resource="${download.url}">
+            ${download.filename}
+    </a> 
+     <div data-sly-test="${download.displaySize && download.size}" class="cmp-download__property cmp-download__property--size">
+         ${download.size}
+     </div>
+     <div data-sly-test="${download.displayFormat && download.format}" class="cmp-download__property cmp-download__property--format cmp-download__property--format-${download.format}">
+        
+        <div class="cmp-download__property--format-name">${download.format} FILE</div>
+        <img class="cmp-download__property--format-icon" src="" /> 
+     </div>
+ </div>
+
+</div>
+<div data-sly-use.download="com.macnicagwi.core.components.models.Download"
+    data-sly-test.hasContent="${download.getDownloadFormXFPath}"
+    class="cmp-download--popup-form">
+    <sly data-sly-resource="${@path=download.getDownloadFormXFPath, selectors='content', wcmmode='disabled'}"></sly>
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-download cq-dd-file'}"></sly>

@@ -1,0 +1,37 @@
+<div 
+    data-sly-use.list="com.macnicagwi.core.components.models.ProductListing"
+    data-sly-use.filter="com.macnicagwi.core.components.models.MultiLevelFilter"
+    data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.itemTemplate="item.html"
+    data-sly-use.teaserTemplate="teaser.html"
+    data-sly-test.hasContent="${!list.empty}"
+    data-sly-use.productListTemplate="productlist.html"
+    data-sly-use.productFamilyListTemplate="productfamilylist.html">
+    <div class="multilevelfilter" data-sly-resource="${'.' @ resourceType='macnicagwi/components/content/multilevelfilter'}"></div>
+
+<div 
+    id="${list.id}"
+    data-cmp-data-layer="${list.data.json}" data-cmp-resource="${list.resourcePath}"
+    data-cmp-listsize="${list.totalResultsSize}"
+    class="cmp-productlisting">
+    <sly data-sly-test="${list.groupByFamily}" data-sly-repeat.productFamily="${list.productFamilyMap}">
+        <div class="cmp-productlisting__product-family">
+            <h2 class="cmp-productlisting__product-family-name">${productFamily}</h2>
+            <sly
+                data-sly-call="${productFamilyListTemplate.productFamilyList @ list=list, productFamily = productFamily }">
+            </sly>
+        </div>
+    </sly>
+
+    <sly data-sly-test="${!list.groupByFamily}" data-sly-call="${productListTemplate.productsList @ list = list}"></sly>
+    </sly>
+
+</div>
+    <span class="cmp-productlisting__no-results-found">${filter.getNoResultsFoundText}</span>
+    <div data-sly-test="${filter.getLoadMoreButtonText != null}"
+        class="cmp-productlisting__loadmore-button">
+        <button class="cmp-button">${filter.getLoadMoreButtonText}</button>
+    </div>
+</div>
+
+<sly data-sly-call="${template.placeholder @ isEmpty=list.products.size == 0, classAppend='cmp-productlisting'}"></sly>

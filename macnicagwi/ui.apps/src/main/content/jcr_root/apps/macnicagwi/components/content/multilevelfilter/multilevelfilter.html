@@ -1,0 +1,59 @@
+<div data-sly-use.filter="com.macnicagwi.core.components.models.MultiLevelFilter"
+    data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+    data-sly-test.hasContent="${!filter.empty}"
+    data-cmp-data-layer="${filter.data.json}"
+    id="${filter.id}"
+    class="cmp-multilevelfilter">
+    <div class="cmp-multilevelfilter__search-filters">
+      <div class="cmp-multilevelfilter__search-filters-list">
+    <div class="cmp-multilevelfilter__close-icon"></div>
+    <div class="cmp-multilevelfilter__parent-filters">
+      
+      <div class="cmp-multilevelfilter__parent-tag">
+        <div class="cmp-multilevelfilter__parent-tag-title cmp-multilevelfilter__parent-tag-title--active cmp-multilevelfilter--select-all">
+        ${filter.getAllButtonText}
+        </div>
+      </div>
+      <div 
+          data-sly-repeat.parentTag="${filter.filterItemMap}"
+          class="cmp-multilevelfilter__parent-tag" 
+          data-tag-id="${parentTag.id}" 
+          data-tag-path="${parentTag.name}">
+            <div class="cmp-multilevelfilter__parent-tag-title">
+              ${parentTag.title}
+              <span class="cmp-multilevelfilter__parent-tag-title-active-children"></span>
+            </div>
+            <div class="cmp-multilevelfilter__child-filters">
+              <ul class="cmp-multilevelfilter__children">
+                <li 
+                  class="cmp-multilevelfilter__children-item"
+                  data-sly-repeat.childTag="${filter.filterItemMap[parentTag]}" 
+                  data-tag-id="${childTag.id}" 
+                  data-tag-path="${childTag.name}">
+                    <input  type="checkbox" class='cmp-multilevelfilter__children-item--checkbox' id="${childTag.id}" value="${childTag.title}">
+                    <label for="${childTag.id}">${childTag.title}</label>
+                  </li>
+              </ul>
+              <div class="cmp-multilevelfilter__filter-buttons">
+                <button class="cmp-multilevelfilter__clear-button cmp-button">${filter.getClearButtonText}</button>
+                <button class="cmp-multilevelfilter__apply-button cmp-button" disabled>${filter.getApplyButtonText}</button>
+              </div>
+            </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <div class='cmp-multilevelfilter__text-search'
+        data-sly-test="${filter.isfreeTextSearchEnabled}">
+      <input type="Search" placeholder="${filter.getFreeTextSearchPlaceholder}" />
+      <div class="cmp-multilevelfilter__text-search-icon"></div>
+    </div>
+    <div class="cmp-multilevelfilter__filter-button">
+      <button class="cmp-button">${filter.getFilterButtonText}</button>
+      <div class='cmp-button__icon--filter-icon'></div>
+    </div>
+</div>
+
+
+
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent, classAppend='cmp-card-list'}"></sly>

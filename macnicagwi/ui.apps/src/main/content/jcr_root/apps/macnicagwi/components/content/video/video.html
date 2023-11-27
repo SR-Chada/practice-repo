@@ -1,0 +1,38 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2019 Adobe
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<div data-sly-use.video="com.macnicagwi.core.components.models.Video"
+     data-sly-use.component="com.adobe.cq.wcm.core.components.models.Component"
+     data-sly-use.commonsTemplates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${(video.result && video.result.processor) || video.embedCode || video.videoUrl || video.html || video.embeddableResourceType}"
+     data-cmp-data-layer="${video.data.json}"
+     id="${component.id}"
+     class="cmp-video">
+     <sly data-sly-test="${video.isValidRequest}">
+          <sly data-sly-test="${video.result && video.result.processor}"
+          data-sly-use.processorTemplate="processors/${video.result.processor}.html"
+          data-sly-call="${processorTemplate.render @ options=video.result.options}"></sly>
+          <sly data-sly-test="${video.html}">${video.html @context = 'html'}</sly>
+          <sly data-sly-test="${video.embeddableResourceType}"
+               data-sly-resource="${resource.path @ resourceType=video.embeddableResourceType, wcmmode='disabled'}"></sly>
+          <sly data-sly-test="${video.videoUrl}"
+               data-sly-include="/apps/macnicagwi/components/content/video/videorender.html">
+          </sly>
+          <sly data-sly-test="${video.embedCode}"
+               data-sly-include="/apps/macnicagwi/components/content/video/youkuembedcode.html">
+          </sly>
+     </sly>
+</div>
+<sly data-sly-call="${commonsTemplates.placeholder @ isEmpty = !hasContent}"></sly>

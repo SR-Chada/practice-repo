@@ -1,0 +1,103 @@
+@mixin Homepage-title {
+    .cmp-homepage-title {
+        .cmp-title {
+            max-width: 1060px;
+            margin: auto;
+            margin-top: 10rem;
+
+            @include tab {
+                max-width: 768px;
+            }
+
+            @media only screen and (max-width:580px) {
+                max-width: 375px;
+            }
+
+            @include mobile {
+                max-width: 668px;
+            }
+
+            @media only screen and (max-width:375px) {
+                max-width: 335px;
+            }
+
+            .cmp-title__text {
+                .cmp-title__text-content {
+
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        width: 1px;
+                        height: 80px;
+                        background: $point-color;
+                        display: inline-block;
+                        position: absolute;
+                        bottom: 110%;
+                        left: 3px;
+                        right: 0;
+                        animation: mymove 5s infinite;
+                    }
+
+                    @keyframes mymove1 {
+
+
+                        50% {
+                            transform-origin: bottom;
+                            transform: scaleY(0);
+                        }
+
+                        100% {
+                            transform-origin: top;
+                            transform: scaleY(1);
+                        }
+                    }
+
+                    &::after {
+                        content: '';
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        background: $point-color;
+                        inset: 0;
+                        margin: auto;
+                        display: inline-block;
+                        bottom: 125%;
+                        right: 150rem;
+                        position: absolute;
+                    }
+                    p{
+                        width: max-content;
+                        height: 41px;
+                        font-size: 27px;
+                        color: #500059;
+                        text-align: left;
+                        letter-spacing: 1.89px;
+                        line-height: 37.8px;
+                        text-transform: uppercase;
+                        opacity: 1;
+                        @include mobile{
+                            font-size: 18px;
+                            letter-spacing: 1.26px;
+                            line-height: 27px;
+                        }
+                    }
+                    .cmp-title__action-link{
+                        font-size: 55px;
+                        line-height: 66px;
+                        letter-spacing: 2.2px;
+                        display: block;
+                        height: 86px;
+                        @include mobile{
+                            font-size: 30px;
+                            letter-spacing: 1.2px;
+                            line-height: 36px;
+                        }
+                    }
+                }
+
+            }
+
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "pageproperties": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:createdBy": "admin",
+    "jcr:lastModifiedBy": "admin",
+    "eventStartDateLabel": "start date label",
+    "newsDateLabel" : "date label",
+    "eventEndDateLabel" : "enddate label",
+    "eventLocationLabel"  : "location label",
+    "technicalArticleDateLabel"  : "article date label",
+    "id": "1641",
+    "sling:resourceType": "macnicagwi/components/content/pageproperties"
+  }
+}
+
+

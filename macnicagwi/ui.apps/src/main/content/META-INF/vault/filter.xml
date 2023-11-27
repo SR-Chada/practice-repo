@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/macnicagwi/clientlibs"/>
+    <filter root="/apps/macnicagwi/components"/>
+    <filter root="/apps/macnicagwi/i18n"/>
+    <filter root="/oak:index/macnicaPageLucene-1"/>
+    <filter root="/oak:index/macnicaAssetLucene-1"/>
+    <filter root="/apps/sling"/>
+    <filter root="/apps/cq"/>
+    
+</workspaceFilter>

@@ -1,0 +1,82 @@
+@import "./variables.scss";
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-tab - 1px}) {
+    @content;
+  }
+}
+@mixin mobile1 {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media (min-width: #{$breakpoint-tab}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+@mixin mobile2 {
+  @media (min-width: 500px) and (max-width: #{$breakpoint-tab - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+@mixin desktop-lg {
+  @media (min-width: #{$max-width + 1px}) {
+    @content;
+  }
+}
+
+@mixin tab-and-mobile {
+  @media (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin full-width {
+  width: 100vw !important;
+  position: relative;
+  left: calc(-50.55vw + 50%);
+  margin: 0 auto;
+  background-color: $table-heading-bg;
+}
+
+@mixin max-cmp-width {
+  max-width: 1060px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+@mixin loading-icon($width, $height) {
+      background-image: url("./assets/icon/loading-icon-lg.svg");
+      background-size: $width $height;
+      background-repeat: no-repeat;
+      width: $width;
+      height: $height;
+      animation: rotation 2s infinite linear;
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+}
+
+
+
+@mixin half-background($first-bgColor, $second-bgColor, $first-percentage, $second-percentage, $height) {
+ 
+    height: $height;
+    background: linear-gradient(0deg, $first-bgColor $first-percentage, $second-bgColor $second-percentage);
+  
+}

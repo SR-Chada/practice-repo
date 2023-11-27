@@ -1,0 +1,158 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.banner-without-title {
+  .cmp-herobanner-title {
+    display: none !important;
+  }
+}
+.cmp-container--fullwidth {
+  & > .aem-container {
+    max-width: max-content;
+  }
+}
+.cmp-container--centered {
+  & > .aem-container {
+    max-width: 1060px;
+    margin: 90px auto 80px;
+    row-gap: 43px;
+
+    & > * {
+      margin-bottom: 50px;
+      @include mobile {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (min-width: $breakpoint-tab) and (max-width: #{$breakpoint-desktop - 1px}) {
+      max-width: 86.98%;
+    }
+
+    @include mobile {
+      margin: 65px auto 60px;
+      max-width: 89.335%;
+    }
+  }
+}
+
+.full-cmp-width {
+  @include full-width;
+  padding: 60px 0;
+}
+.full-cmp-width-p0 {
+  @include full-width;
+  padding: 0;
+}
+.full-cmp-width-32 {
+  @include full-width;
+  background: linear-gradient(
+    180deg,
+    transparent 32%,
+    $table-heading-bg 0
+  ) !important;
+  @include tab {
+    background: linear-gradient(
+      180deg,
+      transparent 21%,
+      $table-heading-bg 0
+    ) !important;
+  }
+  @include tab {
+    background: linear-gradient(180deg,transparent 28%,$table-heading-bg 0)!important
+  }
+  @include mobile{
+    background: linear-gradient(
+      180deg,
+      transparent 19%,
+      $table-heading-bg 0)!important;
+  }
+}
+.full-cmp-width-image-text {
+  @include full-width;
+  background: linear-gradient(180deg, white 17%, transparent 0),
+    linear-gradient(90deg, transparent 20%, #faf7fa 0) !important;
+  @include tab {
+    background: linear-gradient(180deg, #fff 13%, transparent 0),
+      linear-gradient(90deg, transparent 20%, #faf7fa 0) !important;
+  }
+  @include mobile {
+    background: linear-gradient(180deg, #fff 14%, transparent 0),
+      linear-gradient(90deg, transparent 0%, #faf7fa 0) !important;
+  }
+}
+.full-cmp-width-image-text-right {
+  @include full-width;
+  background: linear-gradient(270deg, #fff 40%, transparent 0),
+    linear-gradient(180deg, transparent 10%, #faf7fa 0) !important;
+  @include tab {
+    background: linear-gradient(270deg, #fff 5%, transparent 0),
+      linear-gradient(180deg, transparent 10%, #faf7fa 0) !important;
+  }
+  @include mobile {
+    background: linear-gradient(270deg, #fff 3%, transparent 0),
+      linear-gradient(180deg, transparent 10%, #faf7fa 0) !important;
+  }
+}
+
+.max-cmp-width {
+  max-width: 1060px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  margin-left: 10px;
+  @include tab {
+    margin: 0 auto;
+    max-width: 85.5%;
+  }
+
+  @include mobile {
+    margin: 0 auto;
+    max-width: 88.335%;
+  }
+}
+
+
+.loader {
+  &::after{
+    content: "Loading...";
+    position: absolute;
+     left: 50%;
+     top: 50.5%;
+  }
+  &::before{
+    content: "";
+    @include loading-icon(31px, 31px);
+     position: absolute;
+     left: 47%;
+     top: 50%;
+     
+     @include tab{
+      left:46%;
+     }
+     @include mobile2{
+      left:44%;
+     }
+     @include mobile1{
+      left:40%;
+
+     }
+  }
+ 
+}
+
+
+.without-herobanner{
+  .cmp-herobanner {
+    display: none !important;
+  }
+
+} 
+
+
+.without-breadcrumb{
+  .cmp-breadcrumb {
+    display: none;
+  }
+
+} 

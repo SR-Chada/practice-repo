@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[mobile/groups/responsive]"
+        cq:template="/conf/macnicagwi/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="macnicagwi/components/page/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="macnicagwi/components/content/container"
+            layout="responsiveGrid">
+            <experiencefragment-header_global
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="macnicagwi/components/content/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/macnicagwi/global/en/site/header/master"/>
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="macnicagwi/components/content/container"
+                layout="responsiveGrid">
+                <experiencefragment-header_subsidiary
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="macnicagwi/components/content/experiencefragment"
+                    fragmentVariationPath="/content/experience-fragments/macnicagwi/apac/galaxy/en/site/header/master"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="macnicagwi/components/content/container"
+                    editable="{Boolean}true"
+                    layout="responsiveGrid"/>
+                <experiencefragment-footer_subsidiary
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="macnicagwi/components/content/experiencefragment"
+                    fragmentVariationPath="/content/experience-fragments/macnicagwi/apac/galaxy/en/site/footer/master"/>
+            </container>
+            <experiencefragment-footer_global
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="macnicagwi/components/content/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/macnicagwi/global/en/site/footer/master"/>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}480"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1024"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

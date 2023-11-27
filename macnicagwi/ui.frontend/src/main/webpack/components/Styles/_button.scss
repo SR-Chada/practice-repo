@@ -1,0 +1,142 @@
+@import "../../site/variables";
+
+@mixin button-primary {
+  font-family: $font-family;
+  font-size: $font-size-normal;
+  font-weight: $font-weight-regular;
+  font-style: $font-style-normal;
+  text-decoration: none;
+  color: $color-background-default;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background-color: $color-primary;
+  line-height: $line-height-xxl;
+  border: none;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
+
+   &[disabled] {
+     background-color: $button-primary-disable-background-color;
+
+    &:hover {
+      background-color: $button-primary-disable-background-color;
+    }
+  }
+}
+
+@mixin button-secondary {
+  font-family: $font-family;
+  font-size: $font-size-normal;
+  font-weight: $font-weight-medium;
+  font-style: $font-style-normal;
+  line-height: $line-height-lg;
+  text-transform: uppercase;
+  background: none;
+  text-decoration: none;
+  background-color: none;
+  border: none;
+  outline: none;
+  color: $button-secondary-color;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.cmp-button--primary {
+  .cmp-button {
+    padding: 8px 24px;
+    border-radius: 4px;
+    background-color: $color-primary;
+    border: none;
+    outline: none;
+
+    &:hover {
+      background-color: $button-primary-hover-background-color;
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: $button-primary-click-background-color;
+      cursor: pointer;
+    }
+
+    &[disabled] {
+      background-color: $button-primary-disable-background-color;
+
+      &:hover {
+        background-color: $button-primary-disable-background-color;
+      }
+    }
+  }
+
+  .cmp-button__text {
+    font-family: $font-family;
+    font-size: $font-size-normal;
+    font-weight: $font-weight-regular;
+    font-style: $font-style-normal;
+    text-decoration: none;
+    color: $color-background-default;
+  }
+}
+
+.cmp-button--secondary {
+  .cmp-button {
+    @include button-secondary;
+
+    &:hover {
+      border-bottom: 3px solid $button-secondary-color;
+      padding-bottom: 8.5px;
+      cursor: pointer;
+
+    }
+
+    &:active {
+      color: $color-primary;
+      border-bottom: 3px solid $color-primary;
+      padding-bottom: 8.5px;
+      cursor: pointer;
+    }
+
+
+    &.disabled {
+      color: $color-primary;
+    }
+  }
+}
+
+.button {
+  div {
+    text-align: center;
+  }
+}
+
+.cmp-button--event-registration-button {
+  & .cmp-button {
+    cursor: pointer;
+
+  
+    @include tab-and-mobile {
+      width: 100%;
+      position: fixed;
+      right: 0%;
+      bottom: 0%;
+      top: unset;
+      border-radius: 8px 8px 0 0;
+    }
+  }
+}
+
+.button{
+   @extend .cmp-button--primary;
+ }
+
+ .button.cmp-button--event-registration-button{
+  button{
+    display: none;
+  }
+  a{
+    display: initial;
+  }
+ }

@@ -1,0 +1,15 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.under_line-home {
+  display: none;
+  @include desktop-lg{
+    display: block;
+    height: 1px;
+    width: 395px !important;
+    position: absolute;
+    top: 60px;
+    right: 35px;
+    background-color: $point-color;
+  }
+}

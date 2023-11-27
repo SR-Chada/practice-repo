@@ -1,0 +1,38 @@
+
+<template data-sly-template.bannerImg = "${@ item}">
+  
+<div 
+data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+data-sly-test="${item.image.src}"
+data-cmp-dmimage="${item.image.dmImage}"
+data-asset-id="${item.image.uuid}"
+id="${item.image.id}"
+data-cmp-data-layer="${item.image.data.json}"
+class="cmp-image${!wcmmode.disabled ? ' cq-dd-image' : ''} ${item.subText ? 'cmp-image__image--gradient' : ''} ${properties.noGradient ? 'cmp-image__image--nogradient' : ''}"
+itemscope itemtype="http://schema.org/ImageObject">
+<a data-sly-unwrap="${!item.imageLink.valid}"
+       class="cmp-image__link"
+       data-sly-attribute="${item.imageLink.htmlAttributes}"
+       data-cmp-clickable="${item.image.data ? true : false}">
+       <div class="cmp-image__data">
+        <img srcset="${item.image.srcset}" src="${item.image.src}"
+          loading="${item.image.lazyEnabled ? 'lazy' : ''}"
+          class="cmp-image__image"
+          itemprop="contentUrl"
+          width="${item.image.width}" height="${item.image.height}"
+          alt="${item.image.alt || true}" title="${item.image.displayPopupTitle && item.image.title}"/>
+          <div class="cmp-bannerimage__subtext" data-sly-test="${item.subText}">
+            <div class="cmp-bannerimage__subtext--text">${item.subText}</div>
+          </div>
+        </div>
+ </a>
+<span class="cmp-image__title" itemprop="caption" data-sly-test="${!item.image.displayPopupTitle && item.image.title}">${properties.subText}</span>
+ <meta itemprop="caption" content="${item.image.title}" data-sly-test="${item.image.displayPopupTitle && item.image.title}">
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !item.image.src, classAppend = 'cmp-image cq-dd-image'}"></sly>
+
+</template>
+<div class="cmp-bannerimage" 
+data-sly-use.bannerImage="com.macnicagwi.core.components.models.BannerImage"
+data-sly-call="${bannerImg @item=bannerImage}"></div>
+

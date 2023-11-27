@@ -1,0 +1,74 @@
+@import '../../site/mixins';
+
+.resizablecontainer{
+    .aem-Grid{
+       display: block !important;
+     }
+    .cmp-image {
+        margin-right: 5px;
+    }
+    
+    .cmp-button{
+        display: block;
+    }
+}
+.cmp-resizable--grid{
+    .aem-Grid{
+        @include tab-and-mobile{
+            display: grid !important;
+           }
+    }
+}
+
+
+#cmp-container--title-pageproperties{
+    .aem-Grid {
+        display: flex !important;
+        border-bottom: 1px solid $border-color-default;
+        &::before {
+            display: none;
+        }
+    }
+    .title {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .pageproperties{
+        width: auto;
+    }
+    .cmp-pageproperties__technical-article-manufacturer-logo{
+        .cmp-pageproperties__technical-article-manufacturer-logo-image{
+            .cmp-image__image{
+                width: 220px;
+                max-width: 100%;
+                @include tab{
+                    width: 200px;
+                }
+                @include mobile{
+                    width: 150px;
+                }
+            }
+        }
+    }
+    .cmp-title__text {
+        @include mobile{
+          white-space:nowrap; 
+        }
+    }
+}
+
+.cmp-resizablecontainer--carousel-alignment{
+    .cmp-container{
+        .aem-Grid{
+            display: flex !important;
+            @include tab-and-mobile{
+                display: block !important;
+                .container{
+                    width: 100%;
+                }
+            }
+            
+        }
+    }
+}

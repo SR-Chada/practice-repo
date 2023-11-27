@@ -1,0 +1,14 @@
+<sly data-sly-use.textModel="com.adobe.cq.wcm.core.components.models.Text"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<p data-sly-test.text="${textModel.text}"></p>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+
+
+<div data-sly-use.heading="com.macnicagwi.core.components.models.Heading"
+ id="${heading.id}">
+    <h2 class="cmp-heading" data-sly-element="${heading.type}">
+      <span data-sly-test="${heading.icon}" class="cmp-heading__icon cmp-heading__icon--${heading.icon}" aria-hidden="true"></span>
+      <span class="cmp-heading__text ${heading.cssClassName}">${heading.text}</span>
+  </h1>
+</div>
+

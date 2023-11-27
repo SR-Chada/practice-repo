@@ -1,0 +1,75 @@
+<sly data-sly-use.textModel="com.adobe.cq.wcm.core.components.models.Text"
+   data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<p data-sly-test.text="${textModel.text}"></p>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+<div data-sly-use.searchresults="com.macnicagwi.core.components.models.SearchResults"
+    data-sly-use.filter="com.macnicagwi.core.components.models.MultiLevelFilter"
+    class="cmp-searchresults"
+    data-cmp-listsize="${searchresults.totalResultsSize}"> 
+    <div class="title cmp-title--border-bottom">
+        <div class="cmp-title">
+            <h1 class="cmp-title__text">
+                ${properties.searchResultsForText}: <span class="cmp-searchresults__search-text">${searchresults.getQueryString}<span>
+            </h1>
+        </div>
+    </div>
+    <div class="multilevelfilter" data-sly-resource="${'.' @ resourceType='macnicagwi/components/content/multilevelfilter'}"></div>
+    <div class="cmp-searchresults__showing-results-for">
+        <span class="cmp-searchresults__showing-results-for-title">${properties.filteredOnText}</span>
+        <span class="cmp-searchresults__showing-results-for-values"></span>
+    </div>
+    <div class="cmp-searchresults__pages cmp-searchresults__assets">
+        <ul  
+            data-sly-list.item="${searchresults.listItems}">
+            <li class="cmp-searchresults__pages-content"
+                data-cmp-data-layer="${item.data.json}"
+                data-sly-test="${item.itemType == 'PAGE'}">
+                <a data-sly-attribute="${item.link.htmlAttributes}"
+                    data-cmp-clickable="${item.data ? true : false}">
+                    <div class="cmp-searchresults__pages-image"
+                        data-sly-test="${item.image}">
+                        <div class="cmp-searchresults__item-image" data-attr-test="test" data-img-src="${item.image}" data-sly-resource="${item.image @ wcmmode='disabled'}">
+                            <p>hello world</p>
+                        </div>
+                    </div>
+                    <div class="cmp-searchresults__pages-details">
+                         <div class="cmp-searchresults__pages-details-title"
+                            data-sly-test="${item.title}">${item.title}</div> 
+                        <div class="cmp-searchresults__pages-details-description" data-sly-test="${item.description}">${item.description}</div>
+                        <div class="cmp-searchresults__pages-details-type" data-sly-test="${item.type}"><p>${item.type}</p></div>
+                    </div>
+                </a>
+            </li>
+            <li class="cmp-download"
+                data-cmp-data-layer="${item.data.json}"
+                data-sly-test="${item.itemType == 'ASSET'}">
+                <div class="cmp-download__properties">
+                    <div class="cmp-download__property cmp-download__property--filename">
+                        ${item.fileName}
+                    </div>                   
+                    <div class="cmp-download__property cmp-download__property--format cmp-download__property--format-${item.extension}">
+                        <div class="cmp-download__property--format-icon"></div> 
+                    </div>  
+                    <a class="cmp-download__action" isRestrictedDownload="${item.isRestrictedDownload}" resource="${item.url}">
+                        <span class="cmp-download__action-icon"></span>
+                    </a>      
+                </div>     
+                <div class="cmp-download__property cmp-download__property--contenttype">
+                    <p>${item.contentType}</p>
+                </div> 
+            </li>    
+        </ul>
+    </div>
+    <span class="cmp-searchresults__no-results-found">${filter.getNoResultsFoundText}</span>
+    <div data-sly-test="${filter.getLoadMoreButtonText != null}"
+        class="cmp-searchresults__loadmore-button">
+        <button class="cmp-button">${filter.getLoadMoreButtonText}</button>
+    </div>
+    <div class="cmp-searchresults__pagination"></div>
+    <div 
+    data-sly-test.hasContent="${searchresults.getDownloadFormXFPath}"
+    class="cmp-searchresults--popup-form">
+    <sly data-sly-resource="${@path=searchresults.getDownloadFormXFPath, selectors='content', wcmmode='disabled'}"></sly>
+  </div>
+</div>
+

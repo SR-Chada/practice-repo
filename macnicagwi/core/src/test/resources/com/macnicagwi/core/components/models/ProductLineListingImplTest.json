@@ -1,0 +1,25 @@
+{
+  "productlinelisting": {
+    "freeTextSearch": "true",
+    "jcr:created": "Thu Aug 11 2022 14:01:27 GMT+0000",
+    "jcr:lastModifiedBy": "sumit.ka@1digitals.com",
+    "loadMoreButtonText": "Show More",
+    "freeTextSearchPlaceholder": "Manufacturer Search",
+    "jcr:createdBy": "sumit.ka@1digitals.com",
+    "sling:resourceType": "macnicagwi/components/content/manufacturerlisting",
+    "applyButtonText": "Apply All",
+    "filterRootPaths": [
+      "macnicagwi:manufacturers",
+      "macnicagwi:product-lines",
+      "macnicagwi:application-categories"
+    ],
+    "jcr:lastModified": "Wed Sep 07 2022 05:48:27 GMT+0000",
+    "clearButtonText": "Uncheck All",
+    "jcr:primaryType": "nt:unstructured",
+    "searchResultsBlockSize": "10",
+    "searchPageRootPath": "/content/macnicagwi/apac/galaxy/en/products-support/products",
+    "filterType": "multiLevelFilter",
+    "filterButtonText": "Filter",
+    "noResultsFoundText": "No Results Results"
+  }
+}

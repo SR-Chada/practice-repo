@@ -1,0 +1,141 @@
+@import '../../site/mixins';
+.tabs {
+    .cmp-tabs{
+      &__tablist {
+        margin-block-start: 0;
+        @include mobile{
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            width: 100%;
+         }
+       }
+       &__tab {
+        padding: 4px 16px 4px 0;
+        border-radius: 8px;
+        @include H2-text;
+        color: $color-primary;
+        margin-right: 2.5%;
+        @include mobile{
+            font-size: 18px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            height: auto;
+            margin-right: 16px;
+
+        }
+        &--active {
+            background-color: $color-primary;
+            color: invert($color-text-primary);
+            padding-left: 1pc;
+            @include mobile{
+                width: fit-content;
+
+            }
+         }
+    }
+
+    }
+}   
+   
+.cmp-tabs__tablist--greybackground{
+    .cmp-tabs{
+      &__tablist {
+        padding: 8px 24px;
+        background: $color-background-lightgrey;
+        position: sticky;
+       }
+       &__tab{
+           font-family: $font-family;
+        color: $button-secondary-color !important;
+        padding: auto 0;
+        padding: 0;
+        &--active{
+            color: $color-primary !important;
+            background-color: $color-background-lightgrey !important;
+            border: none;
+            border-bottom: 3px solid $color-primary;
+            border-radius: 0 !important;
+        }
+    }
+  }
+  .overlay{
+    .cmp-tabs__tabpanel--active{
+        display: none;
+    }
+  }
+} 
+.cmp-tabs__button {
+    color: $subpageliststing-mobile-text-color;
+    width: 100%;
+    text-align: left;
+    background: $color-search-bar;
+    border-radius: 8px 0 0 8px;
+    padding: 8px 0 8px 8px;
+    border: none;
+    margin-bottom: 16px;
+    display: none;
+    @include H4-text;
+         &::after {
+            content: url("../resources/images/vector-icon-blue.svg");
+            float: right;
+            margin: 0 7px;
+        }
+}
+.overlay{
+    @include tab-and-mobile{
+        position: fixed; 
+         bottom: -27px;
+         left: 0;
+          right: 0;
+          background: rgba(0, 0, 0, 0.7);
+          display: block;
+          z-index: 999;
+          padding: 0;
+          .cmp-tabs__content{
+             margin-top: 210px;
+             border-radius: 5px;
+             position: relative;
+             padding: 16px 16px 24px;
+             border: solid 1px $border-color-default;
+             background-color: $color-background-default;
+             width: -webkit-fill-available;
+             min-height: 358px;
+             border-radius: 16px 16px 0px 0px;
+             overflow-y: scroll;
+             height: 300px;
+             .cmp-tabs__popup-close-icon{
+                float: right;
+                margin: 22px auto;
+                width: 100%;
+                text-align: end;
+                 &::before {
+                     content: url("../resources/images/popup-close-icon.svg");
+                     margin: 0 8px;
+                     display: inline-block;
+                 }
+             }
+             .cmp-tabs__tab {
+                float: none;
+                text-transform: uppercase;
+                padding: 12px 24px;
+                color: $button-secondary-color !important;
+                width: fit-content;
+                padding: 8px 0px;
+                &--active{
+                    background: none !important;
+                    color: $color-primary !important;
+                }
+
+             } 
+             .cmp-tabs__tablist{
+                background: none;
+                width: 75%;
+                margin: auto 0;
+            }
+            
+            
+             } 
+         }
+     }
+ 
+ 

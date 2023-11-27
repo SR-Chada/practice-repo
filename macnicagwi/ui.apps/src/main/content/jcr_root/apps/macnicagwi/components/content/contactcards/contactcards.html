@@ -1,0 +1,64 @@
+<sly data-sly-use.textModel="com.adobe.cq.wcm.core.components.models.Text"
+   data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<p data-sly-test.text="${textModel.text}"></p>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+<div data-sly-use.contactcards="com.macnicagwi.core.components.models.ContactCards"
+   class="cmp-contactcards" id="${contactcards.id}">
+   <div class="cmp-contactcard" data-sly-repeat.officeLocation="${contactcards.getOfficeLocations}">
+         <div data-sly-test.officeLocationTitle="${officeLocation.title}" class="cmp-contactcard__title">
+            <div class="cmp-contactcard__title--value"><p><span data-sly-test.officeLocationHeadQuarter="${officeLocation.markAsHeadquarter}">&#9733;</span>${officeLocationTitle}</p> <p class="cmp-contactcard--companyname">${officeLocation.companyname}</p> </div>
+         </div>
+         <div class="cmp-contactcard__content">
+         <div data-sly-test.officeLocationAddress="${officeLocation.address}" class="cmp-contactcard__address">
+            <div class="cmp-contactcard__address--value">${officeLocationAddress @ context='html'}</div>
+         </div>
+         <div data-sly-test.officeLocationGoogleMapLink="${officeLocation.googleMapLink}" class="cmp-contactcard__google-maps">
+            <a class="cmp-contactcard__google-maps--link" href="${officeLocationGoogleMapLink}" target="_blank">${contactcards.googleMapsLabel}</a>
+         </div>
+         <div class="cmp-contactcard__route-instrcutions">
+            <div data-sly-test="${contactcards.routeInstructionsLabel}">
+
+            <div class="cmp-contactcard__route-instrcutions-label">${contactcards.routeInstructionsLabel}</div>
+            <div class="cmp-contactcard__route-instrcutions-icons">
+               <div data-sly-test="${contactcards.publicTransportTabLabel && officeLocation.publicTransportRouteInstructions @ context='html'}" class="cmp-contactcard__route-instrcutions--icons cmp-contactcard__route-instrcutions--public-transport-icon ${officeLocationPublicTransportRouteInstructions @ context='html' ? 'public-trans' : 'display-none'}"></div>
+               <div data-sly-test="${contactcards.carTabLabel && officeLocation.carRouteInstructions @ context='html'}" class="cmp-contactcard__route-instrcutions--icons cmp-contactcard__route-instrcutions--car-icon"></div>
+               <div data-sly-test="${contactcards.motorcycleTabLabel && officeLocation.motorcycleRouteInstructions @ context='html'}" class="cmp-contactcard__route-instrcutions--icons cmp-contactcard__route-instrcutions--motorcycle-icon"></div>
+            </div>
+            <!--/* use popup template*/-->
+            <div data-sly-use.popupTemplate="templates.html">
+               <sly data-sly-call="${popupTemplate.popupContainer @ contactcards=contactcards, officeLocation=officeLocation}"/>
+            </div>
+            </div>
+         </div>
+         <div data-sly-test.officeLocationMobileNumber="${officeLocation.mobileNumber}" class="cmp-contactcard__mobile-number">
+            <div class="cmp-contactcard__mobile-number--icon"></div>
+            <div class="cmp-contactcard__mobile-number--value">${officeLocationMobileNumber}</div>
+         </div>
+         <div data-sly-test.officeLocationFaxNumber="${officeLocation.faxNumber}" class="cmp-contactcard__fax-number">
+            <div class="cmp-contactcard__fax-number--icon"></div>
+            <div class="cmp-contactcard__fax-number--value">${officeLocationFaxNumber}</div>
+         </div>
+         <div class="cmp-contactcard__emails">
+           
+            <div data-sly-test.officeLocationBusinessEmail="${officeLocation.businessEmail}" class="cmp-contactcard__business-email">
+               <div class="cmp-contactcard__business-email--icon"></div>
+               <div class="cmp-contactcard__business-email--label-value">
+                  <div class="cmp-contactcard__business-email--label">${contactcards.businessEmailLabel}</div>
+                  <div class="cmp-contactcard__business-email--value"><a href="mailto:${officeLocationBusinessEmail}">${officeLocationBusinessEmail}</a></div>
+               </div>
+            </div>
+            <div data-sly-test.officeLocationTechnicalEmail="${officeLocation.technicalEmail}" class="cmp-contactcard__technical-email">
+               <div class="cmp-contactcard__technical-email--label">${contactcards.technicalEmailLabel}</div>
+               <div class="cmp-contactcard__technical-email--value"><a href="mailto:${officeLocationTechnicalEmail}">${officeLocationTechnicalEmail}</a></div>
+            </div>
+            <div data-sly-test.officeLocationSupportEmail="${officeLocation.supportEmail}" class="cmp-contactcard__support-email">
+               <div class="cmp-contactcard__support-email--label">${contactcards.supportEmailLabel}</div>
+               <div class="cmp-contactcard__support-email--value"><a href="mailto:${officeLocationTechnicalEmail}">${officeLocationSupportEmail}</a></div>
+            </div>
+         </div>
+         <div class="cmp-contactcard__read-more-button">
+            <button>${contactcards.readMoreButtonLabel}</button>
+         </div>
+      </div>
+   </div>
+</div>

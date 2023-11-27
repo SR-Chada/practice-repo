@@ -1,0 +1,63 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+@import "./HomePage-Header.scss";
+@import "./HomePage-ImageText.scss";
+@import "./HomePage-TeaserVariation-homepage.scss";
+@import "./HomePage-TeaserVariation-homepage-one.scss";
+@import "./HomePage-TeaserVariation-homepage-two.scss";
+@import "./HomePage-TeaserVariation-homepage-three.scss";
+@import "./HomePage-NewsList.scss";
+@import './HomePage-Title.scss';
+@import './HomePage-ZoomTeaser.scss';
+
+@mixin readmore-arrow($background-image, $background-size, $width, $height, $left) {
+    content: "";
+    background-image: #{$background-image};
+    background-size: #{$background-size};
+    background-repeat: no-repeat;
+    width: #{$width};
+    height: #{$height};
+    left: #{$left};
+    position: absolute;
+    transition: background-size .3s ease-out;
+}
+
+@mixin readmore-circle($background, $width, $height) {
+    content: "";
+    display: block;
+    opacity: 1;
+    border-radius: 50%;
+    background: #{$background};
+    width: #{$width};
+    height: #{$height};
+}
+
+@mixin heading-link($font-size, $font-weight, $font-family, $color) {
+    text-decoration: none;
+    color: #{$color};
+    font-size: #{$font-size};
+    font-weight: #{$font-weight};
+    font-family: #{$font-family};
+    position: relative;
+}
+
+
+@include header;
+
+.home-page-container {
+    z-index: 5;
+    position: relative;
+    @include imagetext;
+    @include TeaserVariationHomePage;
+    @include TeaserVariationHomePage-one;
+    @include TeaserVariationHomePage-two;
+    @include TeaserVariationHomePage-three;
+    @include Newslist-homepage;
+    @include Homepage-title;
+    @include TeaserVariationHomePage-zoom-teaser;
+}
+
+.cmp-footer-container-bg {
+    z-index: 5;
+    position: relative;
+}

@@ -1,0 +1,154 @@
+.downloadlist {
+    position: relative;
+    overflow-x: auto;
+    scrollbar-width: none; /* firefox */
+    &::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+    .cmp-downloadlist {
+        margin: 36px 0 24px;
+
+        table {
+            th {
+                text-align: left;
+            }
+        }
+
+        &__loadmore-button {
+            width: 100%;
+            text-align: center;
+
+            .cmp-button {
+                @include button-primary;
+            }
+        }
+
+        &__no-results-found {
+            display: none;
+            margin: 32px 0;
+        }
+
+        &__file {
+            padding: 22px 35px;
+            justify-content: center;
+            width: auto;
+            color: $color-text-primary;
+            @include normal-text;
+        
+            .cmp-downloadlist__properties {
+                display: flex;
+            }
+            .cmp-downloadlist__property-format {
+                display: flex;
+                &-name {
+                    text-transform: uppercase;
+                    padding-top: 4px;
+                }
+                &-jpg,
+                &-jpeg,
+                &-png {
+                    display: flex;
+                    .cmp-downloadlist__property-format-icon {
+                        margin: 8px 23px 8px 43px;
+                        &::after {
+                            display: block;
+                            content: " ";
+                        }
+                    }
+                }
+                &-pdf {
+                    .cmp-downloadlist__property-format-icon {
+                        margin: 8px 23px 8px 28px;
+                        &::after {
+                            display: block;
+                            content: url("../resources/images/pdf-file-format-icon.svg");
+                        }
+                    }
+                }
+                &-zip {
+                    .cmp-downloadlist__property-format-icon {
+                        margin: 8px 23px 8px 19px;
+                        &::after {
+                            display: block;
+                            content: url("../resources/images/zip-file-format-icon.svg");
+                        }
+                    }
+                }
+            }
+        
+            .cmp-downloadlist__property-filename {
+                padding-right: 99px;
+                padding-top: 4px;
+                @include tab-and-mobile {
+                    padding-right: 30px;
+                }
+            }
+        
+            .cmp-downloadlist__action {
+                padding-top: 8px;
+                cursor: pointer;
+                &-icon {
+                    &::before {
+                        display: block;
+                        content: url("../resources/images/download-icon.svg");
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cmp-downloadlist--max-content-width {
+
+    .cmp-downloadlist {
+
+        table {
+            width: max-content;
+        }
+
+        &__file {
+            justify-content: flex-end;
+        }
+    }
+}
+
+.cmp-downloadlist--remove-headers {
+
+    .cmp-downloadlist {
+
+        table {
+
+            thead {
+                display: none;
+            }
+        }
+
+        &__file {
+            justify-content: flex-end;
+        }
+    }
+}
+.cmp-downloadlist--align-center{
+    .cmp-downloadlist {
+
+        table {
+
+            thead {
+                tr{
+                    th {
+                        text-align: center !important;
+                    }
+                }
+                
+            }
+            tbody{
+                tr{
+                    td {
+                        text-align: center !important;
+                    }
+                }
+
+            }
+        }
+    }    
+} 

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Core Form Container"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[core.wcm.components.form.container.v2.editor,cq.xf.editor.picker.validator,macnicagwi.components.content.form.container.editor]"
+    helpPath="https://www.adobe.com/go/aem_cmp_form_container_v2"
+    trackingFeature="core-components:form-container:v2">
+    <content
+        granite:class="cmp-formcontainer__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <actionType
+                                                granite:class="cmp-action-type-selection"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                deleteHint="{Boolean}true"
+                                                fieldLabel="Action Type"
+                                                name="./actionType">
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="core/wcm/components/form/container/v1/datasource/actiontype"/>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-dropdown-showhide-target=".action-type-dialog"/>
+                                            </actionType>
+                                            <advanced
+                                                granite:id="cmp-action-type-settings"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="core/wcm/components/form/container/v1/datasource/actionsetting"/>
+                                            </advanced>
+                                            <workflowcontainer
+                                                granite:class="hide cmp-workflow-container"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <workflowmodel
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        emptyOption="{Boolean}true"
+                                                        fieldDescription="Whether a workflow should be started with the stored content as payload."
+                                                        fieldLabel="Start Workflow"
+                                                        name="./workflowModel">
+                                                        <datasource
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="core/wcm/components/form/container/v1/datasource/workflowmodel"/>
+                                                        <granite:data
+                                                            jcr:primaryType="nt:unstructured"
+                                                            cq-dialog-dropdown-showhide-target=".cmp-workflow-title"/>
+                                                    </workflowmodel>
+                                                    <workflowTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldDescription="Title for the workflow."
+                                                        fieldLabel="Workflow Title"
+                                                        name="./workflowTitle"
+                                                        required="{Boolean}true"
+                                                        wrapperClass="hide cmp-workflow-title">
+                                                        <granite:data
+                                                            jcr:primaryType="nt:unstructured"
+                                                            reverseshowhidetargetvalue=""/>
+                                                    </workflowTitle>
+                                                </items>
+                                            </workflowcontainer>
+                                            <successFragmentPath
+                                                granite:id="xfPicker"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/experience-fragments/editor/components/xffield"
+                                                fieldDescription="Choose the experience fragment variation to display."
+                                                fieldLabel="Success Experience Fragment Path"
+                                                filter="folderOrVariant"
+                                                name="./successFragmentPath"
+                                                propertyFilter="cq:xfShowInEditor"
+                                                variant="web"/>
+                                            <errorFragmentPath
+                                                granite:id="xfPicker"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/experience-fragments/editor/components/xffield"
+                                                fieldDescription="Choose the experience fragment variation to display."
+                                                fieldLabel="Error Experience Fragment Path"
+                                                filter="folderOrVariant"
+                                                name="./errorFragmentPath"
+                                                propertyFilter="cq:xfShowInEditor"
+                                                variant="web"/>
+                                            <id
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="HTML ID attribute to apply to the component."
+                                                fieldLabel="ID"
+                                                name="./id"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>                            
+                        </items>
+                    </properties>
+                    <layout
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="FocusSend Configuration"
+                        sling:resourceType="granite/ui/components/foundation/section"
+                        margin="{Boolean}true">
+                         <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                            
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                        <clientKey
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="clientKey"
+                                                name="./clientKey"/>
+                                            <eventId
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="EvenetId"
+                                                name="./eventId"/>
+                                            <childEventId
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="ChildEvenetId"
+                                                name="./childEventId"/>
+                                            <FocusSend
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./focussend"
+                                                text="Send data to FocusSend on Form submission"
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                                            
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </layout>
+                    <cq:styles
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="/mnt/overlay/cq/gui/components/authoring/dialog/style/tab_edit/styletab"/>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

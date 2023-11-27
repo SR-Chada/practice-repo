@@ -1,0 +1,90 @@
+.cmp-productlinelist {
+    .cmp-productlinelist__product-line-cards {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        row-gap: 16px;
+        list-style: none;
+        margin: 0;
+        grid-gap: 21.1px;
+        @include tab {
+            grid-gap: 10.4px;
+        }
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: $color-background-default;
+            border: 1px solid $border-color-medium;
+            border-radius: 8px;
+            row-gap: 0;
+            padding: 24px;
+            grid-gap: 1pc;
+        }
+
+        .cmp-productlinelist__product-line-card {
+            padding: 0;
+            width: 198px;
+            height: 142px;
+            border: 1px solid $border-color-medium;
+            border-radius: 8px;
+
+            @include mobile {
+                margin: 0;
+                width: 100%;
+                height: 172px;
+            }
+            
+            .cmp-productlinelist__item-image-link {
+                width: 100%;
+                height: 106px;  
+                background: $color-background-grey-dark;
+                border-radius: 8px 8px 0 0;
+
+                @include mobile {
+                    height: 136px;
+                }
+                .cmp-productlinelist__item-image{
+                  height: 100%;
+                }
+                .cmp-image {
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    img {
+                        height: inherit;
+                        object-fit: contain;
+                        width: 72.73%;
+                        margin: auto;
+                        vertical-align: middle;
+                    }
+                }
+            }
+
+            .cmp-productlinelist__item-title {
+                padding: 4px 8px;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-weight: $font-weight-medium;
+            }
+            }
+        
+    }
+
+    .cmp-productlinelist__product-line-card {
+        @include mobile {
+            margin: 0 24px;
+        }
+    }
+}
+
+.cmp-productlinelist--remove-background-color{
+    .cmp-productlinelist__product-line-card{
+        .cmp-productlinelist__item-image-link{
+            background: none !important;
+        }
+    } 
+}

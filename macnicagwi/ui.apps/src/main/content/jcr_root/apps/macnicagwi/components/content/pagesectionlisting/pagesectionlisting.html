@@ -1,0 +1,43 @@
+<!--/*
+    Copyright 2015 Adobe Systems Incorporated
+  
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+  
+        http://www.apache.org/licenses/LICENSE-2.0
+  
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/-->
+
+<sly
+  data-sly-use.textModel="com.adobe.cq.wcm.core.components.models.Text"
+  data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+/>
+<p data-sly-test.text="${textModel.text}"></p>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+<!--/* Replace anchor tag href attribute with data-sly-attributes and pass link object*/-->
+<div
+  class="cmp-pagesectionlisting"
+  data-sly-use.pageSectionList="com.macnicagwi.core.components.models.PageSectionListing"
+>
+  <div class="cmp-pagesectionlisting__closeicon"></div>
+  <ul
+    class="cmp-pagesectionlisting__list"
+    data-sly-list.item="${pageSectionList.listItems}"
+    data-sly-use.anchorTemplate="anchor.html"
+  >
+    <li
+      data-sly-test="${item.isActive}"
+      class="cmp-pagesectionlisting__list-item cmp-pagesectionlisting__list-item--active" data-sly-call="${anchorTemplate.anchor @ item = item}"
+    ></li>
+    <li
+      data-sly-test="${!item.isActive}"
+      class="cmp-pagesectionlisting__list-item" data-sly-call="${anchorTemplate.anchor @ item = item}"
+    ></li>
+  </ul>
+</div>

@@ -1,0 +1,4 @@
+<template data-sly-template.listItem="${@ item}">
+<li class="cmp-list__item" data-sly-use.teaserTemplate="teaser.html" data-sly-call="${teaserTemplate.teaser @ item = item}"
+    data-cmp-data-layer="${product.data.json}"></li>
+</template>

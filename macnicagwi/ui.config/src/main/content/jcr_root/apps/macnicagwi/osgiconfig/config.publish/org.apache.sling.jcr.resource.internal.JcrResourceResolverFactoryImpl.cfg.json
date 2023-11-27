@@ -1,0 +1,8 @@
+{
+  "resource.resolver.mapping": [
+    "/:/",
+    "/content/macnicagwi/europe/:/eu/",
+    "/content/macnicagwi/apac/cytronic/:/apac/cytech/cytronic/",
+    "/content/macnicagwi/:/"
+  ]
+}

@@ -1,0 +1,75 @@
+<!--/* popup template */-->
+<div data-sly-template.popupContainer="${@ contactcards, officeLocation}">
+    <div class="cmp-contactcard__popup-container popup">
+        <div class="cmp-popup">
+            <div class="cmp-popup__close-icon"></div>
+           <!--/* use title and tabs templates */-->
+            <div data-sly-use.libs="templates.html">
+                <div class="title-class" data-sly-use.linkTitle="${'com.adobe.cq.wcm.core.components.models.Title' @ title=contactcards.routeInstructionsPopupTitle}">
+	                <div data-sly-use.templatetitle='/apps/macnicagwi/components/content/title/title.html'
+			            data-sly-call="${templatetitle.titleTemplate @title=linkTitle}"></div>
+                </div>
+                <sly data-sly-call="${libs.tabs @ contactcards=contactcards, officeLocation=officeLocation}"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--/* Tabs template */-->
+<div class="tabs" data-sly-template.tabs="${@ contactcards, officeLocation}">
+    <div
+        data-panelcontainer="${wcmmode.edit && 'tabs'}"
+        class="cmp-tabs"
+        data-cmp-is="tabs">
+        <ol
+            data-sly-list.tab="${3}"
+            role="tablist"
+            class="cmp-tabs__tablist"
+            aria-multiselectable="false">
+           
+            <li role="tab"
+                class="cmp-tabs__tab cmp-tabs__tab--active"
+                tabindex="0"
+                data-cmp-hook-tabs="tab"
+                data-sly-test.officeLocationPublicTransportRouteInstructions="${officeLocation.publicTransportRouteInstructions}" class="cmp-contactcard__route-instrcutions-popup-tab-public-transport">
+                <div class="cmp-contactcard__route-instrcutions-popup-tab-transport--label cmp-contactcard__route-instrcutions-popup-tab-public-transport--label"><div class="cmp-contactcard__route-instrcutions-popup-tab-transport--label-text">${contactcards.publicTransportTabLabel}</div></div>
+            </li>
+            <li role="tab"
+                class="cmp-tabs__tab"
+                tabindex="1"
+                data-cmp-hook-tabs="tab"
+                data-sly-test.officeLocationCarRouteInstructions="${officeLocation.carRouteInstructions}" class="cmp-contactcard__route-instrcutions-popup-tab-car" >
+                <div class="cmp-contactcard__route-instrcutions-popup-tab-transport--label cmp-contactcard__route-instrcutions-popup-tab-car--label"><div class="cmp-contactcard__route-instrcutions-popup-tab-transport--label-text">${contactcards.carTabLabel}</div></div>
+            </li>
+            <li role="tab"
+                class="cmp-tabs__tab"
+                tabindex="2"
+                data-cmp-hook-tabs="tab"
+                data-sly-test.officeLocationMotorcycleRouteInstructions="${officeLocation.motorcycleRouteInstructions}" class="cmp-contactcard__route-instrcutions-popup-tab-motorcycle" >
+                <div class="cmp-contactcard__route-instrcutions-popup-tab-transport--label cmp-contactcard__route-instrcutions-popup-tab-motorcycle--label"><div class="cmp-contactcard__route-instrcutions-popup-tab-transport--label-text">${contactcards.motorcycleTabLabel}</div></div>
+            </li>
+        </ol>
+        <div
+            role="tabpanel"
+            tabindex="0"
+            class="cmp-tabs__tabpanel cmp-tabs__tabpanel--active"
+            data-cmp-hook-tabs="tabpanel">
+            <div class="cmp-contactcard__route-instrcutions-popup-tab-transport--value cmp-contactcard__route-instrcutions-popup-tab-public-transport--value active">${officeLocationPublicTransportRouteInstructions @ context='html'}</div>
+        </div>
+        <div
+            role="tabpanel"
+            tabindex="1"
+            class="cmp-tabs__tabpanel"
+            data-cmp-hook-tabs="tabpanel">
+            <div class="cmp-contactcard__route-instrcutions-popup-tab-transport--value cmp-contactcard__route-instrcutions-popup-tab-car--value">${officeLocationCarRouteInstructions @ context='html'}</div>
+        </div>
+        <div
+            role="tabpanel"
+            tabindex="2"
+            class="cmp-tabs__tabpanel"
+            data-cmp-hook-tabs="tabpanel">
+            <div class="cmp-contactcard__route-instrcutions-popup-tab-transport--value cmp-contactcard__route-instrcutions-popup-tab-motorcycle--value">${officeLocationMotorcycleRouteInstructions @ context='html'}</div>
+        </div>
+    </div>
+
+</div>

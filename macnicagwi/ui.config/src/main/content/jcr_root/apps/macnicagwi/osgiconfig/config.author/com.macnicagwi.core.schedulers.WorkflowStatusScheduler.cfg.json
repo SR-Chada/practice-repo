@@ -1,0 +1,8 @@
+{
+  "schedulerName": "Workflow Scheduler Config",
+  "enabled": "$[env:WF_SCHEDULER_ENABLED;default=true]",
+  "timeInterval": "$[env:WF_SCHEDULER_TIME_INTERVAL;default=1]",
+  "timeFormat": "$[env:WF_SCHEDULER_TIME_FORMAT;default=H]",
+  "cronExpression": "$[env:WF_SCHEDULER_CRON_EXPR;default=0 0 * ? * *]"
+}
+

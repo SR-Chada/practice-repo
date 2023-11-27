@@ -1,0 +1,22 @@
+@import '../../site/mixins';
+
+.shareaholic-share-buttons-container{
+    position: absolute !important;
+    right: 0;
+    width: fit-content;
+
+    @include mobile{
+        position: relative !important;
+        text-align: left;
+        display: initial;
+    }
+    }
+
+
+a.shareaholic-service-icon.shareaholic-service-icon.shareaholic-service-default{
+    @include mobile{
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 16px !important;
+    }
+}

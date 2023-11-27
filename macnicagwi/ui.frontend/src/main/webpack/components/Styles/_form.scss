@@ -1,0 +1,213 @@
+.cmp-form {
+    &-text{
+        
+        label{
+            @include H2-text;
+            float: left;
+            width: 100%;
+            border-bottom: 1px solid $color-primary;
+            color: $color-text-primary;
+            margin-bottom: 17.5px;
+            span{
+                color: $color-primary;
+            }
+        }
+        &__text, &__textarea{
+            @include normal-text;
+            width: 97%;
+            margin-bottom: 1pc;
+            background: $color-background-form-input;
+            border-radius: 8px;
+            border: none;
+            padding: 8px 1pc;
+            &:focus {
+                outline: none;
+            }
+            @include tab{
+                width: 96%;
+            }
+            @include mobile{
+                width: 92%;
+            }
+        }
+    }
+    label.error {
+        border-bottom: none;
+        @include mobile-normal-text;
+        color: $errormessage-text-form-color;
+    }
+    .parent-label-error {
+        @include mobile-normal-text;
+        color: $errormessage-text-form-color;
+        border-bottom: 1px solid $color-primary;
+    }
+    &-button {
+        @include button-primary;
+        border: none;
+        &[disabled]{
+            opacity: 0.3;
+        }
+    }
+    
+    
+    &-success{
+        .cmp-popup{
+            padding: 0 !important;
+            &::after {
+                content: "";
+                background: #4FD479;
+                border-radius: 0px 0px 8px 8px;
+                width: 100%;
+                display: block;
+                height: 16px;
+            }
+            & > .cmp-container{
+                padding: 2pc 24px 24px;
+                display: flex !important;
+                grid-gap: 0 !important;
+                @include mobile{
+                    display: block !important;
+                }
+                &::before {
+                    content: '';
+                     background-image: url("../resources/images/popup-circle-success-icon.svg");
+                     background-repeat: no-repeat;
+                     width: 25px;
+                     height: 25px;
+                     display: block;
+                     margin-right: 28px;
+                     margin-top: 22px;
+                     padding-right: 12px;
+                     @include tab{
+                        padding-right: 20px;
+                     }
+                     @include mobile{
+                        margin-top: 0;
+                        margin-bottom: 1pc;
+                    }
+                 }
+
+
+            }
+            @include mobile{
+                .cmp-heading{
+                    line-height: 100%;
+                    font-size: 24px;
+                }
+            }
+            
+
+        }
+    }
+    &-error{
+        .cmp-popup{
+            padding: 0 !important;
+            &::after {
+                content: "";
+                background: #EA7178;
+                border-radius: 0px 0px 8px 8px;
+                width: 100%;
+                display: block;
+                height: 16px;
+            }
+            & > .cmp-container{
+                padding: 2pc 24px 24px;
+                display: flex !important;
+                grid-gap: 0 !important;
+                @include mobile{
+                    display: block !important;
+                }
+                &::before {
+                    content: '';
+                     background-image: url("../resources/images/popup-circle-error-icon.svg");
+                     background-repeat: no-repeat;
+                     width: 25px;
+                     height: 25px;
+                     display: block;
+                     margin-right: 28px;
+                     margin-top: 22px;
+                     padding-right: 12px;
+                     @include tab{
+                        padding-right: 20px;
+                     }
+                     @include mobile{
+                        margin-top: 0;
+                        margin-bottom: 1pc;
+                    }
+                 }
+
+            }
+
+            @include mobile{
+                .cmp-heading{
+                    line-height: 100%;
+                    font-size: 24px;
+                }
+            }
+        }
+    } 
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff !important;
+  z-index: 2;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.loading {
+    &::after {
+
+        content: "Loading...";
+        visibility: visible;
+        position: absolute;
+
+        left: 50%;
+
+        top: 50.5%;
+
+    }
+    &::before {
+
+        content: "";
+
+        background-image: url("../resources/images/loading-icon-lg.svg");
+        visibility: visible;
+        background-size: 31px 31px;
+        background-repeat: no-repeat;
+        width: 31px;
+        height: 31px;
+        animation: rotation 2s infinite linear;
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(359deg);
+            }
+        }
+
+        position: absolute;
+        left: 47%;
+        top: 50%;
+        z-index: 1;
+
+        @include mobile{
+            left: 40%;
+        }
+
+        @include tab {
+            left: 45%;
+        }
+    }
+}
+

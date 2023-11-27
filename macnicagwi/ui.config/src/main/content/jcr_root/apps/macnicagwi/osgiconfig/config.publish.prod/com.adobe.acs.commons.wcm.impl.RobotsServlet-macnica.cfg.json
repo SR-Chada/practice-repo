@@ -1,0 +1,11 @@
+{
+         "sling.servlet.resourceTypes":["macnicagwi/components/page/basepage","macnicagwi/components/page/technicalarticlepage","macnicagwi/components/page/solutionpage","macnicagwi/components/page/productpage","macnicagwi/components/page/page","macnicagwi/components/page/newspage","macnicagwi/components/page/eventpage"],
+        "user.agent.directives":["all:*","google:googlebot"],
+       " allow.directives":["all:/"],
+        "allow.property.names":["google:googlebotAllowed"],
+        "disallow.property.names":["google:googlebotDisallowed"],
+        "sitemap.directives":["https://www.macnica.com.sitemap.xml"],
+        "sitemap.property.names":["cq:isLanguageRoot"],
+        "externalizer.domain":"publish",
+        "print.grouping.comments":true
+}

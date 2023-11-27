@@ -1,0 +1,377 @@
+
+.supplierlist {
+    position: relative;
+    .multilevelfilter {
+        .cmp-multilevelfilter__close-icon{
+            z-index: 10;
+        }
+        .cmp-multilevelfilter__child-filters--active{
+            z-index: 9;
+        }
+        .cmp-multilevelfilter__parent-tag-title{
+            @include mobile {
+                box-sizing: border-box;
+            }
+        }
+
+        .cmp-multilevelfilter__text-search{
+            @include mobile {
+                box-sizing: border-box;
+            }
+            
+        }
+    }
+    cmp-multilevelfilter__search-filters{
+        @include mobile {
+            box-sizing: border-box;
+        }
+    }
+    .supplierlist-dropdown-main{
+        position: relative;
+        &:hover ul.supplierlist-dropdown-cont{
+            display: block;
+        }
+        .supplier-selectlabel{
+            color:$color-primary;
+            background-color: $color-background-primary;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            width: max-content;
+            border: 1px solid $button-secondary-color;
+            border: 1px solid $border-color-medium;
+            border-radius: 8px;
+            &:hover{
+                background-color: $color-primary;
+                color: $color-background-default;
+                svg {
+                    path{
+                        fill: $color-background-default;
+                    }
+
+                    @include mobile {
+                      float: right;
+                    }
+                }
+            }
+            @include mobile {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+        ul.supplierlist-dropdown-cont{
+            display: none;
+            margin: 0;
+            border-radius: 0 0 8px 8px;
+            z-index: 1;
+            max-height: 280px;
+            overflow-y: scroll;
+            font-size: 13px;
+            padding: 0 8px;
+            box-sizing: border-box;
+            background-color: $color-background-primary;
+            position: absolute;
+            .supplieritem-alphabet{
+                color:$color-primary;
+            }
+
+            ul {
+                padding: 0 0 0 10px;
+                list-style: none;
+                margin: 0;
+                line-height: 24px;
+                li{
+                    a{
+                        color: $color-text-primary;
+                    }
+                }
+            }
+        }
+    }
+    .cmp-supplierlist {
+        &__entries {
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            grid-gap: 1.7%;
+            .cmp-supplierlist__entry {
+                list-style: none;
+                margin: 0;
+                border: 1px solid $border-color-medium;
+                border-radius: 8px;
+                position: relative;
+                width: 23.5%;
+                margin-bottom: 15px;
+                
+                @include tab {
+                    width: 48%;
+                }
+                
+                @include mobile {
+                    width: 100%;
+                }
+                a.cmp-supplierlist__item-anchortag{
+                    padding: 10px;
+                    display: block;
+                    cursor: pointer;
+                }
+                .cmp-supplierlist__item-image-link {
+                    height: 150px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .cmp-image__image{
+                    max-width: 100%;
+                    width: 300px;
+                    max-height: 120px;
+                    object-fit: contain;
+                }
+
+                &:hover{
+                    .cmp-supplierlist__item-description{
+                        display: block;
+                    }
+                }
+                
+                .cmp-productlinelisting__item-title {
+                    padding: 4px 8px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-weight: $font-weight-medium;
+                    background: #7a2180;
+                    color: #fff;
+                    font-size: 14px;
+                    border-radius: 8px;
+                    text-align: center;
+                }
+                .cmp-supplierlist__item-description{
+                    display: none;
+                    border: 1px solid $border-color-medium;
+                    border-radius: 5px;
+                    padding: 8px;
+                    background: rgba(255,255,255,0.95);
+                    position: absolute;
+                    top: 50%;
+                    overflow: inherit;
+                    width: 300px;
+                    z-index: 1;
+                    max-height: 250px;
+                    font-size: 13px;
+                    line-height: normal;
+                    @include mobile {
+                        width: 100%;
+                        box-sizing: border-box;
+                    }
+
+                    .suppliertitle{
+                        color:$color-primary;
+                        font-size: 16px;
+                        font-weight: 600;
+                        margin-bottom: 5px
+                    }
+                    p{
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 5;
+                        line-clamp: 5;
+                        -webkit-box-orient: vertical;
+                        margin-bottom: 10px;
+                    }
+                    .cmp-supplierlist__item-anchortag.readmorebtn{
+                        padding: 5px 14px;
+                        background: #7a2180;
+                        color: #fff;
+                        border-radius: 5px;
+                        float: right;
+                        display: block;
+                        line-height: 18px;
+                        height: 22px;
+                        font-weight: 600;
+                    }
+                }
+                
+                .cmp-manufacturerlist__entry-heading {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: $font-size-large;
+
+                    @include mobile {
+                        flex-direction: column-reverse;
+                        align-items: flex-start;
+                        padding: 0 0 8px;
+                    }
+
+                    .cmp-manufacturerlist__item-title {
+                        @include mobile {
+                            margin-top: 16px;
+                        }
+                    }
+
+                    img {
+                        height: 32px;
+                    }
+                }
+
+                .cmp-productlinelisting {
+                    &::before {
+                        content: "";
+                        display: block;
+                        width: 100%;
+                        border-bottom: 1px solid $border-color-medium;
+
+                        @include mobile {
+                            margin-bottom: 16px;
+                        }
+                    }
+
+                    &__product-line-cards {
+                        padding: 24px 0 16px 0;
+                        display: flex;
+                        flex-wrap: wrap;
+                        row-gap: 16px;
+                        list-style: none;
+                        margin: 0;
+                        grid-gap: 16px;
+                        a {
+                            &:visited{
+                                color: $button-secondary-color;
+                        }
+                       }
+                        li div {
+                            height: 100%;
+                            width: 100%;
+                        }
+
+                        @include mobile {
+                            border: none;
+                            padding: 0;
+                        }
+
+                        .cmp-productlinelisting__product-line-card {
+                            padding: 5px;
+                            width: 198px;
+                            height: 142px;
+                            border: 1px solid $border-color-medium;
+                            border-radius: 8px;
+
+                            @include mobile {
+                                margin: 0;
+                                width: 100%;
+                                height: 172px;
+                            }
+
+                            .cmp-productlinelisting__item-image-link {
+                                width: 100%;
+                                height: 106px;  
+                                background: white;
+                                border-radius: 8px 8px 0 0;
+
+                                @include mobile {
+                                    height: 136px;
+                                }
+                                
+                                .cmp-image {
+                                    width: 100%;
+                                    height: 100%;
+
+                                    img {
+                                        height: inherit;
+                                        object-fit: contain;
+                                        width: 72.73%;
+                                        margin: auto;
+                                        vertical-align: middle;
+                                     }
+                                }
+                            }
+
+                            
+                        }
+                    }
+                }
+
+                .cmp-productlinelisting--parent {
+                    &::before {
+                        display: none;
+                    }
+
+                    .cmp-productlinelisting__product-line-cards {
+                        padding: 0;
+
+                        @include mobile {
+                            border: none;
+                            padding: 0;
+                        }
+
+                        .cmp-productlinelisting__product-line-card {
+                            padding: 0;
+
+                            a {
+                                margin: 0;
+                                &:visited{
+                                    color: $button-secondary-color;
+                                }                    
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__loadmore-button {
+            width: 100%;
+            text-align: center;
+
+            .cmp-button {
+                @include button-primary;
+            }
+        }
+
+        &__no-results-found {
+            display: none;
+            margin: 32px 0;
+        }
+    }
+    .cmp-manufacturerlist__loadmore-button{
+        width:100%;
+        text-align:center;
+        .cmp-button{
+            font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Verdana,Arial,Helvetica,sans-serif;
+            font-size:1pc;
+            font-weight:400;
+            font-style:normal;
+            text-decoration:none;
+            color:$color-background-default;
+            padding:8px 24px;
+            border-radius:4px;
+            background-color:$color-primary;
+            line-height:175%;
+            border:none;
+            outline:none;
+            &:hover{
+                cursor:pointer;
+            }
+            &[disabled],
+            &[disabled]:hover{
+                background-color:rgba(122,33,128,.3);
+            }
+        }
+    }
+    .cmp-manufacturerlist__no-results-found{
+        display:none;
+        margin:2pc 0;
+    }
+}
+
+

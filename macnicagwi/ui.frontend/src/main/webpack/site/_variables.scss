@@ -1,0 +1,93 @@
+/* Typography variables*/
+$font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Verdana, Arial, Helvetica, sans-serif;
+
+
+$font-size-large:24px;
+$font-size-medium:18px;
+$font-size-normal:16px;
+$font-size-small:14px;
+$font-size-0: 0;
+$font-size-22: 22px;
+$font-size-20: 20px;
+
+$font-weight-normal:normal;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-heavy: 900;
+
+$font-style-normal:normal;
+
+$line-height-normal:normal;
+$line-height-sm:100%;
+$line-height-md:120%;
+$line-height-lg:125%;
+$line-height-xl:150%;
+$line-height-xxl:175%;
+
+$letter-spacing-sm:0.01em;
+$letter-spacing-md:0.03em;
+
+/*colors*/
+
+$color-primary:#7A2180;
+$color-accent:#11143f;
+$color-common-gradient: linear-gradient(90deg, #0C2354 0%, #112F80 49.93%, #452E80 100%);
+
+$color-text-primary:#000000;
+$color-text-secondary:#1d3070;
+
+$color-background-default:#ffffff;
+$color-background-primary:#f3f3f3;
+$color-background-secondary:#E5E2E2;
+$color-background-grey: #efefef;
+$color-hover-dropdown: #d9e3ff;
+$color-search-bar: #F5F5F5;
+$color-background-lightgrey: #F8F8F8;
+$color-background-grey-dark: #EDEDED;
+
+$button-primary-hover-background-color: #112F80;
+$button-primary-click-background-color: #0C2354;
+$button-primary-disable-background-color: rgba($color-primary, 0.3);
+
+$button-secondary-color: #6D50FF;
+
+$language-navigation-background-color: #7f1084;
+
+$border-color-default: #c4c4c4;
+$border-color-dark: #adadad;
+$border-color-light: #cbcaca;
+$border-color-medium: #CDCDCD;
+
+$copyright-text-subsidiary-color:#6c6c6c;
+$table-border-color:#CED0D4;
+$table-header-background-color: #F3F3F3;
+$table-row-background-color: #F9F7FA;
+
+$email-input-color: #0011FF;
+
+
+
+/*colors*/
+
+/* Breakpoints */
+
+$breakpoint-tab:481px;
+$breakpoint-desktop:1025px;
+
+$subpageliststing-mobile-text-color: #454545;
+$carouselindicator-background-color: #b0c4d0;
+$carousel-variation-arrow-color: #76178f;
+
+$color-background-form-input: #F5F6F7;
+$errormessage-text-form-color: #D32F2F;
+
+$contact-cards-title-background-color: #E7E7E7;
+
+$color-text-error-page-title: #404040;
+$font-size-extra-large: 144px;
+
+$scrollbar-background-color: #9043A4;
+$subsidaryheader-navigation-list-active-background-color: #E6E2E2;
+
+$bannerimage-color-gradient: linear-gradient(359.12deg, rgba(0, 0, 0, 0.6) 0.81%, rgba(196, 196, 196, 0) 99.29%);

@@ -1,0 +1,175 @@
+@mixin TeaserVariationHomePage-two {
+    .cmp-global-teaser-variation-services {
+        // margin-top: 5%;
+        min-height: 505px;
+        a{
+            text-decoration: none;
+        }
+        .cq-dd-image {
+            position: relative;
+            max-width: 1440px;
+            margin: auto;
+            width: unset;
+            vertical-align: middle;
+            padding: 5% 0;
+
+            @media (max-width: 1050px) {
+                margin-top: 2%;
+                // margin-top: 10%;
+            }
+
+            .cmp-teaser__content {
+                text-align: left;
+                width: 75%;
+                margin: auto;
+
+                @media (max-width: 1050px) {
+                    width: 87%;
+                }
+
+                .cmp-teaser__pretitle {
+                    color: $point-color;
+                    display: flex;
+                    flex-direction: column;
+                    grid-gap: 30px;
+                    position: relative;
+                    font-size: 24px;
+                    letter-spacing: 1.68px;
+                    line-height: 33.6px;
+
+                    &::before {
+                        content: '';
+                        width: 1px;
+                        height: 60px;
+                        background: $point-color;
+                        display: inline-block;
+                        animation: mymove 5s infinite;
+                    }
+
+                    @keyframes mymove1 {
+
+
+                        50% {
+                            transform-origin: bottom;
+                            transform: scaleY(0);
+                        }
+
+                        100% {
+                            transform-origin: top;
+                            transform: scaleY(1);
+                        }
+                    }
+
+                    &::after {
+                        content: '';
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        background: $point-color;
+                        inset: 0;
+                        top: 67px;
+                        position: absolute;
+                    }
+                }
+
+                .cmp-teaser__title-text {
+                    margin-top: 10px;
+                    font-weight: $font-weight-normal;
+
+                    .cmp-teaser__title-link {
+                        color: black !important;
+                        text-decoration: none;
+                        position: relative;
+                    }
+                }
+            }
+
+            .cmp-teaser__description {
+                max-width: 79.072%;
+
+                @media (max-width: 1050px) {
+                    width: 100%;
+                    margin-bottom: 36px;
+                }
+
+                p {
+                    color: black;
+                    width: fit-content;
+                    text-align: -webkit-auto;
+                    font-weight: $font-weight-300;
+                }
+            }
+
+            .cmp-teaser__action-container {
+
+                .cmp-teaser__action-link {
+                    text-decoration: none;
+                    color: black;
+                    font-size: 14px;
+                    font-weight: $font-weight-regular;
+                    font-family: $font-family-kanit;
+                    position: absolute;
+                    display: flex;
+                    flex-direction: row-reverse;
+                    letter-spacing: 0.98px;
+                    left: 76%;
+                    bottom: 20%;
+                    align-items: center;
+
+
+                    @media (max-width: 1050px) {
+
+                        position: relative;
+                        left: 0;
+                        bottom: 0;
+                        justify-content: left;
+                    }
+
+
+                    &::before {
+                        @include readmore-circle($color-common-gradient, 65px, 65px);
+                        margin-left: 23.3px;
+                    }
+
+                    &::after {
+                        @include readmore-arrow(url("../../assets/icon/right-arrow-black.svg"), 50px 4px, 60px, 3px, 50%);
+                        top: 31px;
+
+                        @media (max-width: 1050px) {
+                            left: 81px;
+                        }
+
+                        @include mobile {
+                            width: 60px;
+                            background-size: 45px 3px;
+                        }
+                    }
+
+                    &:hover::after {
+                        background-size: 60px 5px;
+
+                        @include mobile {
+                            width: 60px;
+                            background-size: 60px 5px;
+                        }
+                    }
+
+                    @include tab {
+                        font-size: $font-size-14;
+                    }
+
+                    @include mobile {
+                        font-size: $font-size-small;
+                    }
+                }
+
+            }
+        }
+        h2{
+            font-size: 48px;
+            letter-spacing: 1.92px;
+            line-height: 57px;
+            margin-bottom: 27px;
+        }
+    }
+}

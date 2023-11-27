@@ -1,0 +1,4 @@
+{
+  "previewURL": "$[env:WF_PREVIEW_URL]",
+  "publishURL": "$[env:WF_PUBLISH_URL]"
+}

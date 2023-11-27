@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2022-03-23T14:07:32.743Z"
+        cq:lastModifiedBy="sai.g@1digitals.com"
+        cq:lastReplicated="{Date}2022-03-23T14:07:46.578Z"
+        cq:lastReplicated_publish="{Date}2022-03-23T14:07:46.578Z"
+        cq:lastReplicatedBy="sai.g@1digitals.com"
+        cq:lastReplicatedBy_publish="sai.g@1digitals.com"
+        cq:lastReplicationAction="Activate"
+        cq:lastReplicationAction_publish="Activate"
+        cq:template="/conf/macnicagwi/settings/wcm/templates/page-content"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="en"
+        jcr:uuid="629c17e8-34cc-4a6d-a874-9840f675dd8d"
+        sling:resourceType="macnicagwi/components/page/page"
+        pageTitle="MACNICA GWI"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="macnicagwi/components/content/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="macnicagwi/components/content/container">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="macnicagwi/components/content/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="macnicagwi/components/content/container"
+                    layout="responsiveGrid">
+                    <teaser
+                        jcr:description="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xd;&#xa;"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Epic Journey"
+                        sling:resourceType="macnicagwi/components/content/teaser"
+                        actionsEnabled="false"
+                        descriptionFromPage="false"
+                        textIsRich="true"
+                        titleFromPage="false">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="0"
+                                width="4"/>
+                        </cq:responsive>
+                    </teaser>
+                    <teaser_copy
+                        jcr:description="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xd;&#xa;"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Epic Journey"
+                        sling:resourceType="macnicagwi/components/content/teaser"
+                        actionsEnabled="false"
+                        descriptionFromPage="false"
+                        textIsRich="true"
+                        titleFromPage="false">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="0"
+                                width="4"/>
+                        </cq:responsive>
+                    </teaser_copy>
+                    <teaser_copy_1579324932
+                        jcr:description="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xd;&#xa;"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Epic Journey"
+                        sling:resourceType="macnicagwi/components/content/teaser"
+                        actionsEnabled="false"
+                        descriptionFromPage="false"
+                        textIsRich="true"
+                        titleFromPage="false">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="0"
+                                width="4"/>
+                        </cq:responsive>
+                    </teaser_copy_1579324932>
+                    <helloworld
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="macnicagwi/components/content/helloworld"
+                        text="lalala :)"/>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

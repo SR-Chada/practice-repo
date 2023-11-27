@@ -1,0 +1,57 @@
+<sly data-sly-use.textModel="com.adobe.cq.wcm.core.components.models.Text"
+   data-sly-use.templates="core/wcm/components/commons/v1/templates.html" />
+<p data-sly-test.text="${textModel.text}"></p>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+
+<div data-sly-use.pageproperties="com.macnicagwi.core.components.models.PageProperties"
+   class="cmp-pageproperties ${pageproperties.isEmpty ? 'cmp-pageproperties__hide' : ''}" id="${pageproperties.id}">
+
+   <div class="cmp-pageproperties__news-date" data-sly-test="${pageproperties.newsDate}">
+      <span class="cmp-pageproperties__news-date-label"
+         data-sly-test="${pageproperties.newsDateLabel}">${pageproperties.newsDateLabel}:</span>
+      <span class="cmp-pageproperties__news-date-value">${pageproperties.newsDate}</span>
+   </div>
+   <div class="cmp-pageproperties__event-start-date" data-sly-test="${pageproperties.eventStartDate}">
+      <span class="cmp-pageproperties__event-start-date-label"
+         data-sly-test="${pageproperties.eventStartDateLabel}">${pageproperties.eventStartDateLabel}:</span>
+      <span class="cmp-pageproperties__event-start-date-value">${pageproperties.eventStartDate}</span>
+   </div>
+   <div class="cmp-pageproperties__event-end-date" data-sly-test="${pageproperties.eventEndDate}">
+      <span class="cmp-pageproperties__event-end-date-label"
+         data-sly-test="${pageproperties.eventEndDateLabel}">${pageproperties.eventEndDateLabel}:</span>
+      <span class="cmp-pageproperties__event-end-date-value">${pageproperties.eventEndDate}</span>
+   </div>
+   <div class="cmp-pageproperties__event-location" data-sly-test="${pageproperties.eventLocation}">
+      <span class="cmp-pageproperties__event-location-label"
+         data-sly-test="${pageproperties.eventLocationLabel}">${pageproperties.eventLocationLabel}:</span>
+      <span class="cmp-pageproperties__event-location-value">${pageproperties.eventLocation}</span>
+   </div>
+   <div class="cmp-pageproperties__technical-article-date" data-sly-test="${pageproperties.technicalArticleDate}">
+      <span class="cmp-pageproperties__technical-article-date-label"
+         data-sly-test="${pageproperties.technicalArticleDateLabel}">${pageproperties.technicalArticleDateLabel}:</span>
+      <span class="cmp-pageproperties__technical-article-date-value">${pageproperties.technicalArticleDate}</span>
+   </div>
+
+   <div class="cmp-pageproperties__technical-article-manufacturer-logo" data-sly-test="${properties.manufacturerLogo}">
+      <div class="cmp-pageproperties__technical-article-manufacturer-logo-image" data-attr-test="test"
+         data-img-src="${pageproperties.manufacturerLogo}"
+         data-sly-resource="${pageproperties.manufacturerLogo @ wcmmode='disabled'}">
+      </div>
+   </div>
+   <div class="cmp-pageproperties__technical-article-author-picture" data-sly-test="${properties.authorImage}">
+      <div class="cmp-pageproperties__technical-article-author-picture-image" data-attr-test="test"
+         data-img-src="${pageproperties.authorImage}"
+         data-sly-resource="${pageproperties.authorImage @ wcmmode='disabled'}">
+      </div>
+   </div>
+   <div class="cmp-pageproperties__technical-article-author-name" data-sly-test="${pageproperties.authorName}">
+      <span class="cmp-pageproperties__technical-article-author-name-label"
+         data-sly-test="${pageproperties.authorNameLabel}">${pageproperties.authorNameLabel} </span>
+      <span class="cmp-pageproperties__technical-article-author-name-value">${pageproperties.authorName}</span>
+   </div>
+   <div class="cmp-pageproperties__technical-article-article-source" data-sly-test="${pageproperties.articleSource}">
+      <span class="cmp-pageproperties__technical-article-article-source-label"
+         data-sly-test="${pageproperties.articleSourceLabel}"> ${pageproperties.articleSourceLabel} </span>
+      <span class="cmp-pageproperties__technical-article-article-source-value">${pageproperties.articleSource}</span>
+   </div>
+</div>

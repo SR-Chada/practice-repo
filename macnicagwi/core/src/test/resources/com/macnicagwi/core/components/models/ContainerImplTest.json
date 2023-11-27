@@ -1,0 +1,27 @@
+{
+  "container": {
+    "downlaodAssetMailToBusiness": "false",
+    "watchVideoMailToCustomer": "true",
+    "sling:resourceType": "macnicagwi/components/content/form/container",
+    "watchVideoMailBusinessMailTo": "sumit.ka@1digitals.com",
+    "errorFragmentPath": "/content/experience-fragments/macnicagwi/apac/galaxy/en/site/popus/form-error/master",
+    "rpc_mail_mailToCustomer": "false",
+    "watchVideoMailSubject": "Watch video ",
+    "rpc_mail_mailToBusiness": "false",
+    "watchVideoMailFromAddress": "cmsadmin@macnica.co.jp",
+    "action": "/content/usergenerated/experience-fragments/macnicagwi/apac/galaxy/en/site/watch-video/master/cq-gen1662741987878/",
+    "id": "watch-now-form",
+    "mail_mailToBusiness": "false",
+    "successFragmentPath": "/content/experience-fragments/macnicagwi/apac/galaxy/en/site/popus/form-success/master",
+    "jcr:created": "Fri Sep 09 2022 16:46:27 GMT+0000",
+    "jcr:lastModifiedBy": "sumit.ka@1digitals.com",
+    "jcr:createdBy": "sumit.ka@1digitals.com",
+    "watchVideoMailToBusiness": "true",
+    "actionType": "macnicagwi/components/content/form/actions/watchVideo",
+    "jcr:lastModified": "Mon Sep 12 2022 11:58:37 GMT+0000",
+    "jcr:primaryType": "nt:unstructured",
+    "downlaodAssetMailToCustomer": "false",
+    "mail_mailToCustomer": "false",
+    "watchVideoMailBusinessMailCc": "sai.g@1digitals.com"
+  }
+}

@@ -1,0 +1,18 @@
+<div class="cmp-othersuggestionscard"
+    data-sly-use.relatedSuggestions="com.macnicagwi.core.components.models.RelatedSuggestions"
+    data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.teaserTemplate="core/wcm/components/list/v3/list/teaser.html"
+    id="${relatedSuggestions.id}"
+    data-cmp-data-layer="${relatedSuggestions.data.json}" data-sly-test="${relatedSuggestions.listItems}">
+    <ol class="cmp-othersuggestionscard__indicators"></ol>
+    <div class="cmp-othersuggestionscard__slidercontainer">
+        <span class="cmp-othersuggestionscard__arrows cmp-othersuggestionscard__previous-arrow inactive"></span>
+        <ul class="cmp-othersuggestionscard__list" 
+        data-sly-list.item="${relatedSuggestions.listItems}">
+            <li class="cmp-othersuggestionscard__content" data-sly-call="${teaserTemplate.teaser @ item = item}"
+                data-cmp-data-layer="${item.data.json}">a</li>
+        </ul>
+        <span class="cmp-othersuggestionscard__arrows cmp-othersuggestionscard__next-arrow"></span>
+    </div>
+</div>
+<sly data-sly-call="${template.placeholder @ isEmpty=relatedSuggestions.listItems.size == 0, classAppend='cmp-othersuggestionscard'}"></sly>

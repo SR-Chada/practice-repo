@@ -1,0 +1,49 @@
+{{#if filterTypes.multiLevelFilter}}
+<div class='{{customClass}}-list'>
+    <div class="{{customClass}}-item {{customClass}}-item--active {{customClass}}-select-all">
+        <span>All</span>
+    </div>
+    {{#each searchFilters }}
+    <div class="{{customClass}}-item">
+        <span value="{{id}}">{{title}}</span>
+        <div class='{{customClass}}-children'>
+            <div class="{{customClass}}-children-close-icon"></div>
+            <div class="{{customClass}}-children-list">
+                {{#each this.childSearchFilters}}
+                <div class='{{customClass}}-child' value="{{id}}">{{title}}</div>
+                {{/each}}
+            </div>
+            <div class="{{customClass}}-children-buttons">
+                <button class="cmp-button {{customClass}}-uncheck-all-button">
+                    <span class="cmp-button__text"></span>
+                </button>
+                <button class="cmp-button {{customClass}}-apply-button">
+                    <span class="cmp-button__text"></span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}}
+{{#if filterTypes.singleLevelFilter}}
+<div class='{{customClass}}-list'>
+    <div class="{{customClass}}-item {{customClass}}-item--active {{customClass}}-select-all">
+        <span>All</span>
+    </div>
+    {{#each searchFilters }}
+    {{#each this.childSearchFilters}}
+    <div class="{{customClass}}-item">
+        <span value="{{id}}">{{title}}</span>
+    </div>
+    {{/each}}
+    {{/each}}
+</div>
+{{/if}}
+{{#if isFreeTextSearch}}
+<div class='{{customClass}}-text-search'>
+    <input type="Search" placeholder="{{freeTextSearchPlaceholder}}" />
+    <div class="{{customClass}}-text-search-icon"></div>
+</div>
+{{/if}}

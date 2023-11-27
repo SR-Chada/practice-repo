@@ -1,0 +1,259 @@
+@mixin TeaserVariationHomePage {
+    .cmp-global-teaser-variation-global-network {
+        margin-top: 100px;
+        a{
+            text-decoration: none;
+        }
+        .cq-dd-image {
+            position: relative;
+            height: 505px;
+            background: url("../../assets/icon/Global-Network.svg") no-repeat center;
+            width: 80%;
+            margin: auto;
+
+            @include mobile {
+                width: 89.5%;
+                height: max-content;
+                background: url("../../assets/icon/Global-Network.svg") no-repeat 50% -50%;
+                background-size: 155%;
+            }
+
+            .cmp-teaser__content {
+                text-align: center;
+                width: 70%;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                grid-gap: 30px;
+                padding: 10% 0;
+
+                @include mobile {
+                    width: 100%;
+                    grid-gap: 26px;
+                }
+
+                .cmp-teaser__title-text {
+                    font-weight: $font-weight-normal;
+
+                    .cmp-teaser__title-link {
+                        color: black !important;
+                        text-decoration: none;
+                        position: relative;
+                        font-size: $font-size-55;
+                        line-height: 66px;
+                        letter-spacing: 2.2px;
+                        @include mobile {
+                            font-size: 30px;
+                            letter-spacing: 1.92px;
+                            line-height: 57.6px;
+                        }
+
+                        &::before {
+                            content: '';
+                            width: 1px;
+                            height: 80px;
+                            background: $point-color;
+                            display: inline-block;
+                            position: absolute;
+                            bottom: 110%;
+                            left: 50%;
+                            right: 0;
+                            animation: mymove 5s infinite;
+                        }
+
+                        @keyframes mymove1 {
+
+
+                            50% {
+                                transform-origin: bottom;
+                                transform: scaleY(0);
+                            }
+
+                            100% {
+                                transform-origin: top;
+                                transform: scaleY(1);
+                            }
+                        }
+
+                        &::after {
+                            content: '';
+                            width: 5px;
+                            height: 5px;
+                            border-radius: 50%;
+                            background: $point-color;
+                            inset: 0;
+                            margin: auto;
+                            display: inline-block;
+                            bottom: 125%;
+                            left: 2px;
+                            position: absolute;
+                        }
+
+                    }
+                    @include mobile {
+                        text-align: center;
+                    }
+                }
+            }
+
+            .cmp-teaser__description {
+                p {
+                    color: $plane-color;
+                    text-align: -webkit-center;
+                    font-weight: $font-weight-300;
+
+                    @include mobile {
+                        font-size: 13px;
+                        letter-spacing: 0.91px;
+                        line-height: 23.4px;
+                    }
+
+                }
+            }
+
+            .cmp-teaser__action-container {
+
+                .cmp-teaser__action-link {
+                    text-decoration: none;
+                    color: black;
+                    font-size: 14px;
+                    font-weight: $font-weight-regular;
+                    font-family: $font-family-kanit;
+                    position: relative;
+                    display: flex;
+                    flex-direction: row-reverse;
+                    letter-spacing: 0.98px;
+                    align-items: center;
+                    justify-content: center;
+
+                    &::before {
+                        @include readmore-circle($color-common-gradient, 65px, 65px);
+                        margin-left: 23.3px;
+
+                        @include mobile {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+
+                    &::after {
+                        @include readmore-arrow(url("../../assets/icon/right-arrow-black.svg"), 50px 4px, 60px, 3px, 50%);
+                        top: 31px;
+                        left: 52%;
+                        @include tab{
+                            left: 54%;
+                        }
+                        @include mobile {
+                            width: 55px;
+                            background-size: 45px 3px;
+                            top: 23px;
+                            left: 56%
+                        }
+                    }
+
+                    &:hover::after {
+                        width: 60px;
+                        background-size: 60px 5px;
+
+                        @include mobile {
+                            width: 55px;
+                            background-size: 55px 5px;
+                        }
+                    }
+
+                    @include tab {
+                        font-size: $font-size-14;
+                    }
+
+                    @include mobile {
+                        font-size: $font-size-small;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    @media only screen and (min-width: ($breakpoint-tab+1)) and (max-width:$max-width) {
+        .cmp-global-teaser-variation-global-network {
+            margin-top: 100px;
+
+            .cq-dd-image {
+                background: url("../../assets/icon/Global-Network.svg") no-repeat 36%;
+
+                .cmp-teaser__content {
+                    text-align: center;
+                    margin: auto;
+
+
+                    .cmp-teaser__title-text {
+
+
+                        .cmp-teaser__title-link {
+                            color: black !important;
+                            text-decoration: none;
+                            position: relative;
+
+                            &::before {
+                                content: '';
+                                width: 1px;
+                                height: 80px;
+                                background: $point-color;
+                                display: inline-block;
+                                position: absolute;
+                                bottom: 110%;
+                                left: 50%;
+                                right: 0;
+                                animation: mymove 5s infinite;
+                            }
+
+                            @keyframes mymove1 {
+
+
+                                50% {
+                                    transform-origin: bottom;
+                                    transform: scaleY(0);
+                                }
+
+                                100% {
+                                    transform-origin: top;
+                                    transform: scaleY(1);
+                                }
+                            }
+
+                            &::after {
+                                content: '';
+                                width: 5px;
+                                height: 5px;
+                                border-radius: 50%;
+                                background: $point-color;
+                                inset: 0;
+                                margin: auto;
+                                display: inline-block;
+                                bottom: 125%;
+                                left: 2px;
+                                position: absolute;
+                            }
+
+                        }
+                    }
+                }
+
+                .cmp-teaser__description {
+                    padding-bottom: 30px;
+
+                    p {
+                        color: black;
+                        text-align: -webkit-center;
+
+
+                    }
+                }
+
+
+            }
+
+        }
+    }
+}

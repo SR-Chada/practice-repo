@@ -1,0 +1,27 @@
+//== Base
+
+html,
+body {
+    @include normal-text;
+    margin: 0;
+    a {
+       text-decoration: none;
+       color: $button-secondary-color;
+       &:visited{
+        color: $color-primary;
+       }
+
+      &[href^="mailto:"] { 
+         color: $button-secondary-color;
+      }
+    }
+    
+    img{
+       height: auto;
+    }
+}
+
+
+
+
+

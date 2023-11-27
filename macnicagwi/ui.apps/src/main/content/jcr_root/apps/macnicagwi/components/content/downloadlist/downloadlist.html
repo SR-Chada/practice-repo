@@ -1,0 +1,103 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2021 Adobe
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<sly data-sly-use.downloadList="com.macnicagwi.core.components.models.DownloadList"
+  data-sly-use.filter="com.macnicagwi.core.components.models.MultiLevelFilter"
+  data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+  data-sly-test.hasContent="${!downloadList.isEmpty}"> 
+  <div class="multilevelfilter" data-sly-resource="${'.' @ resourceType='macnicagwi/components/content/multilevelfilter'}"></div>
+  <div  
+      data-resource-path="${downloadList.getResourcePath}"
+      data-cmp-listsize="${downloadList.totalResultsSize}"
+      id="${downloadList.id}"
+      class="cmp-downloadlist table-container">
+    <div class="cmp-table">
+    <table class="cmp-downloadlist__table" cellpadding=1 cellspacing=0 border=1 width="100%">
+      <thead class="cmp-downloadlist__table-head">
+        <sly data-sly-list.propName="${downloadList.selectedProperties}">
+          <th name="${propName}">${downloadList.selectedProperties[propName]}</th>
+        </sly>
+      </thead>
+      <tbody 
+        class="cmp-downloadlist__table-body" 
+        data-sly-list.item="${downloadList.assets}">
+        <tr data-sly-list.propName="${downloadList.selectedProperties}">
+          <sly data-sly-test="${propName == 'title'}">
+            <td name="${propName}"><span>${item.fileName}</span></td>
+          </sly>
+          <sly data-sly-test="${propName == 'description'}">
+            <td name="${propName}"><span>${item.description}</span></td>
+          </sly>
+          <sly data-sly-test="${propName == 'type'}">
+            <td name="${propName}"><span>${item.contentType}</span></td>
+          </sly>
+          <sly data-sly-test="${propName == 'manufacturer'}">
+            <td name="${propName}"><span>${item.manufacturer}</span></td>
+          </sly>
+          <sly data-sly-test="${propName == 'productLine'}">
+            <td name="${propName}"><span>${item.productLine}</span></td>
+          </sly>
+          <sly data-sly-test="${propName == 'publishedDate'}">
+            <td name="${propName}"><span>${item.publishDate}</span></td>
+          </sly>
+          <sly data-sly-test="${propName == 'year'}">
+            <td name="${propName}"><span>${item.year}</span></td>
+          </sly>
+          <sly data-sly-test="${propName == 'chineseYear'}">
+            <td name="${propName}"><span>${item.chineseYear}</span></td>
+          </sly>
+          <sly data-sly-test="${propName == 'downloadDetailsLink'}">
+            <td name="${propName}"><a data-sly-test="${item.downloadDetailsLink.isValid}"
+              data-sly-attribute="${item.downloadDetailsLink && item.downloadDetailsLink.htmlAttributes}"
+              data-cmp-clickable="${item.data ? true : false}">${item.downloadDetailsLink.reference.title}</a></td>
+          </sly>
+          <sly data-sly-test="${propName == 'reportType'}">
+            <td name="${propName}"><span>${item.reportType}</span></td>
+          </sly>
+          <sly data-sly-test="${propName == 'quarter'}">
+            <td name="${propName}"><span>${item.quarter}</span></td>
+          </sly>
+          <sly data-sly-test="${propName == 'file'}">
+            <td class="cmp-downloadlist__file" name="${propName}">
+              <div class="cmp-downloadlist__properties">
+                  <div class="cmp-downloadlist__property cmp-downloadlist__property-format cmp-downloadlist__property-format-${item.extension}">
+                      
+                      <div class="cmp-downloadlist__property-format-name">${item.extension}</div>
+                      <div class="cmp-downloadlist__property-format-icon"></div> 
+                  </div>
+              
+              <a class="cmp-downloadlist__action" isRestrictedDownload="${item.isRestrictedDownload}" resource="${item.url}">
+                  <span class="cmp-downloadlist__action-icon"></span>
+              </a>
+            </div>
+            </td>
+          </sly>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <span class="cmp-downloadlist__no-results-found">${filter.getNoResultsFoundText}</span>
+  <div  data-sly-test="${filter.getLoadMoreButtonText != null}" 
+        class="cmp-downloadlist__loadmore-button">
+      <button class="cmp-button">${filter.getLoadMoreButtonText}</button>
+  </div>
+  <div 
+    data-sly-test.hasContent="${downloadList.getDownloadFormXFPath}"
+    class="cmp-downloadlist--popup-form">
+    <sly data-sly-resource="${@path=downloadList.getDownloadFormXFPath, selectors='content', wcmmode='disabled'}"></sly>
+  </div>
+</sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-downloadlist cq-dd-file'}"></sly>
