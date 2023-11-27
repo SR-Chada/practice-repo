@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Contact Cards Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        granite:class="cmp-contactcards__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <parentPath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription="Path under which the Content Fragments are located."
+                                        fieldLabel="Parent Path"
+                                        name="./parentPath"
+                                        nodeTypes="nt:folder, sling:Folder, sling:OrderedFolder"
+                                        rootPath="/content/dam/macnicagwi/content-fragments/office-locations"/>
+                                    <orderBy
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        emptyOption="{Boolean}false"
+                                        fieldLabel="Order By"
+                                        name="./orderBy"                                     
+                                        type="editable">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <select
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Default"
+                                                value="path"/>
+                                            
+                                            <ranking
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Ranking"
+                                                value="ranking"/>
+                                          
+                                                
+                                        </items>
+                                    </orderBy>
+                                    <locationType
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                        fieldDescription="Tags for filtering the list."
+                                        fieldLabel="Location Type"
+                                        name="./locationType"
+                                        rootPath="/content/cq:tags/macnicagwi/location-type"/>
+                                    <id
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="HTML ID attribute to apply to the component."
+                                        fieldLabel="ID"
+                                        name="./id"/>
+                                </items>
+                            </column>
+                        </items>
+                    </properties>
+                    <elements
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Elements"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <googleMapsLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Google Maps Label"
+                                        name="./googleMapsLabel"/>
+                                    <routeInstructionsLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Route Instructions Label"
+                                        name="./routeInstructionsLabel"/>
+                                    <routeInstructionsPopupTitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Route Instructions Popup Title"
+                                        name="./routeInstructionsPopupTitle"/>
+                                    <publicTransportTabLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Route Instructions Popup - Public Transport Tab Label"
+                                        name="./publicTransportTabLabel"/>
+                                    <carTabLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Route Instructions Popup - Car Tab Label"
+                                        name="./carTabLabel"/>
+                                    <motorcycleTabLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Route Instructions Popup - Motorcycle Tab Label"
+                                        name="./motorcycleTabLabel"/>
+                                    <businessEmailLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Business Email Label"
+                                        name="./businessEmailLabel"/>
+                                    <technicalEmailLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Technical Email Label"
+                                        name="./technicalEmailLabel"/>
+                                    <supportEmailLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Support Email Label"
+                                        name="./supportEmailLabel"/>
+                                    <readMoreButtonLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Read More Button Label"
+                                        name="./readMoreButtonLabel"/>
+                                </items>
+                            </column>
+                        </items>
+                    </elements>
+                    <cq:styles
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="/mnt/overlay/cq/gui/components/authoring/dialog/style/tab_edit/styletab"/>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

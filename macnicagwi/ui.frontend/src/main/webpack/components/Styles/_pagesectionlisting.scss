@@ -1,0 +1,122 @@
+.pagesectionlisting{
+    position: sticky;
+      top: 57px; 
+      z-index: 1;
+    @include tab-and-mobile{
+        padding: 0;
+        top: 0; 
+    }
+    
+.cmp-pagesectionlisting{
+    
+    background: $color-background-lightgrey; 
+    @include tab-and-mobile{
+        padding: 0;
+        background: none;
+        &__button{
+            color: $subpageliststing-mobile-text-color;
+            width: 100%;
+            text-align: left;
+             background: $color-search-bar;
+             border-radius: 8px;
+             padding: 8px 0px 8px 8px;
+             border: none;
+             @include H4-text;
+             &::after {
+                content: url("../resources/images/vector-icon-blue.svg");
+                float: right;
+                margin: -3px 7px;
+            }
+         }
+    }
+          
+    &__list {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        @include tab-and-mobile{
+            padding: 0;
+            width: 98%;
+            height: 90%;
+            overflow-y: scroll;
+            margin-top: 4px;
+
+            &::-webkit-scrollbar-track {
+                border-radius: 10px;
+                background-color: $color-background-default;
+            }
+
+            &::-webkit-scrollbar {
+                width: 5px;
+                background-color: $color-background-default;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                background-color: $color-primary;
+            }
+         }
+        &-item {
+            float: left;
+            padding: 8px 12px;
+            list-style: none;
+            @include H4-text;
+                @include tab-and-mobile{
+                    display: none;                  
+                
+            }
+           &-link {
+               color: $button-secondary-color;
+            }
+            &--active{
+                a{
+                    color: $color-primary !important;
+                    padding-bottom: 5px;
+                    border-bottom: 3px solid $color-primary;
+                }
+            }
+           
+        }
+    }
+      
+}
+&.overlay{
+    @include tab-and-mobile{
+        
+          background: rgba(0, 0, 0, 0.7);
+          display: block;
+          z-index: 999;
+          padding: 0;
+          .cmp-pagesectionlisting{
+            position: fixed; 
+            bottom: 0;
+             border-radius: 5px;
+             padding: 16px 16px 24px;
+             border: solid 1px $border-color-default;
+             background-color: $color-background-default;
+             width: -webkit-fill-available;
+             height: 358px;
+             border-radius: 16px 16px 0px 0px;
+             &__closeicon{
+                 width: 100%;
+                 &::before {
+                     content: url("../resources/images/search-close-icon.svg");
+                     margin: 6px 6px 0 0;
+                     float: right;
+                 }
+             }
+             &__list-item {
+                float: none;
+                text-transform: uppercase;
+                padding: 12px 24px;
+                &.active{
+                    padding: 12px 24px;
+               
+                }
+
+             }  
+         }
+     }
+ }
+}
+ 

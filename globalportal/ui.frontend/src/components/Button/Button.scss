@@ -1,0 +1,170 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.cmp-button--width {
+  width: max-content !important;
+}
+
+.cmp-button-outside-arrow {
+  .button {
+    max-width: $breakpoint-desktop;
+    margin: auto;
+    display: flex;
+    position: relative;
+    font-size: $font-size-14;
+    line-height: 19.6px;
+    letter-spacing: 0.98px;
+    margin-left: 0;
+    @include mobile{
+      align-items: top;
+      line-height: 18.2px;
+      letter-spacing: 0.91px;
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 23px;
+      height: 23px;
+      opacity: 0.8;
+      border-radius: 50%;
+      background: transparent
+        linear-gradient(270deg, $sub-color-light 0%, $button-circle-color 100%)
+        0% 0% no-repeat padding-box;
+      margin-right: 20px;
+      min-width: 23px;
+    }
+    &::after {
+      content: "";
+      background-image: url("../../assets/icon/right-arrow-black.svg");
+      background-size: 27px 3px;
+      background-repeat: no-repeat;
+      width: 27px;
+      height: 3px;
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      transition: width 0.3s ease-out;
+      @media (max-width: #{$breakpoint-tab - 1px}) {
+        width: 24px;
+        background-size: 24px 3px;
+        //top: 17%;
+        left: 8px;
+      }
+    }
+    &:hover::after {
+      width: 30px;
+      background-size: 30px 3px;
+      @media (max-width: #{$breakpoint-tab - 1px}) {
+        width: 27px;
+        background-size: 27px 3px;
+      }
+    }
+    &:hover::before {
+      opacity: 1;
+    }
+    a {
+      color: $main-color;
+      text-decoration: none;
+      align-items: center;
+      display: flex;
+      font-family: $font-family-kanit;
+      span{
+        padding: 0 0.25rem;
+      }
+    }
+  }
+}
+.cmp-button-inside-arrow {
+  .button {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    align-items: center;
+    font-size: $font-size-14;
+    letter-spacing: 0.98px;
+    width: fit-content;
+    &::before {
+      content: "";
+      display: block;
+      width: 65px;
+      height: 65px;
+      opacity: 0.8;
+      border-radius: 50%;
+      background: transparent
+        linear-gradient(270deg, $sub-color-light 0%, $button-circle-color 100%)
+        0% 0% no-repeat padding-box;
+      margin-right: 1rem;
+      
+      cursor: pointer;
+      @include tab{
+        width: 65px;
+        height: 65px;
+      }
+      @include mobile{
+        width: 50px;
+        height: 50px;
+      }
+    }
+    &:hover{
+      .cmp-button__action-link{
+        &::after {
+          width: 60px;
+          background-size: 60px 4px;
+          @media (max-width: #{$breakpoint-tab}) {
+            width: 45px;
+            background-size: 45px 4px;
+          }
+        }
+      }
+    }
+    .cmp-button {
+      &__action-link {
+        position: relative;
+        margin-right: 2rem;
+        &::after {
+          content: "";
+          background-image: url("../../assets/icon/right-arrow-lg-black.svg");
+          background-size: 50px 4px;
+          background-repeat: no-repeat;
+          width: 50px;
+          height: 4px;
+          position: absolute;
+          margin-left: 0.8rem;
+          top: 10px;
+          transition: background-size 0.3s ease-out;
+          @media (max-width: #{$breakpoint-tab - 1px}) {
+            width: 45px;
+            background-size: 45px 4px;
+          }
+        }
+        &:hover::after {
+          width: 60px;
+          background-size: 60px 4px;
+          @media (max-width: #{$breakpoint-tab}) {
+            width: 45px;
+            background-size: 45px 4px;
+          }
+        }
+      }
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    a {
+      color: $main-color;
+      text-decoration: none;
+      // span{
+      //   padding: 0 0.25rem;
+      // }
+    }
+  }
+}
+
+
+.cmp-button--center {
+  justify-content: center;
+  display: flex;
+}

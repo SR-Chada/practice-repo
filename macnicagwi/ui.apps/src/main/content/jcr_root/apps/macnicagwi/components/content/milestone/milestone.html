@@ -1,0 +1,30 @@
+<div class="cmp-milestone">
+  <div class="cmp-milestone__knob"></div>
+  <div class="cmp-milestone__content">
+    <div class="cmp-milestone__date" data-sly-test="${properties.isYear}">
+      <span>${'yyyy' @ format=properties.date}</span>
+    </div>
+    <div class="cmp-milestone__date" data-sly-test="${properties.isYearMonth}">
+      <span>${'yyyy MMM' @ format=properties.date}</span>
+    </div>
+
+    <div class="cmp-milestone__description" data-sly-test="${!properties.title}">
+      <div class="cmp-milestone__content-description" data-sly-test="${properties.text}" data-sly-use.linkText="${'com.adobe.cq.wcm.core.components.models.Text' @ textModel=properties.description}">
+        <div data-sly-use.templateText='/apps/macnicagwi/components/content/text/text.html'
+        data-sly-call="${templateText.textTemplate @textModel=linkText}"></div>
+      </div>
+    </div>
+
+    <div class="cmp-milestone__description" data-sly-test="${properties.title}">
+      <div class="cmp-milestone__data">
+        <span class="cmp-milestone__data-title">${properties.title}</span>
+        <div class="cmp-milestone__innerdata">
+          <div class="cmp-milestone__data-description" data-sly-test="${properties.text}" data-sly-use.linkText="${'com.adobe.cq.wcm.core.components.models.Text' @ textModel=properties.description}">
+            <div data-sly-use.templateText='/apps/macnicagwi/components/content/text/text.html'
+            data-sly-call="${templateText.textTemplate @textModel=linkText}"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

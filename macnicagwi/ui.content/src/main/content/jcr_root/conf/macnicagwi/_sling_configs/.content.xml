@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root  xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+        xmlns:jcr="http://www.jcp.org/jcr/1.0"
+        xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+        xmlns:rep="internal"
+        jcr:mixinTypes="[rep:AccessControllable]"
+        jcr:primaryType="nt:unstructured">
+    <rep:policy/>
+    <com.adobe.cq.wcm.core.components.internal.DataLayerConfig
+        jcr:primaryType="nt:unstructured"
+        enabled="{Boolean}false"/>
+    <com.adobe.cq.wcm.core.components.internal.services.pdfviewer.PdfViewerCaConfig
+        jcr:primaryType="nt:unstructured"
+        clientId="28b07c6be4d544f188dc2f36e33b196b"
+        reportSuiteId="macnicagwi"/>
+    <com.macnicagwi.core.config.SubsidiaryNameConfig
+        jcr:primaryType="nt:unstructured"
+        subsidiaryName="macnica"/>
+
+    <com.macnicagwi.core.config.GtmConfig
+        jcr:primaryType="nt:unstructured"
+        bodyScript="&lt;!-- Google Tag Manager (noscript) -->&#xa;&lt;noscript>&lt;iframe src=&quot;https://www.googletagmanager.com/ns.html?id=GTM-M4CB8FF&quot;&#xa;height=&quot;0&quot; width=&quot;0&quot; style=&quot;display:none;visibility:hidden&quot;>&lt;/iframe>&lt;/noscript>&#xa;&lt;!-- End Google Tag Manager (noscript) -->"
+        headScript="&lt;!-- Google Tag Manager -->&#xa;&lt;script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':&#xa;new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],&#xa;j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=&#xa;'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);&#xa;})(window,document,'script','dataLayer','GTM-M4CB8FF');&lt;/script>&#xa;&lt;!-- End Google Tag Manager -->"/>
+    <com.macnicagwi.core.config.WorkFlowCaConfig
+            jcr:primaryType="nt:unstructured"
+            approverGroup=""
+            hqGroup="macnicagwi-global-authors"/>
+     <com.macnicagwi.core.config.HubspotConfig
+        jcr:primaryType="nt:unstructured"
+         script=""/>                                         
+    <com.macnicagwi.core.config.ShareaholicConfig
+        jcr:primaryType="nt:unstructured"
+        headerScript=""/>
+        
+</jcr:root>

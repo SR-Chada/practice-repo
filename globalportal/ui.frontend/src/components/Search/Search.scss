@@ -1,0 +1,124 @@
+@import '../../variables.scss';
+@import "../../mixins.scss";
+
+.search {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    .cmp-search {
+        &__input {
+            display: none;
+            &--active {
+                display: block;
+                position: absolute;
+                right: -10px;
+                top: -0.5rem;
+                width: 390px;
+                height: 45px;
+                border-radius: 0 50px 50px 0;
+                border: none;
+                outline: none;
+                padding-left: 20px;
+                padding-right: 60px;
+                -moz-animation: fade 1000ms ease-in-out;
+                -webkit-animation: fade 1000ms ease-in-out;
+                animation: fade 1000ms ease-in-out;
+                @include mobile {
+                    width: 335px;
+                    right: 0;
+                }
+                @include tab{
+
+                    width: 568px;
+                    cursor: pointer;
+
+                }
+            }
+        }
+        &__icon {
+            display: none;
+        }
+    }
+    .cmp-search--icon {
+        #search__icon {
+            background: url("../../resources/images/search-icon-white.svg");
+            background-repeat: no-repeat;
+            height: 45px;
+            padding: 20px;
+            position: absolute;
+            right: -0.5rem;
+            top: 0.3rem;
+            z-index: 2;
+            cursor: pointer;
+            @include mobile {
+                right: 0;
+            }
+        }
+        #search__icon-bg {
+            content: "";
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            border-radius: 50px;
+            border: 1px $white-color solid;
+            position: absolute;
+            right: 0;
+            top: -8px;
+            cursor: pointer;
+            &--active {
+                content: "";
+                display: inline-block;
+                width: 45px;
+                height: 45px;
+                border-radius: 50px;
+                border: 1px $white-color solid;
+                position: absolute;
+                right: 0;
+                top: -8px;
+                background: transparent linear-gradient(270deg, #7f1084e6 0%, #7f10844d 100%) 0% 0% no-repeat padding-box;
+                -moz-animation: fade 400ms ease-in-out;
+                -webkit-animation: fade 400ms ease-in-out;
+                animation: fade 400ms ease-in-out;
+                @include mobile {
+                    right: 10px;
+                }
+            }
+        }
+    }
+    button{
+        border: none;
+        outline: none;
+        background: transparent;
+    }
+}
+
+.cmp-search--fit-content {
+    width: max-content !important;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

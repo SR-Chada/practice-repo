@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/macnicagwi" mode="update"/>
+    <filter root="/conf/global/settings/dam/adminui-extension/metadataschema/macnicagwi"/>
+    <filter root="/content/macnicagwi" mode="merge"/>
+    <filter root="/content/dam/macnicagwi" mode="merge"/>
+    <filter root="/content/experience-fragments/macnicagwi" mode="merge"/>
+    <filter root="/content/jcr_root/conf/global/settings/workflow/models/content-approval" mode="merge"/>
+    <filter root="/conf/global/settings/workflow/models/request_for_activation1" mode="update"/>
+    <filter root="/conf/global/settings/workflow/models/request_for_deactivation1" mode="update"/>
+    <filter root="/conf/global/settings/workflow/models/macnicagwi-content-activation" mode="update"/>
+    <filter root="/conf/global/settings/workflow/models/macnicagwi-content-de-activation" mode="update"/>
+
+</workspaceFilter>

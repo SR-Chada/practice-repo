@@ -1,0 +1,107 @@
+/* Colors: */
+@font-face {
+    font-family: 'Kanit-Light';
+    src: url("./assets/fonts/Kanit-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Kanit-Regular';
+    src: local('Kanit'), url('./assets/fonts/Kanit-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Kanit, sans-serif';
+    src: local('Kanit'), url('./assets/fonts/Kanit-ExtraBold.ttf') format('truetype');
+}
+
+$plane-color: #161616;
+$main-color: #0B0B0B;
+$sub-color: #500059;
+$sub-color-light: #7F1084E6;
+$point-color: #7F1084;
+$nav-color-bg: #470F49;
+$point-color-light: #7F1084CC;
+$white-color: #FFFFFF;
+$gray-color-1:#00000033;
+$gray-color-2:#0000004D;
+$gray-color-3: #000000B3;
+$nav-link-color : #CECECE;
+$right-arrow-color: #0F0F0F;
+$color-common-gradient : linear-gradient(90deg, #7F10844D 0%, #7F1084CC 100%);
+$button-circle-color: #7f10844d;
+$bg-buttonlistvariation-color: #FAF7FA;
+$table-heading-bg: #FAF7FA;
+$table-border-color: #70707050;
+$swipe-text-color: #ffffff;
+$image-empty-color: #f4eff4;
+
+
+// Font Size
+$font-size-small: 13px;
+$font-size-12: 12px;
+$font-size-10: 10px;
+$font-size-11: 11px;
+$font-size-13: 13px;
+$font-size-14: 14px;
+$font-size-15: 15px;
+$font-size-regular: 16px;
+$font-size-18: 18px;
+$font-size-20: 18px;
+$font-size-21: 21px;
+$font-size-22: 22px;
+$font-size-23: 23px;
+$font-size-27: 27px;
+$font-size-17: 17px;
+$font-size-55: 55px;
+$font-size-32: 32px;
+$font-size-large: 120px;
+$font-size-25: 25px;
+$font-size-45: 45px;
+$font-size-33: 33px;
+$font-size-30: 30px;
+$font-size-24: 24px;
+$font-size-20: 20px;
+$font-size-38: 38px;
+$font-size-14: 14px;
+$font-size-50: 50px;
+$font-size-28: 28px;
+$font-size-extra-large: 144px;
+
+
+// Font Weight
+$font-weight-regular: 'Regular';
+$font-weight-light: 'Light';
+$font-weight-300: 300;
+$font-weight-normal: normal;
+
+/* Font/text values */
+$font-family-kanit: 'Kanit-Regular';
+$font-family-extra-bold-kanit: 'Kanit, sans-serif';
+$font-style-normal: normal;
+$text-transform-uppercase: uppercase;
+$font-family-light : 'Kanit-Light';
+
+// character spacing
+$character-spacing-70: 70;
+$character-spacing-40: 40;
+$character-spacing-100: 100;
+$character-spacing-112: 1.12px;
+
+// Line Spacing
+$line-spacing-70: 70;
+$line-spacing-40: 40;
+$line-spacing-66: 66;
+$line-spacing-50: 50;
+$line-spacing-120: 120;
+$line-spacing-29: 29;
+$line-spacing-24: 24;
+$line-spacing-28: 28;
+$line-spacing-19: 19.5px;
+
+$transition: all 400ms ease;
+
+/* Breakpoints */
+
+$max-width:1440px;
+$breakpoint-tab: 768px;
+$breakpoint-desktop:1050px;
+$breakpoint-mobile:375px;

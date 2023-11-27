@@ -1,0 +1,180 @@
+.cmp-productlinecontacts {
+    margin: 8px 0 0;
+
+    @include tab-and-mobile {
+        margin: 0;
+    }
+
+    .cmp-productlinecontact {
+
+        &::after{
+            display: block;
+            content: "";
+            border: 1px solid $table-border-color;
+            margin: 0;
+            padding: 0;
+        }
+    
+        @include tab-and-mobile {
+            &:first-child {
+                margin: 10px 0 0;
+            }
+    
+            &:not(:first-child) {
+                margin: 27.5px 0 0;
+            }
+        }
+
+        &__name {
+            @include tab {
+                flex-grow: 1;
+                width: 100%;
+            }
+
+            
+            &--person-icon {
+                background: url("../resources/images/contact-person-icon.svg");
+                background-repeat: no-repeat;
+                width: 16px;
+                height: 16px;
+                margin: 6px 14px 0 0;
+            }
+
+        
+            &--contact-name {
+                word-wrap: break-word;
+                width: 154px;
+            
+                @include tab-and-mobile {
+                    width: 100%;
+                }
+            }
+        }
+
+        &__contact-numbers {
+            display: flex;
+            flex-direction: column;
+
+            @include tab {
+                flex-direction: row;
+            }
+
+            &-primary-contact,
+            &-secondary-contact {
+                display: flex;
+            }
+
+                            
+            &-phone-icon {
+                background: url("../resources/images/phone-icon.svg");
+                background-repeat: no-repeat;
+                width: 16px;
+                height: 16px;
+                margin: 6px 14px 0 0;
+            }
+
+            &-primary-contact{
+                margin: 0;
+            }
+
+            &-secondary-contact {
+                margin: 20px 0 0 0;
+
+                @include tab {
+                    margin: 0 0 0 24px;
+                }
+            }
+        }
+
+        &__email-id {
+            &-icon {
+                background: url("../resources/images/email-icon.svg");
+                background-repeat: no-repeat;
+                width: 24px;
+                height: 16px;
+                margin: 6px 14px 0 0;
+            }
+            
+            &-contact-email {
+                word-wrap: break-word;
+                width: 200px;
+                text-decoration: none;
+            
+                @include tab-and-mobile {
+                    width: 100%;
+                }
+            }
+        }
+
+        &__product-line-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+
+            @include tab {
+                justify-content: flex-start;
+                flex-grow: 1;
+                width: 100%;
+                margin:0;
+            }
+
+            @include mobile {
+                margin:0;
+                justify-content: flex-start;
+            }
+
+            &-item {
+                margin: 14px 16px 0 0;
+
+                @include tab-and-mobile {
+                    margin: 16px 16px 0 0;
+                }
+            
+                img {
+                    height: 24px;
+                }
+            }
+        }
+
+        .cmp-productlinecontact__elements {
+            display: flex;
+        
+            @include tab {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 0 0 20px;
+            }
+        
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .cmp-productlinecontact__element {
+                display: flex;
+                margin: 25px 24px 0 0;
+            
+                @include tab {
+                    margin: 8px 24px 0 0;
+                }
+            
+                @include mobile {
+                    margin: 8px 0 0 0;
+                }
+            
+                &:last-child {
+                    flex: 1.6 1 0;
+                    margin: 16px 0 0;
+            
+                    @include tab-and-mobile {
+                        flex: none;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+

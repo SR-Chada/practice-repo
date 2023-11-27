@@ -1,0 +1,10 @@
+<template data-sly-template.anchor="${@ item}">
+<sly data-sly-test="${item.itemLink}">
+<a class="cmp-pagesectionlisting__list-item-link"
+  data-sly-attribute="${item.itemLink && item.itemLink.htmlAttributes}">${item.itemLabel}</a>
+</sly>
+<sly data-sly-test="${!item.itemLink}">
+  <a class="cmp-pagesectionlisting__list-item-link"
+    href="${item.itemHashLink}">${item.itemLabel}</a>
+  </sly>
+</template>

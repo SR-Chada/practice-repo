@@ -1,0 +1,251 @@
+.cardlist {
+    position: relative;
+
+    .cmp-card-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 36px 0 24px;
+        grid-gap: 24px;
+        @include tab {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 24px;
+            padding: 0 8px;
+        }
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            margin-top: 16px;
+            grid-gap: 16px;
+        }
+        a {
+            color: $color-text-primary;
+        }
+
+        &__no-results-found {
+            display: none;
+            margin: 32px 0;
+        }
+
+        &__item {
+            border: 1px solid $border-color-default;
+            border-radius: 5px;
+            padding: 16px;
+
+            &-content {
+                display: flex;
+                flex-direction: column;
+                .cmp-card-list__item-content-details-logo {
+                    display: flex;
+                    flex-direction: row;
+                    grid-gap: 20px;
+                    @include tab-and-mobile{
+                        flex-direction: column;
+                    }
+                }
+                .cmp-card-list__item-content-manufacturer-logo{
+                    display: flex;
+                    align-items: center;
+                    width: 15%;
+                    justify-content: center;
+                    @include tab-and-mobile{
+                        width: 100%;
+                    }
+                 }
+                &-details {
+                    display: flex;
+                    grid-gap: 20px;
+                    width: 100%;
+                    flex-direction: column;
+                    grid-gap: 16px;
+                    @include tab {
+                        padding: 1pc;
+                    }
+                    .cmp-card-list__item-date {
+                        width: 18%;
+                        @include tab-and-mobile {
+                            width: auto;
+                        }
+                    }
+
+                    &-title-description {
+                        display: flex;
+                        flex-direction: column;
+                        grid-gap: 8px;
+                        width: 84%;
+                        @include tab-and-mobile {
+                        grid-gap: 16px;
+                        width: auto;
+                        }
+                    }
+                }
+            }
+
+            &-title {
+                @include H4-text;
+                font-weight: $font-weight-bold;
+            }
+
+            &-description {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+               @include tab-and-mobile{
+                   -webkit-line-clamp: 6;
+               }
+            }
+
+            &-description-link {
+                color: $color-text-primary;
+            }
+
+            &-event-details {
+                display: flex;
+                grid-gap: 8px 32px;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+        }
+
+        &__loadmore-button {
+            width: 100%;
+            text-align: center;
+
+            .cmp-button {
+                @include button-primary;
+            }
+        }
+    }
+    
+    
+}
+
+.cmp-card-list--horizontal-cards {
+    .cmp-card-list {
+
+        &__item{
+            &-content {
+                flex-direction: column;
+                grid-gap: 0;
+                &-details {
+                    &-title-description {
+                        width: 72%;
+                    }
+                }
+            }
+            &-event-details {
+                display: flex;
+                grid-gap: 8px 32px;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                margin-top: 8px;
+            }
+
+            &-list-button {
+                display: none;
+                align-self: center;
+                width: 12%;
+
+                .cmp-button {
+                    @include button-primary;
+                }
+            }
+        }
+    }
+}
+
+.cmp-card-list--vertical-cards {
+    .cmp-card-list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 48px;
+        justify-content: center;
+        margin-bottom: 48px;
+
+        @include tab {
+            grid-template-columns: auto auto auto;
+            grid-gap: 24px;
+            padding: 0 8px;
+        }
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            grid-gap: 1pc;
+        }
+
+        &__item {
+            width: 440px;
+            padding: 0;
+            border-radius: 8px;
+
+            @include tab {
+                width: auto;
+            }
+
+            @include mobile {
+                width: 100%;
+            }
+
+            &-content {
+                padding: 0;
+                flex-direction: column;
+                grid-gap: 0;
+                &-details {
+                    flex-direction: column;
+                    padding: 32px;
+                    width: auto;
+                    grid-gap: 16px;
+                    @include tab {
+                        padding: 1pc;
+                    }
+                    .cmp-card-list__item-date {
+                        width: auto;
+                    }
+
+                    &-title-description {
+                        display: flex;
+                        flex-direction: column;
+                        grid-gap: 16px;
+                        width: auto;
+                    }
+                }
+            }
+
+            &-image-link {
+                display: block;
+                width: 100%;
+
+                .cmp-image__image {
+                    border-radius: 8px 8px 0 0;
+                }
+            }
+
+            &-description {
+                -webkit-line-clamp: 3;
+            }
+        }
+    }
+}
+
+.cmp-card-list__item-content-manufacturer-logo-src{
+        .cmp-image__image {
+            width: 120px;
+            max-width: 100%;
+            object-fit: contain;
+            @include tab{
+                width: 182px;
+            }
+            @include mobile{
+                width: 277px;
+            }
+        }
+    
+    } 
+ 

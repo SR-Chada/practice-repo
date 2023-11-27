@@ -1,0 +1,455 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+
+/* new */
+.cmp-footer-container-bg {
+    background-color: #0B0B0B;
+    color: #FFFFFF;
+    font-family: $font-family-kanit  !important;
+
+    #scrollTop{
+        text-transform: none !important;
+        letter-spacing: 1.05px;
+        margin-bottom: 18px;
+        margin-top: 14px;
+    }
+
+    .cmp-display-flex>div>div>div.aem-container {
+        display: flex;
+        align-items: baseline;
+
+        @include mobile {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .cmp-separator {
+        margin-bottom: 50px;
+    }
+
+    .cmp-footer-logo {
+
+        flex: content;
+        width: 200px;
+
+        div.cmp-image>a>img {
+            height: 35px !important;
+            width: 150px !important;
+            filter: brightness(0) saturate(100%) invert(99%) sepia(99%) saturate(0%) hue-rotate(234deg) brightness(104%) contrast(100%);
+            font-size: $font-size-small;
+            cursor: pointer;
+
+            @include mobile {
+                width: 130px !important;
+            }
+
+        }
+    }
+
+    .cmp-footer-navigation {
+        flex: content;
+        margin-left: 9% !important;
+
+        .cmp-navigation {
+
+            justify-content: flex-end !important;
+
+            ul {
+                list-style-type: none !important;
+                // padding: 0 !important;
+                display: flex !important;
+                flex-wrap: wrap !important;
+                text-align: center !important;
+                gap: 30px;
+                justify-content: flex-end !important;
+                @include mobile{
+                    gap: 15px;
+                }
+                :last-child {
+                    padding-right: 0 !important;
+                }
+
+                li {
+
+                    a {
+                        // padding: 0 15px ;
+                        // padding: 16px 0 16px 16px !important;
+                        text-decoration: none !important;
+                        color: #FFFFFF !important;
+                        font-size: $font-size-17  !important;
+                        font-weight: 400 !important;
+                        font-family: $font-family-kanit  !important;
+                        line-height: 28px;
+                        letter-spacing: 0.68px;
+                    }
+
+                    a:hover {
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+    }
+
+    .cmp-button--top {
+
+        button:hover {
+            opacity: 0.5;
+            cursor: pointer;
+
+            &::before {
+                bottom: 70px;
+                opacity: 5 !important;
+
+            }
+
+        }
+
+        a:hover {
+            opacity: 0.5;
+            cursor: pointer;
+
+            &::before {
+                bottom: 70px;
+                opacity: 5 !important;
+
+            }
+
+        }
+
+        a,
+        button {
+
+            background-color: transparent;
+            color: $white-color;
+            float: right;
+            margin-right: 100px;
+            font-size: $font-size-15;
+            margin-top: 15px;
+            border: none;
+            align-items: center;
+            display: flex;
+            font-family: $font-family-light;
+            
+
+            &::before {
+                content: url("../../assets/icon/scroll-to-top.svg");
+
+                height: 30px;
+                position: relative;
+                bottom: 60px;
+                left: 60px;
+                transition-property: bottom;
+                transition-duration: .7s;
+            }
+
+            @media only screen and (min-width: #{$breakpoint-tab - 1px}) and (max-width: #{$breakpoint-desktop - 1px}) {
+                margin-right: 50px;
+            }
+
+            @media only screen and (max-width: $breakpoint-tab) {
+                margin-right: 36px;
+            }
+        }
+    }
+
+    .cmp-footer-button>div>div>div.aem-container {
+        justify-content: flex-end;
+        grid-gap: 15px 10px;
+
+    }
+
+    .cmp-button-bottom {
+        width: fit-content !important;
+        font-size: $font-size-15;
+
+        button {
+            background-color: transparent;
+            color: #FFFFFF;
+            margin-bottom: 3px;
+            border: none;
+
+            span {
+                font-family: $font-family-kanit  !important;
+                font-size: $font-size-15;
+            }
+        }
+
+        button:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    }
+
+    .cmp-icon-linkedIn {
+        width: fit-content !important;
+        cursor: pointer;
+
+        div {
+            margin-left: 30.34px;
+
+            img {
+                height: 28px;
+                @include mobile{
+                    padding-right: 16px;
+                    margin-right: 5px;
+                }
+            }
+
+            img:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .cmp-footer-text {
+
+        //   position: relative;
+        //   bottom: 50px;
+        div>p {
+            color: #FFFFFF;
+            font-size: $font-size-14;
+            font-family: $font-family-kanit  !important;
+
+
+        }
+    }
+
+    .cmp-container-padding {
+        padding: 0 100px;
+
+        @media only screen and (min-width: #{$breakpoint-tab + 1px}) and (max-width: #{$breakpoint-desktop - 1px}) {
+            padding: 0 50px;
+        }
+    }
+
+    .cmp-container-bottom-button>div>div>div.aem-container {
+        justify-content: flex-end;
+        flex-direction: row !important;
+        align-items: center;
+    }
+
+    .cmp-footer-button-container {
+        margin-top: 27.23px !important;
+        margin-bottom: 56.65px;
+        @include tab{
+            margin-bottom: 49.32px;
+        }
+        @include mobile{
+            margin-bottom: 30.35px;
+        }
+        .cmp-container-bottom-button{
+            @include tab{
+                margin-right: 21px;
+            }
+            @include mobile{
+                margin-bottom: 37.56px;
+            }
+        }
+
+    }
+
+    @media only screen and (max-width: 768px) and (min-width: 376px) {
+        .cmp-container-padding {
+            padding: 0 50px;
+        }
+
+        .cmp-footer-navigation {
+            margin-left: 9% !important;
+
+            .cmp-navigation {
+
+                ul {
+                    list-style-type: none;
+                    grid-gap: 15px 1px;
+                    align-items: flex-start;
+
+                    li {
+                        height: 20px;
+                        margin: 0 5px;
+
+                        a {
+                            padding: 16px;
+                            color: #FFFFFF;
+                            font-size: $font-size-12;
+                        }
+
+
+                    }
+                }
+            }
+
+        }
+
+        .cmp-footer-text {
+            position: none;
+        }
+
+    }
+
+
+    @media only screen and (max-width: 767px) {
+        .cmp-container-padding {
+            padding: 0 0 0 20px;
+        }
+
+        .cmp-display-flex>div>div>div.aem-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .cmp-container-column-reverse>div>div>div.aem-container {
+            flex-direction: column-reverse !important;
+            align-items: flex-start;
+        }
+
+        .cmp-container-bottom-button>div>div>div.aem-container {
+            flex-direction: row !important;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .cmp-footer-navigation {
+
+            margin-left: 0 !important;
+            text-align: left;
+            margin-bottom: 16px;
+            width: 100% !important;
+
+            .cmp-navigation {
+                ul {
+                    list-style-type: none;
+                    flex-direction: column;
+                    text-align: left !important;
+                    @include mobile{
+                        margin-block-end: 0;
+                    }
+                    
+                    li {
+                        float: none;
+
+                        a {
+                            padding: 0px !important;
+                            text-decoration: none;
+                            font-size: $font-size-10;
+
+                        }
+                    }
+
+                    @include mobile {
+                        padding: 0;
+                    }
+                }
+            }
+
+        }
+
+
+        .cmp-button-bottom {
+
+
+            button {
+                background-color: transparent;
+                color: $white-color;
+                margin-bottom: 3px;
+                border: none;
+                float: none;
+                padding-left: 0px;
+            }
+        }
+
+        .cmp-button-linkedin {
+
+            button {
+                background-color: transparent;
+                color: #FFFFFF;
+                float: right;
+                border: none;
+            }
+        }
+
+        .cmp-footer-text {
+            position: none;
+        }
+
+        .cmp-button--top {
+
+            a,
+            button {
+                margin-right: 40px;
+                font-size: $font-size-15;
+                margin-top: 14px;
+                border: none;
+
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        text-transform: capitalize;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    #globalportal-footer-contact-us {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 50vh;
+        right: -54px;
+        transform: rotate(90deg);
+        background: transparent linear-gradient(0deg, $point-color-light 0%, $point-color 100%) 0% 0% no-repeat padding-box;
+        border-radius: 0 0 10px 10px;
+        border: none;
+        padding: 20px 17px 30px;
+        font-size: $font-size-regular;
+        font-weight: $font-weight-normal;
+        text-decoration: none;
+        letter-spacing: 0.64px;
+        color: $white-color;
+        opacity: 1;
+        height: 50px;
+        width: 158px;
+
+        &:hover,
+        &:focus {
+            cursor: pointer;
+        }
+
+        @include mobile {
+            font-size: $font-size-12;
+            padding: 12px 7px;
+            height: 35px;
+            width: 108px;
+            right: -37px;
+        }
+
+        .cmp-button__text {
+            display: flex;
+
+            &::before {
+                content: "";
+                background-image: url("../../assets/icon/contact-us-phone-icon.svg");
+                background-size: 16px 16px;
+                height: 1pc;
+                width: 1pc;
+                margin: 5px 5px 0 0;
+                display: block;
+
+                @include mobile {
+                    width: 10px;
+                    height: 10px;
+                    background-size: 10px 10px;
+                }
+            }
+        }
+    }
+}

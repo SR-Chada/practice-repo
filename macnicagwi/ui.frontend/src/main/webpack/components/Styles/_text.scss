@@ -1,0 +1,40 @@
+.cmp-text {
+    div{
+        font-family: $font-family;
+        font-style: $font-style-normal;
+        font-weight: $font-weight-heavy;
+        font-size: $font-size-extra-large;
+       line-height: $line-height-xxl;
+       color: $color-text-error-page-title;
+    }
+    p{
+        word-break: break-word;
+        
+        span{
+            font-family: $font-family;
+            font-style: $font-style-normal;
+            font-weight: $font-weight-medium;
+            font-size: $font-size-large;
+            line-height: $line-height-sm;
+        }
+    }
+    ul li , p{
+        a {
+          word-break: break-word;
+          }
+    } 
+    ul, ol{
+        padding-inline-start: 16px;
+    }
+    ol li, a, ul li , p{
+        word-break: break-word; 
+    }
+}
+.cmp-text--alphabetical-listType{
+    ul {
+        list-style: upper-alpha;
+    }
+} 
+.cmp-disable{
+    display: none;
+}

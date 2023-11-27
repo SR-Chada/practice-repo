@@ -1,0 +1,25 @@
+{
+  "newslisting": {
+    "freeTextSearch": "true",
+    "jcr:created": "Mon Aug 22 2022 13:20:14 GMT+0000",
+    "jcr:lastModifiedBy": "sumit.ka@1digitals.com",
+    "loadMoreButtonText": "Show More",
+    "freeTextSearchPlaceholder": "News Search",
+    "jcr:createdBy": "sumit.ka@1digitals.com",
+    "sling:resourceType": "macnicagwi/components/content/newslisting",
+    "listingType": "news",
+    "applyButtonText": "Apply All",
+    "filterRootPaths": [
+      "macnicagwi:business-categories",
+      "macnicagwi:manufacturers"
+    ],
+    "jcr:lastModified": "Tue Sep 06 2022 17:24:15 GMT+0000",
+    "clearButtonText": "Uncheck All",
+    "jcr:primaryType": "nt:unstructured",
+    "searchResultsBlockSize": "5",
+    "searchPageRootPath": "/content/macnicagwi/apac/galaxy/en/news-events/news",
+    "filterType": "multiLevelFilter",
+    "filterButtonText": "Filter",
+    "noResultsFoundText": "No Results Results"
+  }
+}

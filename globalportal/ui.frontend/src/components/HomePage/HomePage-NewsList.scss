@@ -1,0 +1,57 @@
+@mixin Newslist-homepage {
+    .cmp-tabs {
+        max-width: 1060px;
+        margin: auto;
+
+        @include tab {
+            max-width: 768px;
+        }
+
+        @media only screen and (max-width:580px) {
+            max-width: 375px;
+        }
+
+        @include mobile {
+            max-width: 668px;
+        }
+
+        @media only screen and (max-width:375px) {
+            max-width: 335px;
+        }
+
+        .cmp-tabs__tablist {
+            border-bottom: 1px solid #7f1084;
+
+            .cmp-tabs__tab--active {
+                color: #7f1084;
+                position: relative;
+
+                &:after {
+                    content: "\A";
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    background: #7f1084;
+                    display: inline-block;
+                    margin: 0 10px;
+                    position: absolute;
+                    top: 37px;
+                    right: 0;
+                    left: 30%;
+                }
+            }
+
+            .cmp-tabs__tab {
+                margin: 15px 0;
+                padding: 0 1rem;
+                border-right: 1px solid #7f1084;
+                border-bottom: unset;
+            }
+            li:last-child{
+                &:after{
+                  display: none;
+                }
+              }
+        }
+    }
+}

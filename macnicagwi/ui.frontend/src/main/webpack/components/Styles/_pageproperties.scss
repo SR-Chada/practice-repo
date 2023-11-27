@@ -1,0 +1,37 @@
+.cmp-pageproperties__technical-article-date-value{
+        color: $copyright-text-subsidiary-color;
+}
+
+.cmp-pageproperties__event-start-date-label, .cmp-pageproperties__event-end-date-label, .cmp-pageproperties__event-location-label, .cmp-pageproperties__technical-article-date-value, .cmp-pageproperties__news-date-value, .cmp-pageproperties__technical-article-author-name-label, .cmp-pageproperties__technical-article-article-source-label{
+        font-weight: $font-weight-bold;
+}
+.cmp-pageproperties{
+        &__event-start-date-value, &__event-start-date-label, &__event-end-date-label, &__event-end-date-value, &__event-location-label, &__event-location-value, &__technical-article-author-name-label, &__technical-article-author-name-value, &__technical-article-article-source-label, &__technical-article-article-source-value{
+            display: inline-block;
+            line-height: 125%;
+        }
+        &__event-start-date, &__event-end-date, &__event-location {
+           line-height: 125%;
+        }
+        &__technical-article-author-picture{
+          .cmp-image{
+            text-align: left;
+          }
+          img{
+            width: auto;
+            max-width: 100%;
+          }
+        } 
+        &__technical-article-manufacturer-logo{
+           .cmp-image{
+                text-align: right;
+                img{
+                  width: 100%;
+                  max-width: 100%;
+                }
+            }
+        } 
+}
+.pageproperties:has(.cmp-pageproperties__hide) {
+  display: none;
+}

@@ -1,0 +1,167 @@
+@mixin TeaserVariationHomePage-three {
+    .cmp-global-teaser-variation-solutions {
+        a{
+            text-decoration: none;
+        }
+        .cq-dd-image {
+            position: relative;
+            height: 505px;
+            background: url("../../assets/icon/Definingnewvalue.svg") no-repeat center;
+            width: 100%;
+            margin: 2% auto 0 auto;
+
+            @include mobile {
+                width: 87%;
+                margin: 10% auto 0 auto;
+            }
+
+            .cmp-teaser__content {
+                text-align: center;
+                right: 0;
+                left: 0;
+                z-index: 0;
+                margin: auto;
+                padding: 10% 0;
+                width: 67%;
+
+                @media (max-width: 1050px) {
+                    width: 88%;
+                    padding: 15% 0 0 0;
+                }
+
+                @include mobile {
+                    width: 95%;
+                    line-height: 26.8px;
+                    font-size: 13px;
+                }
+                .cmp-teaser__title{
+                    font-weight: $font-weight-normal;
+                }
+                .cmp-teaser__title-text {
+
+
+                    .cmp-teaser__title-link {
+                        color: black !important;
+                        text-decoration: none;
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            width: 1px;
+                            height: 80px;
+                            background: $point-color;
+                            display: inline-block;
+                            position: absolute;
+                            bottom: 110%;
+                            left: 50%;
+                            right: 0;
+                            animation: mymove 5s infinite;
+
+                            @include mobile {
+                                height: 40px;
+                            }
+                        }
+
+                        @keyframes mymove1 {
+
+
+                            50% {
+                                transform-origin: bottom;
+                                transform: scaleY(0);
+                            }
+
+                            100% {
+                                transform-origin: top;
+                                transform: scaleY(1);
+                            }
+                        }
+
+                        &::after {
+                            content: '';
+                            width: 5px;
+                            height: 5px;
+                            border-radius: 50%;
+                            background: $point-color;
+                            inset: 0;
+                            margin: auto;
+                            display: inline-block;
+                            bottom: 125%;
+                            left: 2px;
+                            position: absolute;
+                        }
+
+                    }
+                }
+            }
+
+            .cmp-teaser__description {
+                margin-top: 8%;
+
+                p {
+                    color: black;
+                    margin: 0 auto;
+                    text-align: center;
+                    font-weight: $font-weight-300;
+
+                    @include mobile {
+                        line-height: 26.8px;
+                        font-size: 13px;
+                    }
+                }
+            }
+
+            .cmp-teaser__action-container {
+                width: fit-content;
+
+                .cmp-teaser__action-link {
+                    text-decoration: none;
+                    color: black;
+                    font-size: 14px;
+                    font-weight: $font-weight-regular;
+                    font-family: $font-family-kanit;
+                    position: absolute;
+                    display: flex;
+                    flex-direction: row-reverse;
+                    letter-spacing: 0.98px;
+                    left: 45%;
+                    bottom: 25%;
+                    align-items: center;
+
+                    &::before {
+                        @include readmore-circle($color-common-gradient, 56px, 41px);
+                        margin-left: 23.3px;
+                    }
+
+                    &::after {
+                        @include readmore-arrow(url("../../assets/icon/right-arrow-black.svg"), 27px 3px, 27px, 3px, 65%);
+                        top: 20px;
+
+                        @include mobile {
+                            width: 24px;
+                            background-size: 24px 3px;
+                        }
+                    }
+
+                    &:hover::after {
+                        width: 30px;
+                        background-size: 30px 3px;
+
+                        @include mobile {
+                            width: 27px;
+                            background-size: 27px 3px;
+                        }
+                    }
+
+                    @include tab {
+                        font-size: $font-size-14;
+                    }
+
+                    @include mobile {
+                        font-size: $font-size-small;
+                    }
+                }
+
+            }
+        }
+    }
+}

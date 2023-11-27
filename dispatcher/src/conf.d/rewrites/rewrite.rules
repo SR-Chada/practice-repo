@@ -1,0 +1,112 @@
+# This file contains the rewrite rules, and can be customized.
+#
+# By default, it includes just the rewrite rules. You can
+# add rewrite rules to this file but you should still include
+# the default rewrite rules.
+
+Include conf.d/rewrites/default_rewrite.rules
+RewriteRule ^/robots.txt$ /content/macnicagwi/_jcr_content.robots.txt [PT,L]
+
+#Exclude
+RewriteRule ^/etc.clientlibs($|/) - [L]
+RewriteRule ^/bin($|/) - [L]
+RewriteRule ^/content/dam($|/) - [L]
+
+## HTTP to HTTPS	
+RewriteCond %{HTTP_HOST} !^(localhost|127.0.0.1)
+RewriteCond %{HTTP:X-Forwarded-Proto} !https	
+RewriteCond %{HTTPS} off	
+RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
+
+## Remove any trailing slash, if it's there.
+RewriteRule ^(.+)/$ $1
+
+#Handle request with no slash and no extension
+RewriteCond %{HTTP_HOST} !^(localhost|127.0.0.1)
+RewriteCond %{REQUEST_METHOD} =GET
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_URI} !.*\..*$
+RewriteCond %{REQUEST_URI} !.*/$
+RewriteRule (.*)$ $1/ [R,QSA]
+
+# Redirect globalportal requets to global node
+RewriteRule "^(.*)globalportal(.*).html$" "/global$2.html" [R=301,L,NC]
+
+# Redirect ATD Europe requets to eu node
+RewriteRule "^(.*)europe/atd-europe(.*).html$" "/eu/atd-europe$2.html" [PT,L,NC]
+
+#rewrite for root redirect
+RewriteRule ^/?$ /content/${CONTENT_FOLDER_NAME}/global/en/home.html [R=301,L]
+
+#rewrite rules for handling drupal URLs
+RewriteCond %{HTTP_HOST} !^(localhost|127.0.0.1)
+RewriteCond %{REQUEST_URI} !^.*global.*$
+RewriteCond %{REQUEST_URI} !^.*globalportal.*$
+RewriteCond %{REQUEST_URI} !^.*apac.*$
+RewriteCond %{REQUEST_URI} !^.*europe.*$
+RewriteCond %{REQUEST_URI} !^.*eu.*$
+RewriteCond %{REQUEST_URI} !^.*macnicagwi.*$
+RewriteCond %{REQUEST_URI} !^/apps
+RewriteCond %{REQUEST_URI} !^/content
+RewriteCond %{REQUEST_URI} !^/etc
+RewriteCond %{REQUEST_URI} !^/home
+RewriteCond %{REQUEST_URI} !^/libs
+RewriteCond %{REQUEST_URI} !^/system
+RewriteCond %{REQUEST_URI} !^/tmp
+RewriteRule ^/(.*)$ https://www2.macnica.com/$1 [R=301,L,QSA]
+
+
+
+RewriteRule ^/americas/(.*)*$ https://www2.macnica.com/americas/$1 [R=301,L]
+
+## Rewrite to shorten the url and strip /content/${CONTENT_FOLDER_NAME}
+RewriteCond %{REQUEST_METHOD} =GET
+RewriteCond %{REQUEST_URI} !^.*/europe/.*$
+RewriteCond %{REQUEST_URI} !^.*/cytech/cytronic/.*$
+RewriteRule ^/content/${CONTENT_FOLDER_NAME}(.*).html$ $1.html [R=301,L]
+
+
+#Replace the .html with /
+RewriteCond %{HTTP_HOST} !^(localhost|127.0.0.1)
+RewriteCond %{REQUEST_METHOD} =GET
+RewriteCond %{REQUEST_URI} !^.*global.*$
+RewriteCond %{REQUEST_URI} !^.*globalportal.*$
+RewriteCond %{REQUEST_URI} \.html$
+RewriteRule ^/(.*).html$ /$1/ [R=301,L,QSA]
+
+#Ignore requests to "known" AEM root paths, and prefix all others with the proper AEM prefix
+RewriteCond %{HTTP_HOST} !^(localhost|127.0.0.1)
+RewriteCond %{REQUEST_METHOD} !^POST
+RewriteCond %{REQUEST_URI} !^/apps
+RewriteCond %{REQUEST_URI} !^/content
+RewriteCond %{REQUEST_URI} !^/etc
+RewriteCond %{REQUEST_URI} !^/home
+RewriteCond %{REQUEST_URI} !^/libs
+RewriteCond %{REQUEST_URI} !^/system
+RewriteCond %{REQUEST_URI} !^/tmp
+RewriteCond %{REQUEST_URI} !^.*/europe/.*$
+RewriteCond %{REQUEST_URI} !^.*/cytech/cytronic/.*$
+RewriteCond %{REQUEST_URI} !\.(gif|jpe?g|png|svg|ico|webp|swf|mp4|mp3|mov|avi|flv|mkv|pdf|zip|rar|ppt|pptx|doc|docx|xls|xlsm)$ [NC]
+
+#Make sure requests get passed correctly back to the server
+RewriteRule ^/(.*)$ /content/${CONTENT_FOLDER_NAME}/$1.html [PT,L]
+
+RewriteCond %{HTTP_HOST} !^(localhost|127.0.0.1)
+RewriteCond %{REQUEST_URI} !\.(gif|jpe?g|png|svg|ico|webp|swf|mp4|mp3|mov|avi|flv|mkv|pdf|zip|rar|ppt|pptx|doc|docx|xls|xlsm)$ [NC]
+RewriteRule "^(.*)/cytronic/(.*)$" "/apac/cytech/cytronic/$2.html" [PT,L,NC]
+
+RewriteCond %{HTTP_HOST} !^(localhost|127.0.0.1)
+RewriteCond %{REQUEST_URI} !\.(gif|jpe?g|png|svg|ico|webp|swf|mp4|mp3|mov|avi|flv|mkv|pdf|zip|rar|ppt|pptx|doc|docx|xls|xlsm)$ [NC]
+RewriteRule "/cytronic/(.*)$" "/apac/cytech/cytronic/$1.html" [PT,L,NC]
+
+RewriteCond %{HTTP_HOST} !^(localhost|127.0.0.1)
+RewriteCond %{REQUEST_URI} !\.(gif|jpe?g|png|svg|ico|webp|swf|mp4|mp3|mov|avi|flv|mkv|pdf|zip|rar|ppt|pptx|doc|docx|xls|xlsm)$ [NC]
+RewriteRule "^(.*)/europe/(.*)$" "/eu/$2.html" [PT,L,NC]
+
+RewriteCond %{HTTP_HOST} !^(localhost|127.0.0.1)
+RewriteCond %{REQUEST_URI} !\.(gif|jpe?g|png|svg|ico|webp|swf|mp4|mp3|mov|avi|flv|mkv|pdf|zip|rar|ppt|pptx|doc|docx|xls|xlsm)$ [NC]
+RewriteRule "/europe/(.*)$" "/eu/$1.html" [PT,L,NC]
+
+
+#Rewrite rule for the robots.txt file
+RewriteRule ^/robots.txt$ /content/${CONTENT_FOLDER_NAME}/_jcr_content.robots.txt [PT,L]

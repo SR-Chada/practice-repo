@@ -1,0 +1,12 @@
+.cmp-title__text {
+    @include H1-text;
+    color: $color-primary;
+    margin: 0;
+    padding-bottom: 9.5px;
+
+}
+
+.cmp-title--border-bottom {
+    //Color doesnt match VDs. Design file to be updated.
+    border-bottom: 1px solid $border-color-default;
+}

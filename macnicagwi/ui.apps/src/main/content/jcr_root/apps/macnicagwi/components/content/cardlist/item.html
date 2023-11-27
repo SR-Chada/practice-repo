@@ -1,0 +1,36 @@
+<template data-sly-template.item="${@ item, cardList}">
+    <a class="cmp-card-list__item-content"
+        data-sly-attribute="${cardList.linkItems && item.link.htmlAttributes}"
+        data-cmp-clickable="${item.data ? true : false}">
+        
+        <div class="cmp-card-list__item-image-link"
+            data-sly-test="${item.image && cardList.showFeaturedImage}">
+            <div class="cmp-card-list__item-image" data-attr-test="test" data-img-src="${item.image}" data-sly-resource="${item.image @ wcmmode='disabled'}">
+                <p>hello world</p>
+            </div>
+        </div>
+     <div class="cmp-card-list__item-content-details-logo">
+        <div class="cmp-card-list__item-content-manufacturer-logo" data-sly-test="${item.manufacturerLogo && cardList.showManufacturerLogo}">
+            <div class="cmp-card-list__item-content-manufacturer-logo-src" data-attr-test="test" data-img-src="${item.manufacturerLogo}" data-sly-resource="${item.manufacturerLogo @ wcmmode='disabled'}">
+            </div>
+        </div>
+
+        <div class="cmp-card-list__item-content-details">
+            <span class="cmp-card-list__item-date" data-sly-test="${cardList.showArticleDate}">${item.articleDate}</span>
+            <div class="cmp-card-list__item-content-details-title-description">
+                <span data-sly-test="${cardList.showTitle}"class="cmp-card-list__item-title">${item.title}</span>
+                <span class="cmp-card-list__item-description"
+                    data-sly-test="${item.description && cardList.showDescription}">${item.description}</span>
+
+                <div class="cmp-card-list__item-event-details"
+                    data-sly-test="${item.eventLocation || item.eventStartDate || item.eventEndDate || item.eventStatus}">
+                    <span class="cmp-card-list__item-event-details-location"  data-sly-test="${item.eventLocation}">${cardList.eventLocationLabel} : ${item.eventLocation}</span>
+                    <span class="cmp-card-list__item-event-details-date" data-sly-test="${item.eventStartDate}">${cardList.eventStartDateLabel} : ${item.eventStartDate}</span>
+                    <span class="cmp-card-list__item-event-details-date" data-sly-test="${item.eventEndDate}">${cardList.eventEndDateLabel} : ${item.eventEndDate}</span>
+                    <span class="cmp-card-list__item-event-details-status" data-sly-test="${item.eventStatus}">${cardList.eventStatusLabel} : ${item.eventStatus}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </a>
+</template>

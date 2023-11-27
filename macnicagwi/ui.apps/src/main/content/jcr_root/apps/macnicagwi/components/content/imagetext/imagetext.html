@@ -1,0 +1,17 @@
+<sly data-sly-use.textModel="com.adobe.cq.wcm.core.components.models.Text"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<p data-sly-test.text="${textModel.text}"></p>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+
+
+<div class="cmp-image-text cmp-image-text__asset--position-lg-${imageText.assetPositionLargeScreen} cmp-image-text__asset--position-md-${imageText.assetPositionMediumScreen} cmp-image-text__asset--position-sm-${imageText.assetPositionSmallScreen}" data-sly-use.imageText="com.macnicagwi.core.components.models.ImageText">
+<div class="cmp-image-text__asset">
+<sly data-sly-resource="${resource.path @ resourceType='macnicagwi/components/content/image', appendPath='/image', decorationTagName='div', cssClassName='cmp-image-text__asset-image'}" data-sly-test="${imageText.assetType.toString.toUpperCase == 'IMAGE'}"></sly>
+<sly data-sly-resource="${resource.path @ resourceType='macnicagwi/components/content/resizableimage', appendPath='/resizableimage', decorationTagName='div'}" data-sly-test="${imageText.assetType.toString.toUpperCase == 'RESIZABLEIMAGE'}"></sly>
+</div>
+<div class="cmp-image-text__content">
+<sly data-sly-resource="${resource.path @ resourceType='macnicagwi/components/content/heading', appendPath='/heading', decorationTagName='div'}" data-sly-test="${imageText.isHeading}"></sly>
+<sly data-sly-resource="${resource.path @ resourceType='/apps/macnicagwi/components/content/text', appendPath='/text', decorationTagName='div'}" data-sly-test="${imageText.isText}"></sly>
+<sly data-sly-resource="${resource.path @ resourceType='/apps/macnicagwi/components/content/button', appendPath='/button', decorationTagName='div'}" data-sly-test="${imageText.isButton}"></sly>
+</div>
+</div>

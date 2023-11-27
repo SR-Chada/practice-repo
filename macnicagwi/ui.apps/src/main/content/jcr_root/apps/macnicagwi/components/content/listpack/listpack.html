@@ -1,0 +1,18 @@
+<sly data-sly-use.textModel="com.adobe.cq.wcm.core.components.models.Text"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<p data-sly-test.text="${textModel.text}"></p>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+
+
+
+<div class="cmp-listpack" data-sly-list.children="${resource.listChildren}">
+
+     <ul class="cmp-listpack__list" data-sly-list.child="${children.listChildren}">
+   
+          <li class="cmp-listpack__listitem">${child.valueMap['itemtext']}</li>
+   
+     </ul>
+   
+   </div>
+
+

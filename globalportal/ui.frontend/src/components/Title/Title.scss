@@ -1,0 +1,239 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.cmp-title__text{
+  font-weight: normal;
+  margin-block-start: 0;
+  margin-block-end: 0;
+    p {
+      width: max-content;
+      height: 27px;
+      font-size: $font-size-18;
+      color: $sub-color;
+      text-align: left;
+      letter-spacing: 1.26px;
+      text-transform: uppercase;
+      opacity: 1;
+      @include mobile{
+        font-size: $font-size-15;
+      }
+    }
+} 
+
+.cmp-title {
+  &__text {
+    letter-spacing: 1.8px;
+    color: $main-color;
+    font-size: $font-size-45;
+    text-transform: initial;
+    font-weight: $font-weight-normal;
+    @include mobile {
+      font-size: $font-size-27;
+      letter-spacing: 1.08px;
+    }
+  }
+  &__action-link {
+    text-decoration: none;
+    color: $main-color;
+    &:hover {
+      color: $main-color;
+    }
+  }
+}
+
+h2.cmp-title__text {
+  font-size: $font-size-38;
+  letter-spacing: 1.52px;
+  @include mobile {
+    font-size: $font-size-27;
+    letter-spacing: 1.08px;
+  }
+}
+
+h3.cmp-title__text {
+  font-size: $font-size-30;
+  letter-spacing: 1.2px;
+  line-height: 36px;
+  @include mobile {
+    font-size: $font-size-24;
+    letter-spacing: 0.96px;
+    line-height: 28.8px;
+  }
+}
+.full-cmp-width-image-text-right {
+  h3::first-letter {
+    color: $point-color;
+  }
+}
+h4.cmp-title__text {
+  font-size: $font-size-25;
+  letter-spacing: 1px;
+  line-height: 30px;
+  @include mobile {
+    font-size: $font-size-20;
+    letter-spacing: 0.8px;
+  }
+}
+h5.cmp-title__text {
+  font-size: $font-size-18;
+  letter-spacing: 1.26px;
+  @include mobile {
+    font-size: $font-size-15;
+    letter-spacing: 1.05px;
+  }
+}
+
+.cmp-title--align-center {
+  .cmp-title__text {
+    position: relative;
+    text-align: center;
+    .cmp-title__text-content {
+      &::after {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: $point-color 0% 0% no-repeat padding-box;
+        border-radius: 50%;
+        display: block;
+        margin-left: 47%;
+        margin-top: 9px;
+        @include mobile {
+          width: 3px;
+          height: 3px;
+          margin-left: 40%;
+        }
+      }
+    }
+    &::after {
+      content: "";
+      width: 35px;
+      height: 2px;
+      background: $point-color 0 0 no-repeat padding-box;
+      display: block;
+      position: absolute;
+      bottom: 2px;
+      left: 47%;
+      @include mobile {
+        height: 1px;
+        left: 3px;
+        bottom: 1px;
+        left: 41%;
+      }
+    }
+  }
+}
+
+.cmp-title--bullet {
+  .cmp-title__text {
+    display: flex;
+    position: relative;
+    &::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: $point-color 0% 0% no-repeat padding-box;
+      display: block;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+    }
+  }
+  h1.cmp-title__text {
+    &::after {
+      left: 26px;
+    }
+  }
+  h4.cmp-title__text {
+    &::before {
+      width: 5px;
+      height: 5px;
+      background: $main-color 0% 0% no-repeat padding-box;
+    }
+  }
+  .cmp-title__text-content {
+    margin-left: 20px;
+  }
+  h3.cmp-title__text {
+    &::before{
+      top: 0;
+      margin-top: 14px;
+      @include mobile{
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.cmp-global-title-underlined {
+  .cmp-title{
+    .cmp-title__text {
+    position: relative;
+    &::after {
+      content: "";
+      width: 35px;
+      height: 2px;
+      background: $point-color 0 0 no-repeat padding-box;
+      display: block;
+      position: absolute;
+      bottom: 2px;
+      left: 6px;
+      @include mobile {
+        height: 1px;
+        left: 3px;
+        bottom: 1px;
+      }
+    }
+  }
+  .cmp-title__text-content {
+    &::after {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: $point-color 0% 0% no-repeat padding-box;
+      border-radius: 50%;
+      display: block;
+      @include tab {
+        margin-top: 6px;
+      }
+      @include mobile {
+        width: 3px;
+        height: 3px;
+      }
+    }
+   .cmp-title__action-link{
+    margin-bottom: 6px;
+    display: block;
+    line-height: 54px;
+    min-height: 68px;
+    margin-left: -2px;
+    @include tab{
+      margin-bottom: 13px;
+      margin-left:0;
+    }
+    @include mobile{
+      margin-bottom: 11px;
+      line-height: 32.4px;
+      min-height: 41px;
+    }
+   }
+    
+  }
+}
++ .cmp-spacer-lg + .cmp-spacer-lg{
+  @include mobile {
+    margin-bottom: 10px !important;
+  }
+}
+}
+
+.cmp-title--center{
+  .cmp-title__text-content{
+    text-align: center;
+  }
+} 
+
+.cmp-title--large-font-size{
+  .cmp-title__text-content{
+    font-size: $font-size-extra-large;
+  }
+} 

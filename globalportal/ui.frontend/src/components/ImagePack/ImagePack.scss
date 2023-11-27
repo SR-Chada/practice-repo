@@ -1,0 +1,47 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.image-pack {
+  & > .aem-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    @media (min-width: $breakpoint-tab) and (max-width: $breakpoint-desktop) {
+      flex-wrap:nowrap;
+    }
+    & > * {
+      width: 47.64%;
+      @media (max-width: $breakpoint-tab) {
+        width: 100%;
+      }
+    }
+    .cmp-image {
+      img {
+        height: 284px;
+      }
+      @media (min-width: $breakpoint-tab) and (max-width: $breakpoint-desktop) {
+        img {
+          height: 176px;
+        }
+        gap:40px
+      }
+      @media (max-width: $breakpoint-tab) {
+        img {
+          height: 188px;
+        }
+      }
+    }
+    @media (max-width: $breakpoint-desktop) {
+      gap: 20px;
+    }
+    @media (min-width: $breakpoint-tab) and (max-width: $breakpoint-desktop) {
+      gap:40px
+    }
+   
+    @media (max-width: #{$breakpoint-tab - 1px}) {
+      flex-direction: column;
+      margin: 30px 0;
+    }
+  }
+}

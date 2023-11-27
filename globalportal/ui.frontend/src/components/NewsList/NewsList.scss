@@ -1,0 +1,151 @@
+@import "../../variables.scss";
+.newslist-container {
+  margin-bottom: 60px;
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 114px;
+    min-height: 30vh;
+    .spinner {
+      background-image: url("../../assets/icon/loading-icon-lg.svg");
+      background-size: 31px 31px;
+      background-repeat: no-repeat;
+      width: 31px;
+      height: 31px;
+      animation: rotation 2s infinite linear;
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+    }
+    span {
+      font-size: $font-size-21;
+    }
+  }
+  .newslist {
+    list-style: none;
+    padding: 0;
+    font-family: "Kanit-Light" !important;
+    .listitem {
+      display: flex;
+      flex-direction: column;
+      .info-section {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 13px;
+        .date {
+          font-size: $font-size-14;
+          min-width: 86px;
+          color: $sub-color;
+          letter-spacing: 0.69px;
+          @media (max-width: #{$breakpoint-tab - 1px}) {
+            font-size: $font-size-13;
+          }
+        }
+        .category {
+          min-width: 100px;
+          padding: 2px 16px 3px 16px;
+          background-color: $point-color;
+          font-size: $font-size-13;
+          color: $swipe-text-color;
+          opacity: 0.6;
+          letter-spacing: 0.52px;
+          transition: opacity 0.3s ease-out;
+          @media (max-width: #{$breakpoint-tab - 1px}) {
+            font-size: $font-size-11;
+          }
+        }
+      }
+      .title-section {
+        color: $main-color;
+        font-size: $font-size-18;
+        letter-spacing: 0.72px;
+        @media (max-width: #{$breakpoint-tab - 1px}) {
+          color: $plane-color;
+          font-size: $font-size-14;
+        }
+      }
+      .divider {
+        border-top: 1px solid $point-color;
+        opacity: 0.6;
+        margin-top: 19px;
+        margin-bottom: 25px;
+      }
+      a {
+        text-decoration: none;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+      &:hover .category {
+        opacity: 1;
+      }
+      &:hover .date,
+      &:hover .title-section {
+        color: $point-color;
+      }
+    }
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .active-page {
+      color: $point-color;
+    }
+    .page-number-list {
+      display: flex;
+      padding: 0 !important;
+      li {
+        list-style: none;
+        margin: 0 15px;
+        span {
+          min-height: 30px;
+          font-size: $font-size-20;
+        }
+        &:hover {
+          color: $point-color;
+          cursor: pointer;
+        }
+      }
+    }
+    .prev-number {
+      background-image: url("../../assets/icon/right-arrow-black.svg");
+      background-size: 29px 16px;
+      background-repeat: no-repeat;
+      width: 29px;
+      height: 16px;
+      transition: width 0.3s ease-out;
+      margin-right: 15px;
+      &:hover {
+        width: 32px;
+        background-size: 32px 16px;
+        color: $point-color;
+        cursor: pointer;
+      }
+    }
+    .next-number {
+      background-image: url("../../assets/icon/right-arrow-black.svg");
+      background-size: 29px 16px;
+      background-repeat: no-repeat;
+      width: 29px;
+      height: 16px;
+      transform: scaleX(-1);
+      transition: width 0.3s ease-out;
+      margin-left: 15px;
+      &:hover {
+        width: 32px;
+        background-size: 32px 16px;
+        color: $point-color;
+        cursor: pointer;
+      }
+    }
+  }
+}

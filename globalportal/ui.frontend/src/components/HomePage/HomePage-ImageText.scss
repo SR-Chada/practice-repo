@@ -1,0 +1,106 @@
+@mixin imagetext {
+    .cmp-image-text__asset--position-lg-right {
+        padding: 0 120px;
+        margin-top: -25px;
+
+        @media only screen and (max-width:$breakpoint-desktop) {
+            padding: 0 50px;
+        }
+
+        @media only screen and (max-width:580px) {
+            padding: 0 20px;
+        }
+
+        @media only screen and (max-width:580px) {
+            padding: 0 20px;
+        }
+
+        .aem-container {
+            align-items: center;
+            grid-gap: 80px;
+            flex-direction: row;
+
+            @media only screen and (max-width:$breakpoint-desktop) {
+                align-items: flex-end;
+                grid-gap: 40px;
+                flex-direction: column-reverse;
+            }
+
+            @media only screen and (max-width:580px) {
+                grid-gap: 24px;
+            }
+
+            div {
+
+                flex: 0 0 50%;
+                width: unset;
+
+
+                @media only screen and (max-width:$breakpoint-desktop) {
+                    flex: 0 0 50%;
+                    width: 100%;
+                }
+
+                .cmp-text {
+                    margin-top: 69px;
+
+                    @include tab-and-mobile{
+                        margin-top: 0;
+                    }
+
+                    p {
+                        font-size: $font-size-33 !important;
+                        letter-spacing: 1.32px !important;
+                        color: $point-color;
+                        line-height: 68.8px !important;
+                        font-family: $font-family-light;
+
+                        @media only screen and (max-width:$breakpoint-desktop) {
+                            letter-spacing: 1.32px !important;
+                            color: $point-color;
+                            line-height: 56.8px !important;
+                            text-align: center;
+                        }
+
+                        @media only screen and (max-width:1330px) {
+                            font-size: $font-size-28 !important;
+                            line-height: 55.8px !important;
+                        }
+
+                        @media only screen and (max-width:580px) {
+                            line-height: 35.8px !important;
+                            font-size: $font-size-17 !important;
+                        }
+
+                        u {
+                            text-decoration: none !important;
+                            padding-bottom: 2px;
+                            border-bottom: 1px solid $point-color;
+                            
+                            // @media only screen and (max-width:580px) {
+                            //     border-bottom: 1px solid $point-color;
+                            // }
+
+                        }
+                    }
+                }
+
+                .cmp-image {
+                    margin-top: -50px;
+
+
+                    img {
+                        max-width: 100%;
+
+                    }
+
+                }
+            }
+
+            div:has(>.cmp-image) {
+                align-self: start;
+            }
+        }
+    }
+
+}

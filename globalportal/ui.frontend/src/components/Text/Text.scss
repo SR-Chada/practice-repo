@@ -1,0 +1,90 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.cmp-text{
+  div, p{
+    font-family: $font-family-light;
+  }
+  div{
+    font-size: $font-size-55;
+    letter-spacing: 2.2px;
+    color: $main-color;
+  }
+  p{
+    font-size: $font-size-regular;
+    letter-spacing: 1.12px;
+    color: $plane-color;
+    line-height: 28.8px;
+    font-weight: $font-weight-300;
+
+    @include mobile{
+      font-size: $font-size-small;
+      letter-spacing: 0.91px;
+      line-height: 23.4px;
+    }
+    b{
+      display: block;
+    }
+    
+  }
+  ul,ol{
+    padding-inline-start: 1rem ;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+  ul{
+    li{
+      color: $plane-color;
+      &::marker{
+        font-size: 6px;
+      }
+      @include mobile{
+        font-size: $font-size-small;
+      }
+    }
+  }
+  ol{
+    li{
+      letter-spacing: 1.12px;
+      line-height: 28.8px;
+      &::marker{
+        font-size: 1rem;
+      }
+      @include tab{
+        line-height: 28.8px;
+      }
+      @include mobile{
+        font-size: $font-size-small;
+        letter-spacing: 0.91px;
+        line-height: 23.4px;
+      }
+      
+    }
+  }
+  a{
+    text-decoration: none;
+  }
+}
+
+.cmp-text--bullet{
+  ul,ol{
+    padding-inline-start: 1rem ;
+  }
+  .cmp-text{
+      display: flex;
+      position: relative;
+      &::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: $point-color 0% 0% no-repeat padding-box;
+        display: block;
+        border-radius: 50%;
+        position: absolute;
+        top: 45%;
+      }
+     p{
+       margin-left: 18px
+     }
+   }
+} 

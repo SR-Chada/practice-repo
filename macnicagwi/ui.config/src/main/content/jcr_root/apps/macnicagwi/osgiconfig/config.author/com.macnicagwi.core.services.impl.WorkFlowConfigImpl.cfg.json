@@ -1,0 +1,5 @@
+{
+  "previewURL": "$[env:WF_PREVIEW_URL]",
+  "publishURL": "$[env:WF_PUBLISH_URL]",
+  "fromAddress": "$[env:WF_FROM_ADRS;default=cmsadmin@macnica.co.jp]"
+}

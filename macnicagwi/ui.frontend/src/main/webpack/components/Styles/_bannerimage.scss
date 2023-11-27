@@ -1,0 +1,83 @@
+@import '../../site/variables';
+
+.cmp-bannerimage{
+    .cmp-image__image--gradient{
+       .cmp-image__data{ 
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          left:0; top:0;
+          width:100%; height:100%;
+          display: inline-block;
+          background: $bannerimage-color-gradient;
+          border-radius: 8px;
+        }
+       }
+      }
+.cmp-image{
+    line-height: 0;
+       .cmp-image__image{
+        border-radius: 8px;
+        max-height: 436px;
+        border: 1px solid $border-color-default;
+       }
+       &__link{
+        position: relative;
+       }
+       .cmp-bannerimage__subtext {
+            position: absolute;
+            bottom: 44.3px;
+            left: 24px;
+            font-family: $font-family;
+            font-style: $font-style-normal;
+            font-weight: $font-weight-medium;
+            font-size: $font-size-large;
+            line-height: $line-height-lg;
+            text-align: left;
+            color: invert($color-text-primary);
+            z-index: 1;
+
+            @include tab {
+                bottom: 22.71px; 
+                font-size: $font-size-normal;
+            } 
+            @include mobile {
+                bottom: 10px;
+                left: 16px;
+                font-size: $font-size-normal;
+            }    
+      }
+     
+}
+  
+} 
+
+
+.cmp-popup{
+    .bannerimage.image {
+        margin-top: 32px;
+        .cmp-image__image{
+            height: 398px;
+        }
+    }
+    
+}
+
+.cmp-bannerimage--autofitbanner{
+    .cmp-bannerimage{
+        img.cmp-image__image {
+            object-fit: cover;
+          }
+    } 
+} 
+  
+.cmp-bannerimage--hide-border{
+    .cmp-bannerimage{
+        .cmp-image{
+            .cmp-image__image{
+               border: none;
+            }
+        } 
+    } 
+}

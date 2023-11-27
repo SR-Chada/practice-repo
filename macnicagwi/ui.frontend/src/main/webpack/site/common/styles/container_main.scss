@@ -1,0 +1,79 @@
+
+//== Container main content style, used on page template
+
+main.container {
+    padding: .5em 1em;
+}
+body{
+    scroll-behavior: smooth;
+}
+.subsidiary-page-content{
+    section{
+       & > .cmp-container {
+            max-width: 976px;
+            margin: 2pc auto 1pc;
+            padding: 0 24px;
+            display: grid;
+            grid-gap: 1pc;
+            @include tab-and-mobile {
+                padding: 0;
+                margin: 0 1pc;
+            }
+              .aem-Grid, .cmp-container{
+                    display: grid;
+                    grid-gap: 1pc;
+                    position: relative;
+            }
+        }
+        p{
+            margin: unset;
+        }
+    }
+    @include mobile{
+    section {
+        width: 100% !important;
+    }
+   }
+    & > .cmp-container {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 64px 24px;
+
+    @include tab-and-mobile{
+        padding: 16px 16px 64px; 
+    }
+    & > .aem-Grid {
+        background-color: $color-background-default;
+        border: 1px solid $border-color-dark;
+        border-radius: 24px;
+        width: 100%;
+        }
+    }
+}
+
+
+.subsidiary-page-root{
+    & > .cmp-container {
+        background-color: $color-background-grey;
+    }
+}
+
+#scroll-top {
+    position: fixed;
+    right: 10%;
+    bottom: 30px;
+    padding: 20px;
+    opacity: 0;
+    transition: all 0.4s ease-in-out 0s;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    width: 48px;
+    height: 48px;
+}
+
+.cmp-bannerimage--withoutbanner{
+    .bannerimage{
+        display: none;
+    }
+}

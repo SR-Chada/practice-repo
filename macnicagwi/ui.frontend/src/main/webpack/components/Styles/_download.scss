@@ -1,0 +1,119 @@
+.cmp-download {
+    padding: 10px 16px 8px 16px;
+    display: flex;
+    background: $table-row-background-color;
+    width: fit-content;
+    border: 1px solid $border-color-default;
+    border-radius: 6px;
+    color: $color-text-primary;
+        @include normal-text;
+    &__properties {
+        display: flex;
+    }
+    .cmp-download__property--filename{
+        width:551px !important; 
+        color: $color-text-primary;      
+    }
+&__property--format{
+    display: flex;
+    width: 175.12px;
+    &-name {
+        width: 66px;
+        text-transform: uppercase;
+        padding-top: 4px;
+    }
+    &-jpg, &-jpeg, &-png{
+        display: flex;
+        .cmp-download__property--format-icon{
+            margin: 0px 23px 8px 19px;
+                display: initial;
+                content: url("../resources/images/download-icon.svg");
+                padding: 7px 23px 0 19px;
+                width: 18px;
+            
+        }
+    }
+    &-pdf{
+        .cmp-download__property--format-icon{
+            margin: 0px 23px 8px 19px;
+                display: block;
+                content: url("../resources/images/pdf-file-format-icon.svg");
+                padding: 7px 23px 0 19px;
+                width: 18px;
+            
+        }
+        
+    }
+    &-zip{
+        .cmp-download__property--format-icon{
+            margin: 0px 23px 8px 19px;
+            display: block;
+            content:url("../resources/images/zip-file-format-icon.svg");
+                padding: 7px 23px 0 19px;
+                width: 18px;
+        }
+        
+    }
+    &-rar{
+        .cmp-download__property--format-icon{
+            margin: 0px 23px 8px 18px;
+                display: block;
+                content:url("../resources/images/rar-file-format-icon.svg");
+                padding: 7px 23px 0 19px;
+                width: 19px;
+           
+        } 
+    }
+    &-mp4{
+        .cmp-download__property--format-icon{
+            margin: 0px 23px 8px 17px;
+                display: block;
+                content: url("../resources/images/mp4-file-format-icon.svg");
+                padding: 7px 16px 0 15px;
+                width: 29px;
+            
+        } 
+    }
+}
+    
+    
+    &__action{
+        padding-top: 8px;
+        cursor: pointer;
+        margin-right: 23px;
+      &-icon{
+        &::before{
+            display: block;
+            content: url("../resources/images/download-icon.svg");
+        }
+      }
+   }
+
+   &__property--filename {
+    padding-right: 99px;
+    padding-top: 4px;
+    margin-right: 0;
+    @include tab-and-mobile {
+       padding-right: 30px;
+    }
+    
+}
+   &__property{
+      &--format-icon{
+         height: 24px;
+      }
+   }
+}
+
+.download{
+    margin-bottom: 1pc;
+    &:last-child{
+        margin-bottom: 0pc;
+    }
+    overflow-x: scroll;
+    scrollbar-width: none; /* firefox */
+    &::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+    
+}

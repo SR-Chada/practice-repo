@@ -1,0 +1,13 @@
+{
+  "heading": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:createdBy": "admin",
+    "jcr:lastModifiedBy": "admin",
+    "id": "1234",
+    "icon": "hyphen-icon",
+    "text": "harshan",
+    "type": "h2",
+    "cssClassName": "bright",
+    "sling:resourceType": "macnicagwi/components/content/heading"
+  }
+}

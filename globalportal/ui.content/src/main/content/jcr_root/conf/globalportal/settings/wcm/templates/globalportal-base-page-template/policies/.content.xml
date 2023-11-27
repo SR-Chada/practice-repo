@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0" jcr:primaryType="cq:Page">
+    <jcr:content cq:lastModified="{Date}2023-01-28T16:07:52.662+05:30" cq:lastModifiedBy="admin" cq:policy="globalportal/components/page/policy_spa" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mappings">
+        <root cq:policy="wcm/foundation/components/responsivegrid/spa-default" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping">
+            <responsivegrid cq:policy="wcm/foundation/components/responsivegrid/spa-default" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping">
+                <breadcrumb cq:policy="globalportal/components/breadcrumb/policy_1674822313176" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                <herobanner cq:policy="globalportal/components/herobanner/policy_61943601630578" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+            </responsivegrid>
+            <responsivegrid_820405956 cq:policy="wcm/foundation/components/responsivegrid/policy_61848903417593" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping">
+                <globalportal jcr:primaryType="nt:unstructured">
+                    <components jcr:primaryType="nt:unstructured">
+                        <spacer cq:policy="globalportal/components/spacer/policy_1676362251245" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                        <imagetext cq:policy="globalportal/components/imagetext/policy_1671451742801" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                        <text cq:policy="globalportal/components/text/policy_2421935322066600" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                        <teaser cq:policy="globalportal/components/teaser/policy_108750683314400" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                        <title cq:policy="globalportal/components/title/policy_1670430286439" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                        <video cq:policy="globalportal/components/video/policy_1672223345715" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                        <teaserlist cq:policy="globalportal/components/teaserlist/policy_1672759861689" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                        <tabs cq:policy="globalportal/components/tabs/policy_1672382300789" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                        <regionselectioncontainer cq:policy="globalportal/components/regionselectioncontainer/policy_1673846616610" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                        <button cq:policy="globalportal/components/button/policy_1670565172695" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                        <breadcrumb cq:policy="globalportal/components/breadcrumb/policy_1674822313176" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                        <table cq:policy="globalportal/components/table/policy_1671692509681" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                        <imagepack cq:policy="globalportal/components/imagepack/policy_1671794136218" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                        <image cq:policy="globalportal/components/image/policy_500371173316400" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                        <container cq:policy="globalportal/components/container/policy_55572595167801" jcr:primaryType="nt:unstructured" sling:resourceType="wcm/core/components/policies/mapping"/>
+                    </components>
+                </globalportal>
+            </responsivegrid_820405956>
+
+        </root>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="nt:unstructured">
+    <com.macnicagwi.core.config.ShareaholicConfig
+        jcr:primaryType="nt:unstructured"
+        headerScript="&lt;div class=&quot;clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field-value field-item&quot;>&lt;div class=&quot;shareaholic-canvas&quot; data-app=&quot;share_buttons&quot; data-app-id=&quot;33010242&quot;> &lt;/div>&#xa;&lt;!-- BEGIN SHAREAHOLIC CODE -->&lt;link as=&quot;script&quot; href=&quot;https://cdn.shareaholic.net/assets/pub/shareaholic.js&quot; rel=&quot;preload&quot; />&lt;meta name=&quot;shareaholic:site_id&quot; content=&quot;a1e003b86eb1fdbe93d1a1bb2b8ce442&quot; />&lt;script data-cfasync=&quot;false&quot; async=&quot;&quot; src=&quot;https://cdn.shareaholic.net/assets/pub/shareaholic.js&quot;>&lt;/script>&lt;!-- END SHAREAHOLIC CODE -->&lt;/div>"/>
+</jcr:root>

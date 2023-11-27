@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Page Properties Component"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[macnicagwi.components.pageproperties.editor]">
+    <content
+        granite:class="cmp-pageproperties__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <newsDate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.newsDate ? cqDesign.newsDate : false}"
+                                                fieldDescription="If checked, automatically fetches news date from page properties. "
+                                                name="./newsDate"
+                                                text="News Date"
+                                                uncheckedValue="false"
+                                                value="jcr:content@date">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cmp-pageproperties-dialog-hook="newsDate"/>
+                                            </newsDate>
+                                            <newsDateGroup
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <newsDateLabel
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="News Date Label"
+                                                        name="./newsDateLabel"/>
+                                                </items>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cmp-pageproperties-dialog-hook="newsDateGroup"/>
+                                            </newsDateGroup>
+                                            <eventStartDate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.eventStartDate ? cqDesign.eventStartDate : false}"
+                                                fieldDescription="If checked, event start date will be fetched from page properties."
+                                                name="./eventStartDate"
+                                                text="Event Start Date"
+                                                uncheckedValue="false"
+                                                value="jcr:content@startDate">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cmp-pageproperties-dialog-hook="eventStartDate"/>
+                                            </eventStartDate>
+                                            <eventStartDateGroup
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <eventStartDateLabel
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Event Start Date Label"
+                                                        name="./eventStartDateLabel"/>
+                                                </items>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cmp-pageproperties-dialog-hook="eventStartDateGroup"/>
+                                            </eventStartDateGroup>
+                                            <eventEndDate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.eventEndDate ? cqDesign.eventEndDate : false}"
+                                                fieldDescription="If checked, event end date will be fetched page properties."
+                                                name="./eventEndDate"
+                                                text="Event End Date"
+                                                uncheckedValue="false"
+                                                value="jcr:content@endDate">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cmp-pageproperties-dialog-hook="eventEndDate"/>
+                                            </eventEndDate>
+                                            <eventEndDateGroup
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <eventEndDateLabel
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Event End Date Label"
+                                                        name="./eventEndDateLabel"/>
+                                                </items>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cmp-pageproperties-dialog-hook="eventEndDateGroup"/>
+                                            </eventEndDateGroup>
+                                            <eventLocation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.eventLocation ? cqDesign.eventLocation : false}"
+                                                fieldDescription="If checked, event location will be fetched from page properties."
+                                                name="./eventLocation"
+                                                text="Event Location"
+                                                uncheckedValue="false"
+                                                value="jcr:content@location">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cmp-pageproperties-dialog-hook="eventLocation"/>
+                                            </eventLocation>
+                                            <eventLocationGroup
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <eventLocationLabel
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Event Location Label"
+                                                        name="./eventLocationLabel"/>
+                                                </items>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cmp-pageproperties-dialog-hook="eventLocationGroup"/>
+                                            </eventLocationGroup>
+                                            <technicalArticleDate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.technicalArticleDate ? cqDesign.technicalArticleDate : false}"
+                                                fieldDescription="If checked, automatically fetches technical article date from page properties. "
+                                                name="./technicalArticleDate"
+                                                text="Technical Article Date"
+                                                uncheckedValue="false"
+                                                value="jcr:content@date">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cmp-pageproperties-dialog-hook="technicalArticleDate"/>
+                                            </technicalArticleDate>
+                                            <technicalArticleDateGroup
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <technicalArticleDateLabel
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Technical Article Date Label"
+                                                        name="./technicalArticleDateLabel"/>
+                                                </items>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cmp-pageproperties-dialog-hook="technicalArticleDateGroup"/>
+                                            </technicalArticleDateGroup>
+                                            <authorName 
+                                               jcr:primaryType="nt:unstructured" 
+                                               sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.authorName ? cqDesign.authorName : false}"
+                                                fieldDescription="If checked, automatically fetches author name from page properties. " 
+                                                name="./authorName"
+                                                text="Author Name" 
+                                                uncheckedValue="false" 
+                                                value="jcr:content@authorName">
+
+                                                <granite:data 
+                                                    jcr:primaryType="nt:unstructured" 
+                                                    cmp-pageproperties-dialog-hook="authorName" />
+                                            </authorName>
+                                            <authorNameGroup 
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <authorNameLabel jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                                                        fieldLabel="Author Name Label"
+                                                        name="./authorNameLabel" />
+                                                </items>
+                                                 <granite:data 
+                                                    jcr:primaryType="nt:unstructured" 
+                                                    cmp-pageproperties-dialog-hook="authorNameGroup" />
+                                            </authorNameGroup>
+                                            
+                                            <articleSource 
+                                               jcr:primaryType="nt:unstructured" 
+                                               sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.articleSource ? cqDesign.articleSource : false}"
+                                                fieldDescription="If checked, automatically fetches article Source from page properties. " 
+                                                name="./articleSource"
+                                                text="Article Source" 
+                                                uncheckedValue="false" 
+                                                value="jcr:content@articleSource">
+
+                                                <granite:data 
+                                                    jcr:primaryType="nt:unstructured" 
+                                                    cmp-pageproperties-dialog-hook="articleSource" />
+                                            </articleSource>
+                                            <articleSourceGroup 
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <authorNameLabel jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                                                        fieldLabel="Article Source Label"
+                                                        name="./articleSourceLabel" />
+                                                </items>
+                                                 <granite:data 
+                                                    jcr:primaryType="nt:unstructured" 
+                                                    cmp-pageproperties-dialog-hook="articleSourceGroup" />
+                                            </articleSourceGroup>
+                                            <authorImage 
+                                               jcr:primaryType="nt:unstructured" 
+                                               sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.authorImage ? cqDesign.authorImage : false}"
+                                                fieldDescription="If checked, automatically fetches author image from page properties. " 
+                                                name="./authorImage"
+                                                text="Author Image" 
+                                                uncheckedValue="false" 
+                                                value="jcr:content@authorImage">
+
+                                                <granite:data 
+                                                    jcr:primaryType="nt:unstructured" 
+                                                    cmp-pageproperties-dialog-hook="authorImage" />
+                                            </authorImage>
+                                            <manufacturerLogo 
+                                               jcr:primaryType="nt:unstructured" 
+                                               sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.manufacturerLogo ? cqDesign.manufacturerLogo : false}"
+                                                fieldDescription="If checked, automatically fetches Manufacturer Logo from page properties. " 
+                                                name="./manufacturerLogo"
+                                                text="Manufacturer Logo" 
+                                                uncheckedValue="false" 
+                                                value="jcr:content@manufacturerLogo">
+
+                                                <granite:data 
+                                                    jcr:primaryType="nt:unstructured" 
+                                                    cmp-pageproperties-dialog-hook="manufacturerLogo" />
+                                            </manufacturerLogo>
+
+                                            <id
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="HTML ID attribute to apply to the component."
+                                                fieldLabel="ID"
+                                                name="./id"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

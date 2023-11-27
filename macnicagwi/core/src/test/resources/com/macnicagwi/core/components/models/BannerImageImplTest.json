@@ -1,0 +1,19 @@
+{
+  "bannerimage": {
+    "jcr:created": "Mon Apr 25 2022 06:58:29 GMT+0000",
+    "jcr:lastModifiedBy": "sukanya.s@1digitals.com",
+    "jcr:createdBy": "sukanya.s@1digitals.com",
+    "linkTarget": "_self",
+    "alt": "banner image",
+    "sling:resourceType": "macnicagwi/components/content/bannerimage",
+    "displayPopupTitle": "true",
+    "subText": "Macnica",
+    "isDecorative": "false",
+    "altValueFromDAM": "false",
+    "jcr:lastModified": "Mon Apr 25 2022 12:53:30 GMT+0000",
+    "titleValueFromDAM": "true",
+    "jcr:primaryType": "nt:unstructured",
+    "imageFromPageImage": "false",
+    "fileReference": "/content/dam/macnicagwi/apac/galaxy/public/en/banners/co-tomorrowing.jpg"
+  }
+}

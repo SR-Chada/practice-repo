@@ -1,0 +1,148 @@
+.cmp-form-options {
+        border: none;
+        padding: 0;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+        display: grid;
+        grid-gap: 1pc;
+        
+        select {
+            & option { 
+                color: $color-text-primary; 
+            }
+
+            & option[value=""] {
+                color: $copyright-text-subsidiary-color;
+            }
+
+            &:invalid {
+                color: $copyright-text-subsidiary-color;
+            }
+        }
+
+        &__field{
+            &-label{ 
+            @include normal-text-small;
+            display: block;
+            float: left;
+            width: 100%;
+            color: $color-text-primary;
+           }
+           &--drop-down{
+            @include normal-text;
+            width: 100%;
+            margin-bottom: 2pc;
+            background: $color-background-form-input;
+            border-radius: 8px;
+            border: none;
+            padding: 8px 1pc;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: $color-background-form-input;
+            background-image: url("../resources/images/dropdown-arrow-purple.svg");
+            background-repeat: no-repeat;
+            background-position-x: 98%;
+            background-position-y: 20px;
+
+            &:focus {
+                outline: none;
+            }
+          }
+          &--radio, &--checkbox{
+            &::before {
+               height:12px;
+               width:12px;
+               content: " ";
+               display:inline-block;
+               border:1px solid $border-color-default;
+               border-radius:50%;
+            }
+            &:checked{
+                &::before{
+                background: $color-primary;
+              }
+            }
+          }
+        }
+        
+        &__legend {
+            display: none;
+        }
+    
+    &__label{
+        @include H2-text;
+            float: left;
+            width: 100%;
+            border-bottom: 1px solid $color-primary;
+            color: $color-text-primary;
+            margin-bottom: 17.5px;
+    }
+    &__field-label {
+        position: relative;
+    }
+    &__field--checkbox{
+      appearance: none;
+        &:focus {
+             border: none;
+        }
+
+  }
+}
+
+/* checkboxs variation */
+
+.cmp-form-options--vertical-checkbox{
+    .cmp-form-options{
+        display: block;
+        &__field-label{
+            float: left;
+            width: auto;
+            margin-right: 16px;
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+       
+        &__field--checkbox{
+            margin-left: 0;
+            width: 0;
+            &:checked{
+                background: none;
+                border: none;
+            }
+            &:before {
+                  border: none;
+                  background: none;
+                  }
+          &:checked {
+            & ~ .cmp-form-options__field-description {
+                 color: invert($color-text-primary);
+                 border: 1px solid $border-color-default;
+                 border-radius: 50px;
+                 padding: 8px 12px;
+                 background: $color-primary;
+                 &::before {
+                    content: '';
+                    background-image: url("../resources/images/tick-mark-icon.svg");
+                    background-repeat: no-repeat;
+                    width: 12px;
+                    height: 9.14px;
+                    display: inline-block;
+                    margin-right: 6px;
+                }
+           }
+         :before {
+             background: none;
+                border: none;
+         }
+         }
+           
+            & ~ span.cmp-form-options__field-description {
+                color: $color-primary;
+                background: $color-background-default;
+                 border: 1px solid $border-color-default;
+                 border-radius: 50px;
+                 padding: 8px 12px;
+            }
+        }
+    }
+} 

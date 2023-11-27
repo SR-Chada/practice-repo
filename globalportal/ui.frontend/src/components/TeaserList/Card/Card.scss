@@ -1,0 +1,309 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+
+.teaser-card-main {
+    display: flex;
+    flex-wrap: wrap;
+
+    .teaser-card {
+        height: 310px;
+        border: 1px solid white;
+        position: relative;
+        border-bottom: none;
+        flex-basis: 25%;
+
+
+        @media only screen and (max-width:$breakpoint-desktop) {
+            flex-basis: 50% !important;
+        }
+
+        @media only screen and (max-width:580px) {
+            height: 260px;
+        }
+
+        @media only screen and (max-width:375px) {
+            height: 170px;
+        }
+
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            .cmp-image {
+                img {
+                    transform: scale(1.2);
+                    filter: unset;
+                    cursor: pointer;
+                }
+            }
+
+            .teaser-card-content {
+                p {
+                    &::after {
+                        width: 60px;
+                        background-size: 60px 33px;
+                    }
+                }
+            }
+
+        }
+
+        .cmp-image {
+            height: 310px;
+
+            @media only screen and (max-width:580px) {
+                height: 260px;
+            }
+
+            @media only screen and (max-width:375px) {
+                height: 170px;
+            }
+
+            overflow: hidden;
+
+            img {
+                filter: brightness(40%);
+                height: inherit;
+                object-fit: cover;
+                transition: all .3s ease-in-out;
+            }
+
+        }
+
+        .teaser-card-content {
+            position: absolute;
+            top: 33%;
+            width: 100%;
+            display: inline-grid;
+
+            .teaser-card-icon {
+                width: 50px;
+                height: 50px;
+                margin: auto;
+            }
+
+            p {
+                color: white;
+                font-size: 25px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+
+                &::after {
+                    content: "";
+                    background-image: url("../../../assets/icon/right-arrow-white.svg");
+                    background-size: 47px 33px;
+                    background-repeat: no-repeat;
+                    width: 47px;
+                    height: 33px;
+                    transition: width 0.3s ease-out;
+                }
+
+                @media only screen and (max-width:580px) {
+                    font-size: 17px;
+                }
+            }
+
+        }
+
+    }
+
+    .last-card {
+        transition: 0.3s;
+        opacity: 0.7;
+
+        .last-card-inside {
+            background: #500059;
+            width: 100%;
+            height: inherit;
+            transition-duration: 1s;
+
+            &:hover {
+                width: 75%;
+
+                .cmp-button-inside-arrow {
+                    transition-duration: 1s;
+
+                    .button {
+                        transition-duration: 1s;
+                        left: 20%;
+                    }
+                }
+            }
+
+            .cmp-button-inside-arrow {
+
+                .button {
+                    position: absolute;
+                    top: 40%;
+                    left: 40%;
+                    transition-duration: 1s;
+
+                    &::before {
+                        @media only screen and (max-width:580px) {
+                            margin-right: 0px !important;
+                        }
+                    }
+
+                    @media only screen and (max-width:580px) {
+                        left: 16%;
+                        grid-gap: 25px;
+                    }
+
+                    a {
+                        @media only screen and (max-width:580px) {
+                            margin-right: 0 !important;
+                        }
+
+                        .cmp-button__text {
+                            color: white !important;
+
+                            @media only screen and (max-width:580px) {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .teaser-card-services {
+        background: #0B0B0B 0% 0% no-repeat padding-box;
+        opacity: 0.95;
+        width: 211px !important;
+        height: 270px;
+        flex-basis: unset !important;
+
+        @media only screen and (min-width:$breakpoint-desktop) and (max-width:1300px) {
+            max-width: 1050px;
+            height: 230px;
+        }
+
+        @media only screen and (max-width:$breakpoint-desktop) {
+            flex-basis: 18% !important;
+            height: 187px;
+        }
+
+        @media only screen and (max-width:580px) {
+            flex-basis: 100% !important;
+            height: 60px;
+        }
+
+        &:hover {
+            background: #500059;
+
+            .teaser-card-header {
+
+                .teaser-card-arrow-icon {
+                    &::after {
+                        height: 43px;
+                        background-size: 47px 43px;
+                    }
+                }
+            }
+        }
+
+        .teaser-card-header {
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: inherit;
+            text-align: center;
+
+            @media only screen and (max-width:$breakpoint-desktop) {
+                font-size: $font-size-13;
+            }
+
+            @media only screen and (max-width:580px) {
+                justify-content: start;
+                padding: 0 20px;
+                grid-gap: 20px;
+                flex-direction: row;
+            }
+
+            span {
+                margin-bottom: 10px;
+            }
+
+            .teaser-card-icon {
+                width: 50px;
+                height: 50px;
+
+                @media only screen and (min-width: ($breakpoint-tab+1)) and (max-width:$breakpoint-desktop) {
+
+                    width: 33px;
+                    height: 37px;
+                }
+
+                @media only screen and (max-width:580px) {
+                    width: 27px;
+                    height: 28px;
+                }
+            }
+
+            p {
+                justify-content: center;
+                color: white;
+                font-size: 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                color: white;
+                font-size: 18px;
+
+                @media only screen and (min-width: ($breakpoint-tab+1)) and (max-width:$breakpoint-desktop) {
+                    font-size: $font-size-13;
+                }
+
+
+            }
+
+            .teaser-card-arrow-icon {
+                display: flex;
+
+                &::after {
+                    content: "";
+                    background-image: url("../../../assets/icon/down-arrow-white.svg");
+                    background-size: 47px 33px;
+                    background-repeat: no-repeat;
+                    width: 47px;
+                    height: 33px;
+                    transition-duration: .7s;
+                    margin-top: 10px;
+
+                    @media only screen and (max-width:580px) {
+                        height: 23px;
+                        background-size: 47px 23px;
+                    }
+                }
+
+                @media only screen and (max-width:580px) {
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+
+    .active_card {
+        background: #500059;
+    }
+}
+
+.main-services {
+    justify-content: center;
+    margin-bottom: -120px;
+    z-index: 6;
+    position: relative;
+
+    @media only screen and (max-width:580px) {
+        padding: 0 20px;
+    }
+    @include mobile{
+        margin-bottom: -160px;
+    }
+}

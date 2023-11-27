@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Multi-Level Filter"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[macnicagwi.components.multilevelfilter.editor]">
+    <content
+        granite:class="cmp-multilevelfilter__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <filters
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Filters"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:hideChildren="[searchAssetRootPath]"
+                                            sling:resourceType="granite/ui/components/coral/foundation/include"
+                                            path="macnicagwi/components/content/facettedsearch/cq:dialog/content/items/tabs/items/filters/items/columns/items/column/items"/>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </filters>
+                    <results
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="macnicagwi/components/content/facettedsearch/cq:dialog/content/items/tabs/items/results"/>
+                    <filters    
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                        fieldDescription="Select multi level filter tags"
+                        multiple="true"
+                        fieldLabel="Filter Tags"
+                        name="./tags"/>
+                     <isfreeTextSearchEnabled
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        checked="${not empty cqDesign.isfreeTextSearchEnabled ? cqDesign.isfreeTextSearchEnabled : false}"
+                        fieldDescription="If checked displays free text search box."
+                        name="./isfreeTextSearchEnabled"
+                        text="Free Text Search"
+                        uncheckedValue="false"
+                        value="true">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            cmp-multilevelfilter-dialog-hook="isfreeTextSearchEnabled"/>
+                    </isfreeTextSearchEnabled>
+                    <freeTextSearchGroup
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                            <items jcr:primaryType="nt:unstructured">
+                                <freeTextSearchPlaceholder
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Free Text Search Placeholder"
+                                    name="./freeTextSearchPlaceholder"/>
+                            </items>
+                            <granite:data
+                                jcr:primaryType="nt:unstructured"
+                                cmp-multilevelfilter-dialog-hook="freeTextSearchGroup"/>
+                    </freeTextSearchGroup>
+                    <filterButtonText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="The text to display on filter button in smaller screens"
+                        fieldLabel="Filter Button Text"
+                        name="./filterButtonText"/>
+                    <applyButtonText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="The text to display on apply button"
+                        fieldLabel="Apply Button Text"
+                        name="./applyButtonText"/>
+                    <clearButtonText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="The text to display on clear button"
+                        fieldLabel="Clear Button Text"
+                        name="./clearButtonText"/>
+                    <noResultsFoundText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="The text to display when there is no results found post search."
+                        fieldLabel="No Results Found Text"
+                        name="./noResultsFoundText"/>
+                    <loadMoreButtonText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="The text to display on the load more button"
+                        fieldLabel="Load More Button Text"
+                        name="./loadMoreButtonText"/>
+                    <allButtonText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="The text to display on the All button"
+                        fieldLabel="All Button Text"
+                        name="./allButtonText"/>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

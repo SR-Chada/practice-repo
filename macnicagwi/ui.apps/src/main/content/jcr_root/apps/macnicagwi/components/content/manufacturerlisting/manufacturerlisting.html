@@ -1,0 +1,36 @@
+<sly data-sly-use.textModel="com.adobe.cq.wcm.core.components.models.Text"
+   data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<p data-sly-test.text="${textModel.text}"></p>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+<div data-sly-use.manufacturerlisting="com.macnicagwi.core.components.models.ManufacturerListing" 
+    class="cmp-manufacturerlisting" 
+    data-resource-path="${manufacturerlisting.getResourcePath}" 
+    id="${manufacturerlisting.id}">
+    <div class="cmp-manufacturerlisting__search-input-filter">
+        <div data-sly-test="${manufacturerlisting.isFreeTextSearch}">
+            <div class='cmp-manufacturerlisting__search-filters-text-search'>
+                <input type="Search" placeholder="${manufacturerlisting.getFreeTextSearchPlaceholder}" />
+                <div class="cmp-manufacturerlisting__search-filters-text-search-icon"></div>
+            </div>
+        </div>
+        <button class='cmp-manufacturerlisting__filter-button cmp-button'>
+            <div class='cmp-button__text'><span>${manufacturerlisting.getFilterButtonText}</span></div>
+            <div class='cmp-button__icon--filter-icon'></div>
+        </button>
+    </div>
+    <div class="cmp-manufacturerlisting__search-filters"
+        data-free-text-search="${manufacturerlisting.isFreeTextSearch @ context = 'text' }" 
+        data-free-text-search-placeholder="${manufacturerlisting.getFreeTextSearchPlaceholder}"
+        data-filter-type="${manufacturerlisting.getFilterType}"
+        data-apply-button-text="${manufacturerlisting.getApplyButtonText}"
+        data-clear-button-text="${manufacturerlisting.getClearButtonText}"></div>
+        <div class="cmp-manufacturerlisting__search-results"></div>
+    <!--/* TO-DO: Replace with button component */-->
+    <div class="cmp-manufacturerlisting__showmore">
+        <button class="cmp-button">
+            <span class="cmp-button__text">${manufacturerlisting.loadMoreButtonText}</span>
+        </button>
+    </div>
+    <!--/* TO-DO: no results found text has to be fetched from backend */-->
+    <div class="cmp-manufacturerlisting__no-results">${manufacturerlisting.getNoResultsFoundText}</div>
+</div>

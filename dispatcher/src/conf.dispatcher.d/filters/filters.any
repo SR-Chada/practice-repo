@@ -1,0 +1,41 @@
+#
+# This file contains the filter ACL, and can be customized.
+#
+# By default, it includes the default filter ACL.
+#
+
+$include "./default_filters.any"
+
+# Allow components JSON model
+/0101 { /type "allow" /extension "json" /selectors "model" /path "/content/*" }
+
+
+# Allow manifest.webmanifest files located in the content
+/0102 { /type "allow" /extension "webmanifest" /path "/content/*/manifest" }
+
+# disable this rule to allow mapped content only
+/0103 { /type "allow" /extension '(json)' /path "/content/macnicagwi/*" }  
+
+# Allow Macnica download servlet request
+/0104 { /type "allow" /extension "*" /selectors "macnicadownload" /path "/content/dam/macnicagwi/*" }
+
+# Allow Macnica Post method for Macnica Form submissions
+/0105 { /type "allow" /method "POST" /path "*" }
+
+#allow global portal model json requests
+/0106 { /type "allow" /extension '(json)' /selectors "model" /path "/global/*" }  
+
+#allow global portal serv json requests
+/0107 { /type "allow" /extension '(json)' /selectors "serv" /path "/global/*" }  
+
+#allow global portal serv json requests
+/0108 { /type "allow" /extension '(json)' /selectors "serv" /path "/globalportal/*" }  
+
+#allow global portal serv json requests
+/0109 { /type "allow" /extension "*" /selectors "coredownload" /path "*" }  
+
+#allow global portal serv json requests
+/0110 { /type "allow" /extension "*" /path "*cytronic*" }  
+#allow global portal serv json requests
+/0111 { /type "allow" /extension "*" /path "*/eu/*" }  
+

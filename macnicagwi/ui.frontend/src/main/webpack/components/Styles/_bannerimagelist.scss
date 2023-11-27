@@ -1,0 +1,11 @@
+.cmp-bannerimagelist{
+        display: grid;
+        grid-gap: 24px;
+        @include tab-and-mobile {
+           grid-gap: 1pc;
+        }       
+        @extend .cmp-bannerimage;
+        .cmp-image__image{
+            max-height: 364px !important;
+        }
+}

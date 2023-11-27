@@ -1,0 +1,135 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.main-container {
+  position: relative;
+  .swipe-circle {
+    @include desktop{
+      display: none;
+    }
+    @media (max-width: #{$breakpoint-tab - 1px}) {
+      width: 100px;
+      height: 100px;
+      background: $point-color 0% 0% no-repeat padding-box;
+      border-radius: 50%;
+      position: absolute;
+      top: 50px;
+      left: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: $font-size-15;
+      color: $swipe-text-color;
+    }
+  }
+
+  .arrow {
+    @include desktop{
+      display: none;
+    }
+    @media (max-width: #{$breakpoint-tab - 1px}) {
+      position: absolute;
+      top: 80px;
+      width: 26px;
+      left: 184px;
+      height: 1px;
+      background-color: #fff;
+      box-shadow: 0 3px 5px #ffffff;
+    }
+  }
+
+  .arrow::after,
+  .arrow::before {
+    @include desktop{
+      display: none;
+    }
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 7px;
+    right: 0px;
+    background-color: #fff;
+  }
+
+  .arrow::after {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .arrow::before {
+    top: -5px;
+    transform: rotate(-45deg);
+  }
+  .cmp-table {
+    min-width: 100%;
+    @media (max-width: #{$breakpoint-tab - 1px}) {
+      overflow: scroll;
+      
+    }
+
+    table {
+      color: $plane-color;
+      border: 1px solid $nav-link-color;
+      letter-spacing: $character-spacing-112;
+      font-size: $font-size-15;
+      overflow-x: auto;
+      display: block;
+      border-collapse: collapse;
+      scrollbar-width: none;
+      border: none;
+      border-color: $nav-link-color;
+      tbody{
+        width: 1060px;
+        display: inline-table;
+        @include tab-and-mobile {
+          width: 100%;
+        }
+      }
+    }
+    th {
+      background-color: $table-heading-bg;
+      color: $plane-color;
+      padding: 22px 20px;
+      width: 221px;
+      font-family: $font-family-kanit !important;
+      line-height: 28.8px;
+      @include tab{
+        padding: 12px 15px 16px;
+      }
+      @include mobile{
+        width: 120px;
+        padding: 22px 14px;
+        font-size: $font-size-12;
+        letter-spacing: 0.48px;
+        line-height: 21.6px;
+
+      }
+    }
+    td {
+      padding: 22px 20px;
+      font-family: "Kanit-Light" !important;
+      p{
+        font-size: $font-size-15;
+      }
+      ul,ol{
+        padding-inline-start: 1rem;
+      }
+      @media (max-width: #{$breakpoint-tab - 1px}) {
+        padding: 22px 14px;
+        font-size: $font-size-12;
+      }
+      @include tab{
+        padding: 20px 14px 22px 16px;
+      }
+      @include mobile{
+        padding: 15px 18px 15px 15px;
+      }
+    }
+  }
+}
+
+table::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}

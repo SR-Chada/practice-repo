@@ -1,0 +1,613 @@
+@import "../../variables.scss";
+@import '../../mixins.scss';
+@import '../Text/Text.scss';
+@mixin heading-link($font-size, $font-weight, $font-family, $color) {
+    text-decoration: none;
+    color: #{$color};
+    font-size: #{$font-size};
+    font-weight: #{$font-weight};
+    font-family: #{$font-family};
+    position: relative;
+}
+
+@mixin readmore-arrow($background-image, $background-size, $width, $height, $left) {
+    content: "";
+    background-image: #{$background-image};
+    background-size: #{$background-size};
+    background-repeat: no-repeat;
+    width: #{$width};
+    height: #{$height};
+    left: #{$left};
+    position: absolute;
+    transition: width 0.3s ease-out;
+}
+
+@mixin readmore-circle($background, $width, $height) {
+    content: "";
+    display: block;
+    opacity: 1;
+    border-radius: 50%;
+    background: #{$background};
+    width: #{$width};
+    height: #{$height};
+}
+
+.cmp-global-teaser-default {
+    a{
+        text-decoration: none;
+    }
+    .cq-dd-image {
+        position: relative;
+    }
+    .cmp-teaser__image {
+        @include mobile {
+            padding-top: 90px;
+        }
+        .cmp-image {
+            height: 320px;
+            @include tab {
+                height: 202px;
+            }
+            @include mobile {
+                height: 101px;
+            }
+            .cmp-image__image {
+                height: 320px;
+                object-fit: cover;
+                @include tab {
+                    height: 202px;
+                }
+                @include mobile {
+                    height: 101px;
+                }
+            }
+        }
+    }
+    .cmp-teaser__content {
+        .cmp-teaser__title {
+            position: absolute;
+            top: 0;
+            &::after {
+              @include readmore-arrow(none, unset, 35px, 2px, 6px);
+              background: $point-color 0 0 no-repeat padding-box;
+              bottom: 2px;
+              @include mobile {
+                  height: 1px;
+                  left: 3px;
+                  bottom: 1px;
+              }
+          }
+        }
+        .cmp-teaser__title-text {
+            margin-block-start: 0;
+            margin-block-end: 0;
+            font-weight: normal;
+            @include mobile {
+                line-height: 28.8px;
+            }
+            &::after {
+              @include readmore-circle($point-color 0 0 no-repeat padding-box, 6px, 6px);
+              @include mobile {
+                  width: 3px;
+                  height: 3px;
+              }
+          }
+            .cmp-teaser__title-link {
+              padding-bottom: 16px;
+                @include heading-link($font-size-45, $font-weight-regular, $font-family-kanit, $main-color);
+                letter-spacing: 1.8px;
+                display: block;
+                @include tab {
+                    font-size: $font-size-45;
+                }
+                @include mobile {
+                    font-size: $font-size-27;
+                    letter-spacing: 1.08px;
+                    line-height: 32.4px;
+                    padding-bottom: 13px;
+                }
+            }
+            
+        }
+        .cmp-teaser__description {
+            p {
+                font-weight: $font-weight-300;
+                margin: 35px 0 25px 0;
+                @include tab {
+                    margin: 32.86px 0 28.68px 0;
+                }
+                @include mobile {
+                    margin: 20px 0 17.57px 0;
+                }
+            }
+            @extend .cmp-text;
+        }
+    }
+    .cmp-teaser__action-container {
+        width: fit-content;
+        .cmp-teaser__action-link {
+            @include heading-link($font-size-small, $font-weight-regular, $font-family-kanit, $main-color);
+            letter-spacing: 0.98px;
+            display: flex;
+            margin-bottom: 65px;
+            &::before {
+                @include readmore-circle($color-common-gradient, 23px, 23px);
+                margin-right: 26px;
+                @include mobile {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            &::after {
+                @include readmore-arrow(url("../../assets/icon/right-arrow-black.svg"),
+                27px 3px,
+                27px,
+                3px,
+                12px);
+                top: 10px;
+                @include mobile {
+                    width: 24px;
+                    background-size: 24px 3px;
+                }
+            }
+            @include tab {
+                font-size: $font-size-14;
+            }
+            @include mobile {
+                font-size: $font-size-small;
+            }
+            &:hover::after {
+                width: 33px;
+                background-size: 33px 3px;
+                @include tab {
+                    width: 30px;
+                    background-size: 30px 3px;
+                }
+                @include mobile {
+                    width: 27px;
+                    background-size: 27px 3px;
+                }
+            }
+        }
+    }
+}
+
+.cmp-global-teaser-variation {
+    .cq-dd-image {
+        position: relative;
+        transition: all .3s ease-in-out;
+        &:hover {
+            .cmp-image {
+                transform: scale(1.2);
+            }
+            .cmp-teaser__image {
+                opacity: 0.8;
+                transition: all 0.3s ease-out;
+            }
+        }
+
+        .cmp-teaser__content{
+            .cmp-teaser__description {
+                font-size: 16px;
+                letter-spacing: 1.12px;
+                line-height: 28.8px;
+                font-weight: 300;
+            }
+
+        }
+    }
+    .cmp-teaser__image {
+        height: auto;
+        overflow: hidden;
+        .cmp-image {
+            height: 400px;
+            transition: all .3s ease-in-out;
+            .cmp-image__image {
+                background: $plane-color 0% 0% no-repeat padding-box;
+                opacity: .4;
+                height: 400px;
+                object-fit: cover;
+                @include mobile {
+                    height: 280px;
+                }
+            }
+            @include mobile {
+                height: 280px;
+            }
+        }
+    }
+    .cmp-teaser__content {
+        position: absolute;
+        bottom: 17.5%;
+        padding: 0 92px 0 80px;
+        @include tab {
+            padding: 0 60px;
+        }
+        @include mobile {
+            padding: 0 30px;
+            bottom: 35px;
+        }
+        .cmp-teaser__title-text {
+            margin-block-end: 21px;
+
+            font-weight: $font-weight-normal;
+            @include mobile {
+                margin-block-start: 0;
+                margin-block-end: 7px;
+                line-height: 32.4px;
+                letter-spacing: 1.08px;
+                font-size: $font-size-27;
+            }
+            .cmp-teaser__title-link {
+                @include heading-link($font-size-45,
+                $font-weight-regular,
+                $font-family-kanit,
+                $white-color);
+                line-height: 40px;
+                @include tab {
+                    font-size: $font-size-45;
+                }
+                @include mobile {
+                    font-size: $font-size-27;
+                    line-height: 32.4px;
+                    letter-spacing: 1.08px;
+                }
+            }
+        }
+        .cmp-teaser__description {
+            p {
+                color: $white-color;
+                margin-block-start: 0;
+                margin-block-end: 0;
+                margin-bottom: 28.2px;
+                line-height: 28.8px;
+                @include tab {
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    line-height: 23.4px;
+                }
+                @include mobile {
+                    font-size: $font-size-small;
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    letter-spacing: 0.91px;
+                    line-height: 23.4px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .cmp-teaser__action-container {
+            width: fit-content;
+            .cmp-teaser__action-link {
+                @include heading-link($font-size-14,
+                $font-weight-regular,
+                $font-family-kanit,
+                $white-color);
+                display: flex;
+                letter-spacing: 0.98px;
+                align-items: center;
+                &::before {
+                    @include readmore-circle($color-common-gradient,
+                    23px,
+                    22.8px);
+                    margin-right: 23.3px;
+                    @include mobile{
+                      width: 20px;
+                      height: 20px;
+                    }
+                }
+                &::after {
+                    @include readmore-arrow(url("../../assets/icon/right-arrow-white.svg"),
+                    27px 3px,
+                    27px,
+                    3px,
+                    12px);
+                    top: 10px;
+                    @include mobile {
+                        width: 24px;
+                        background-size: 24px 3px;
+                    }
+                }
+                &:hover::after {
+                    width: 30px;
+                    background-size: 30px 3px;
+                    @include mobile {
+                        width: 27px;
+                        background-size: 27px 3px;
+                    }
+                }
+                @include tab {
+                    font-size: $font-size-14;
+                }
+                @include mobile {
+                    font-size: $font-size-small;
+                }
+            }
+        }
+    }
+    .cq-dd-image {
+        .cmp-teaser__image {
+            background: $plane-color 0% 0% no-repeat padding-box;
+            opacity: 0.4;
+        }
+    }
+}
+
+.cmp-global-teaser-variation-three {
+    .cq-dd-image {
+        padding-top: 100px;
+        position: relative;
+        @include tab {
+            padding-top: 125px;
+        }
+        @include mobile {
+            padding-top: 125px;
+        }
+        .cmp-teaser__image {
+            width: 47.642%;
+            float: left;
+            margin-bottom: 35px;
+            margin-right: 50px;
+            @include tab-and-mobile {
+                width: 100%;
+                float: none;
+                margin-bottom: 0;
+                padding-right: 0;
+            }
+            .cmp-image {
+                height: 264px;
+                @include tab {
+                    text-align: center;
+                }
+                &__image {
+                    height: 264px;
+                    @include tab {
+                        width: 70.36%;
+                    }
+                    @include mobile {
+                        width: 100%;
+                        height: 188px;
+                    }
+                }
+                @include mobile {
+                    height: 188px;
+                }
+            }
+        }
+        .cmp-teaser__content {
+            .cmp-teaser__pretitle {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                letter-spacing: 1.26px;
+                color: $sub-color;
+                text-transform: uppercase;
+                font-weight: $font-weight-300;
+                text-align: center;
+                font-size: $font-size-18;
+                @include mobile {
+                    font-size: $font-size-15;
+                    letter-spacing: 1.05px;
+                }
+            }
+            .cmp-teaser__title {
+                position: absolute;
+                top: 30px;
+                width: 100%;
+                &-text {
+                    margin-bottom: 0;
+                    font-size: $font-size-30;
+                    text-align: center;
+                    font-weight: $font-weight-normal;
+                    letter-spacing: 1.2px;
+                    line-height: 36px;
+                    @include mobile {
+                        font-size: $font-size-24;
+                        letter-spacing: 0.96px;
+                        line-height: 28.8px;
+                    }
+                }
+                &-link {
+                    color: $main-color;
+                    text-decoration: none;
+                }
+                @include tab{
+                    display: flex;
+                    justify-content: center;
+                    h2{
+                        width: 80%;
+                    }
+                }
+            }
+            .cmp-teaser__description {
+                p {
+                    margin-top: 35px;
+                    font-family: $font-family-light;
+                    letter-spacing: $character-spacing-112;
+                    @include tab {
+                        margin-top: 25px;
+                    }
+                    @include mobile {
+                        margin-top: 18px;
+                    }
+                }
+                p:first-child {
+                    width: 47.642%;
+                    float: right;
+                    height: 299px;
+                    margin-block-start: 0;
+                    margin-block-end: 0;
+                    margin-top: -35px;
+                    @include tab {
+                        width: 100%;
+                        height: auto;
+                        float: none;
+                        margin-top: 25.79px;
+                    }
+                    @include mobile {
+                        width: 100%;
+                        height: auto;
+                        float: none;
+                        margin-top: 20.68px;
+                    }
+                }
+            }
+            .cmp-teaser__action-container {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                .cmp-teaser__action-link {
+                    @include heading-link($font-size-small,
+                    $font-weight-regular,
+                    $font-family-kanit,
+                    $main-color);
+                    display: flex;
+                    align-items: center;
+                    &::before {
+                        @include readmore-arrow(url("../../assets/icon/right-arrow-lg-black.svg"),
+                        50px 4px,
+                        50px,
+                        4px,
+                        51%);
+                        @include mobile {
+                            width: 45px;
+                            background-size: 45px 4px;
+                            left: 56%;
+                        }
+                    }
+                    &:hover::before {
+                        width: 55px;
+                        background-size: 55px 4px;
+                        @include mobile {
+                            width: 50px;
+                            background-size: 50px 4px;
+                        }
+                    }
+                    &::after {
+                        @include readmore-circle(transparent linear-gradient(270deg,
+                        $sub-color-light 0%,
+                        $button-circle-color 100%) 0% 0% no-repeat padding-box,
+                        65px,
+                        65px);
+                        opacity: 0.8;
+                        margin-left: 27px;
+                        @include mobile {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cmp-global-teaser-variation-two {
+    .cmp-image {
+        height: 320px;
+        .cmp-image__image {
+            height: 320px;
+            @include mobile {
+                height: 160px;
+            }
+        }
+        @include mobile {
+            height: 160px;
+        }
+    }
+    .cq-dd-image {
+        position: relative;
+    }
+    .cmp-teaser__title {
+        position: absolute;
+        top: 95px;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        width: 100%;
+        @include mobile {
+            top: -28px;
+        }
+
+      }
+
+      .cmp-teaser__title {
+        position: absolute;
+        // top: 30px;
+        width: 100%;
+
+        &-text {
+            background: $point-color 0% 0% no-repeat padding-box;
+            opacity: 0.85;
+            width: 277px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            min-width: 277px;
+            font-weight: $font-weight-normal;
+            height: 130px;
+            display: grid;
+            @include mobile {
+                min-width: auto;
+                height: auto;
+                width: 265px;
+            }
+        }
+        &-link {
+            @include heading-link($font-size-18,
+            $font-weight-regular,
+            $font-family-kanit,
+            $white-color);
+            letter-spacing: 0.72px;
+            line-height: 36px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            @include mobile {
+                font-size: $font-size-regular;
+                padding: 8px 0px 12px;
+                letter-spacing: 0.64px;
+                line-height: 24px;
+            }
+        }
+    }
+    .cmp-teaser__description {
+        p {
+            margin-top: 34px;
+            @include mobile {
+                margin-top: 20.52px;
+            }
+        }
+    }
+}
+
+.cmp-global-teaser-variation,
+.cmp-global-teaser-variation-two,
+.cmp-global-teaser-variation-three {
+    a{
+        text-decoration: none;
+    }
+    .cmp-teaser__description {
+        @extend .cmp-text;
+        p {
+            font-family: $font-family-light !important;
+        }
+    }
+}
+
+.cmp-global-teaser-variation-two,
+.cmp-global-teaser-variation-three {
+    .cmp-teaser__description {
+        @extend .cmp-text;
+    }
+    .cmp-teaser__action-link {
+        letter-spacing: 0.91px;
+    }
+}

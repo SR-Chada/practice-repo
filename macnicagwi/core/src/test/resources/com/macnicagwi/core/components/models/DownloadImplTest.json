@@ -1,0 +1,12 @@
+{
+  "download": {
+    "jcr:created": "Wed Aug 10 2022 10:19:35 GMT+0000",
+    "jcr:lastModifiedBy":"sumit.ka@1digitals.com",
+    "jcr:createdBy":"sumit.ka@1digitals.com",
+    "sling:resourceType":"macnicagwi/components/content/download",
+    "jcr:lastModified":"Wed Aug 10 2022 10:19:57 GMT+0000",
+    "jcr:primaryType":"nt:unstructured",
+    "fileReference":"/content/dam/macnicagwi/apac/anstek/public/zh_tw/downloads/202206151447000.pdf",
+    "downloadFormFragmentPath":"/content/experience-fragments/macnicagwi/apac/galaxy/en/site/forms/watch-restricted-video-form"
+  }
+}

@@ -1,0 +1,168 @@
+@import 'variables';
+
+@mixin H1-text {
+    font-family: $font-family;
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    font-style: $font-style-normal;
+    line-height: $line-height-xl;
+    
+    @include tab{
+        font-size: $font-size-normal;
+        line-height: $line-height-xxl;
+    }
+    @include mobile{
+        font-size: $font-size-normal;
+        line-height: $line-height-xxl;
+    }
+}
+
+@mixin normal-text {
+    font-family: $font-family;
+    font-size: $font-size-normal;
+    font-weight: $font-weight-regular;
+    font-style: $font-style-normal;
+    line-height: $line-height-xxl;
+}
+
+@mixin H2-text {
+    font-family: $font-family;
+    font-size: $font-size-22;
+    font-weight: $font-weight-bold;
+    font-style: $font-style-normal;
+    line-height: $line-height-xxl;
+    @include tab{
+        font-size: $font-size-20;
+        line-height: $line-height-xxl;
+    }
+    @include mobile{
+        font-size: $font-size-medium;
+        line-height: $line-height-xxl;
+    }
+}
+
+@mixin H3-text {
+    font-family: $font-family;
+    font-size: $font-size-20;
+    font-weight: $font-weight-medium;
+    font-style: $font-style-normal;
+    line-height: $line-height-xl;
+    @include tab{
+        font-size: $font-size-medium;
+        line-height: $line-height-xxl;
+    }
+    @include mobile{
+        font-size: $font-size-normal;
+        line-height: $line-height-xxl;
+    }
+}
+
+@mixin H4-text {
+    font-family: $font-family;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-medium;
+    font-style: $font-style-normal;
+    line-height: $line-height-lg;
+    @include tab{
+        font-size: $font-size-normal;
+    }
+    @include mobile{
+        font-size: $font-size-normal;
+    }
+}
+
+@mixin H4-text-uppercase {
+    @include H4-text;
+    text-transform: uppercase;
+}
+
+@mixin label-bold {
+    font-family: $font-family;
+    font-size: $font-size-normal;
+    font-weight: $font-weight-bold;
+    font-style: $font-style-normal;
+    line-height: $line-height-md;
+    letter-spacing: $letter-spacing-sm;
+}
+
+@mixin label-regular {
+    font-family: $font-family;
+    font-size: $font-size-normal;
+    font-weight: $font-weight-regular;
+    font-style: $font-style-normal;
+    line-height: $line-height-md;
+}
+
+@mixin label-uppercase {
+    font-family: $font-family;
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+    font-style: $font-style-normal;
+    line-height: $line-height-lg;
+    letter-spacing: $letter-spacing-md;
+    text-transform: uppercase;
+}
+
+@mixin normal-text-regular {
+    font-family: $font-family;
+    font-style: $font-style-normal;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-normal;
+    line-height: $line-height-lg;
+}
+
+@mixin normal-text-medium {
+    font-family: $font-family;
+    font-style: $font-style-normal;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-normal;
+    line-height: $line-height-lg;
+}
+
+@mixin normal-text-small {
+    font-family: $font-family;
+    font-style: $font-style-normal;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-small;
+    line-height: $line-height-sm;
+}
+
+@mixin mobile-normal-text {
+    font-family: $font-family;
+    font-style: $font-style-normal;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-normal;
+    line-height: $line-height-xxl;
+}
+
+@mixin mobile-table-header {
+    @include mobile-normal-text;
+}
+
+
+// small normal regular and Big Black ( ask design team )
+
+
+@mixin mobile {
+    @media (max-width: #{$breakpoint-tab - 1px}) {
+      @content;
+    }
+  }
+
+@mixin tab {
+    @media (min-width: #{$breakpoint-tab}) and (max-width: #{$breakpoint-desktop - 1px}) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media (min-width: #{$breakpoint-desktop}) {
+      @content;
+    }
+  }
+
+@mixin tab-and-mobile {
+    @media (max-width: #{$breakpoint-desktop - 1px}) {
+        @content;
+    }
+}

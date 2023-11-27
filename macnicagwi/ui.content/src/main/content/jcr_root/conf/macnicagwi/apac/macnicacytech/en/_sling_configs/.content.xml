@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="nt:unstructured">
+    <com.macnicagwi.core.config.HubspotConfig
+        jcr:primaryType="nt:unstructured"
+        script="&lt;!-- start Hubspot-->&lt;script  type=&quot;text/javascript&quot; id=&quot;hs-script-loader&quot; async=&quot;&quot; defer=&quot;defer&quot; src=&quot;//js.hs-scripts.com/20001535.js&quot;>&lt;/script>&lt;!-- End Hubspot -->"/>
+    <com.macnicagwi.core.config.WorkFlowCaConfig
+        jcr:primaryType="nt:unstructured"
+        approverGroup="macnicagwi-macnicacytech-approvers"
+        hqGroup="macnicagwi-global-authors"/>
+    <com.macnicagwi.core.config.SubsidiaryNameConfig
+        jcr:primaryType="nt:unstructured"
+        subsidiaryName="macnicacytech"/>
+</jcr:root>

@@ -1,0 +1,25 @@
+<sly 
+    data-sly-use.cardList="com.macnicagwi.core.components.models.CardList"
+    data-sly-use.filter="com.macnicagwi.core.components.models.MultiLevelFilter"
+    data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.itemTemplate="item.html"
+    data-sly-test.hasContent="${!cardList.empty}">
+    <div class="multilevelfilter" data-sly-resource="${'.' @ resourceType='macnicagwi/components/content/multilevelfilter'}"></div>
+    <ul  
+        class="cmp-card-list" 
+        data-sly-list.item="${cardList.listItems}"
+        data-cmp-data-layer="${cardList.data.json}"
+        data-cmp-resource="${cardList.getResourcePath}"
+        data-cmp-listsize="${cardList.totalResultsSize}"
+        id="${cardList.id}">
+        <li class="cmp-card-list__item"
+            data-cmp-data-layer="${item.data.json}"
+            data-sly-call="${itemTemplate.item @ item = item, cardList = cardList}"></li>
+    </ul>
+    <span class="cmp-card-list__no-results-found">${filter.getNoResultsFoundText}</span>
+    <div data-sly-test="${filter.getLoadMoreButtonText != null}"
+        class="cmp-card-list__loadmore-button">
+        <button class="cmp-button">${filter.getLoadMoreButtonText}</button>
+    </div>
+</sly>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent, classAppend='cmp-card-list'}"></sly>

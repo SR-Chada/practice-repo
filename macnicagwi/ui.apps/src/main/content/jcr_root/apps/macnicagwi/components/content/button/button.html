@@ -1,0 +1,24 @@
+<!--/* Placeholder text for authoring view*/-->
+  <sly data-sly-use.textModel="com.adobe.cq.wcm.core.components.models.Text"
+  data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<p data-sly-test.text="${textModel.text}"></p>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+
+<!--/* Display element only if jcr:title is configured*/-->
+<sly data-sly-test="${properties.jcr:title}" data-sly-unwrap>
+<div>
+  <button data-sly-use.button="com.adobe.cq.wcm.core.components.models.Button"
+  data-sly-use.iconTemplate="icon.html"
+  data-sly-element="${button.buttonLink.valid ? 'a' : 'button'}"
+  type="${button.buttonLink.valid ? '' : 'button'}"
+  id="${button.id}"
+  class="cmp-button"
+  data-sly-attribute="${button.buttonLink.htmlAttributes}"
+  aria-label="${button.accessibilityLabel}"
+  data-cmp-clickable="${button.data ? true : false}"
+  data-cmp-data-layer="${button.data.json}">
+<sly data-sly-call="${iconTemplate.icon @ icon=button.icon}"></sly>
+<span data-sly-test="${button.text}" class="cmp-button__text">${button.text}</span>
+</button>
+</div>
+</sly>

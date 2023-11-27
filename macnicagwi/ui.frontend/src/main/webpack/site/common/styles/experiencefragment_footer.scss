@@ -1,0 +1,463 @@
+//== XF Footer style, used on page template
+
+/*Global footer*/
+footer.global-footer {
+    background: $color-common-gradient;
+
+    .cmp-experiencefragment--footer {
+        margin: auto;
+        max-width: 1440px;
+
+        & > .cmp-container {
+            padding: 40px 193px;
+
+            @include tab-and-mobile {
+                position: relative;
+            }
+
+            @include tab {
+                padding: 20px 128px;
+            }
+
+            @include mobile {
+                padding: 20px 24px;
+            }
+        }
+    }
+    #cmp-container__img-list {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @include tab-and-mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: normal;
+        }
+
+        #macnica-global-logo {
+            display: flex;
+            vertical-align: middle;
+            width: 330px;
+
+            @include tab-and-mobile {
+                width: 100%;
+            }
+
+
+            .cmp-image__image {
+                width: 183px;
+                height: 37px;
+
+                @include tab-and-mobile {
+                    width: 119px;
+                    height: 24px;
+                }
+            }
+        }
+        .list {
+            @include tab {
+                padding: 44px 0 0 0;
+            }
+
+            @include mobile {
+                padding: 28px 0 0 0;
+            }
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                grid-gap: 16px 32px;
+                justify-content: flex-end;
+                list-style-type: none;
+                padding: 0;
+                margin: 8px 0 0;
+
+                @include tab-and-mobile {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                @include mobile{
+                    grid-gap: 0;
+                }
+
+                li {
+                    @include H4-text;
+                    float: left;
+
+                    @include tab-and-mobile {
+                        padding: 0 0 32px 0;
+                    }
+                    a {
+                        display: block;
+                        text-decoration: none;
+                    }
+                    span {
+                        color: $color-background-default;
+                    }
+                }
+            }
+        }
+    }
+
+    #copyright-txt {
+        @include H4-text;
+        color: $color-background-default;
+        width: 330px;
+
+        @include tab-and-mobile {
+            width: 100%;
+        }
+    }
+
+    #copyright-socia-media-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+
+        @include tab-and-mobile {
+            margin-top: 0;
+        }
+    }
+
+    #social-media-global {
+        display: flex;
+        grid-gap: 16px 48px;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+
+        @include tab-and-mobile {
+            flex-direction: column;
+            grid-gap: 30px;
+            position: absolute;
+            top: 88px;
+            right: 128px;
+        }
+
+        @include mobile {
+            right: 24px;
+        }
+
+        .cmp-button {
+            @include H4-text;
+            color: $color-background-default;
+            display: flex;
+            align-items: center;
+            background: none;
+            padding: 0;
+        }
+
+        #facebook-global {
+            .cmp-button__icon--facebook-global-icon {
+                content: url("../resources/images/facebook-global-icon.svg");
+                width: 28px;
+                height: 28px;
+                margin-right: 8px;
+            }
+        }
+
+        #twitter-global {
+            .cmp-button__icon--twitter-global-icon {
+                content: url("../resources/images/twitter-global-icon.svg");
+                width: 28px;
+                height: 28px;
+                margin-right: 8px;
+            }
+        }
+
+        #linkedin-global {
+            .cmp-button__icon--linkedin-global-icon {
+                content: url("../resources/images/linkedin-global-icon.svg");
+                width: 28px;
+                height: 28px;
+                margin-right: 8px;
+            }
+        }
+    }
+}
+
+@mixin social-media-icons-subsidiary {
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 3px 4px 0 0;
+}
+
+/*Subsidiary footer*/
+.subsidiary-footer{
+
+.cmp-experiencefragment.cmp-experiencefragment--footer{
+    background-color: $color-background-primary;
+    margin-top: 2pc;
+    padding:24px 184px;
+    border-radius: 0 0 24px 24px;
+    @include tab {
+        padding: 16px 112px;
+    }
+
+        @include mobile {
+            padding: 16px;
+        }
+
+        #footer-container {
+            display: flex;
+            justify-content: space-between;
+
+            @include tab-and-mobile {
+                flex-direction: column;
+                .resizableimage{
+                    display: grid;
+                }
+            }
+            .cmp-resizableimage{
+                width: auto !important;
+                .cmp-resizableimage__image {
+                    max-width: initial;
+                    @include mobile{
+                        width: auto !important;
+                    }
+                }
+            }
+            .cmp-resizableimage{
+                width: auto !important;
+            }
+        }
+
+        #macnica-footer-logo {
+            width: 185px;
+        }
+
+        #follow-us-social-media-container {
+            display: flex;
+            flex-direction: column;
+            width: 384px;
+            margin-top: 72px;
+
+            @include tab-and-mobile {
+                width: 100%;
+                margin-top: 32px;
+            }
+
+            .cmp-text--follow-us-txt {
+                color: $color-text-secondary;
+                font-size: $font-size-normal;
+                font-weight: $font-weight-bold;
+                line-height: $line-height-xl;
+                margin-left: 10px;
+
+                @include tab-and-mobile {
+                    margin-left: 0;
+                }
+
+                & > p {
+                    margin: 0 0 24px;
+                }
+            }
+
+            #social-media-container {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                width: 100%;
+                grid-gap: 32px 0;
+
+                @include tab {
+                    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                    grid-gap: 32px 32px;
+                }
+
+                @include mobile {
+                    grid-template-columns: 100px 100px;
+                    grid-gap: 32px 32px;
+                    justify-content: center;
+                }
+
+                .cmp-image {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .cmp-image__link {
+                        img {
+                            width: 100px;
+                            height: auto;
+                            @include tab-and-mobile {
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+
+                #facebook-subsidiary {
+                    .cmp-image__title {
+                        display: flex;
+
+                        &::before {
+                            @include social-media-icons-subsidiary;
+                            content: url("../resources/images/facebook-bw-icon.svg");
+                        }
+                    }
+                }
+
+                #instagram-subsidiary {
+                    .cmp-image__title {
+                        display: flex;
+
+                        &::before {
+                            @include social-media-icons-subsidiary;
+                            content: url("../resources/images/instagram-bw-icon.svg");
+                        }
+                    }
+                }
+
+                #linkedin-subsidiary {
+                    .cmp-image__title {
+                        display: flex;
+
+                        &::before {
+                            @include social-media-icons-subsidiary;
+                            content: url("../resources/images/linkedin-bw-icon.svg");
+                        }
+                    }
+                }
+
+                #twitter-subsidiary {
+                    .cmp-image__title {
+                        display: flex;
+
+                        &::before {
+                            @include social-media-icons-subsidiary;
+                            content: url("../resources/images/twitter-bw-icon.svg");
+                        }
+                    }
+                }
+
+                #youtube-subsidiary {
+                    .cmp-image__title {
+                        display: flex;
+
+                        &::before {
+                            @include social-media-icons-subsidiary;
+                            content: url("../resources/images/youtube-bw-icon.svg");
+                        }
+                    }
+                }
+
+                #wechat-subsidiary {
+                    .cmp-image__title {
+                        display: flex;
+
+                        &::before {
+                            @include social-media-icons-subsidiary;
+                            content: url("../resources/images/wechat-bw-icon.svg");
+                        }
+                    }
+                }
+            }
+        }
+
+        #contact-us {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 50vh;
+            right: -48px;
+            transform: rotate(90deg);
+            background-color: $color-primary;
+            border-radius: 0 0 10px 10px;
+            border: none;
+            padding: 8px 16px;
+            font-size: $font-size-normal;
+            font-weight: $font-weight-normal;
+            text-decoration: none;
+            z-index: 1;
+            &:hover,
+            &:focus {
+                cursor: pointer;
+            }
+
+            @include tab-and-mobile{
+                right: -15px;
+                padding: 12px 19px;
+                border-radius: 0 0 22px 22px;
+            }
+
+            @include mobile{
+                right: -16px;
+            }
+
+            & .cmp-button__icon--phone-icon {
+                &::before {
+                    content: url("../resources/images/contact-us-phone-icon.svg");
+                    height: 16px;
+                    width: 16px;
+                    margin: 0 12px 0 0;
+                    display: block;
+                    transform: rotate(-90deg);
+
+                    @include tab-and-mobile {
+                        height: 12px;
+                        width: 12px;
+                    }
+                }
+            }
+
+            & .cmp-button__text {
+                color: $color-background-default;
+                text-decoration: none;
+
+                @include tab-and-mobile {
+                    display: none;
+                }
+            }
+        }
+
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                padding: 8px 0px 0px 0px;
+                a {
+                    text-decoration: none;
+                    color: $button-secondary-color;
+                }
+            }
+        }
+
+
+        #copyright-txt-subsidiary {
+            @include H4-text;
+            color: $copyright-text-subsidiary-color;
+            margin: 18px 0 0;
+            @include tab-and-mobile {
+                margin: 32px 0 26px 0;
+            }
+            p {
+                padding: 10px 0;
+                margin-block-start: 0;
+                margin-block-end: 0;
+            }
+
+        }
+        #links-txt {
+            margin: 18px 0 0;
+            padding: 0;
+            font-weight: $font-weight-bold;
+            color: $color-text-secondary;
+            display: inline-block;
+            p {
+                margin: 0;
+            }
+
+            @include mobile {
+                margin: 16px 0 0;
+            }
+        }
+    }
+}
